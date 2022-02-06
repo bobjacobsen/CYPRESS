@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/xml/XSLT/panelfile.xsl" type="text/xsl"?>
+<!DOCTYPE catalogTrees SYSTEM "/xml/DTD/catalogTree.dtd">
+<catalogTrees class="jmri.jmrit.catalog.DefaultCatalogTreeManagerConfigXML">
+  <!--Written by JMRI version 4.25.10ish+jake+20220204T1900Z+Ra4d14e0906 on Fri Feb 04 14:25:18 EST 2022-->
+  <catalogTree systemName="NXDI" userName="Default Icons">
+    <node nodeName="Default Icons">
+      <node nodeName="Sensor">
+        <leaf name="BeanStateInconsistent" path="program:resources/icons/USSpanels/Lamps/lamp-w.gif" />
+        <leaf name="BeanStateUnknown" path="program:resources/icons/USSpanels/Lamps/lamp-w.gif" />
+        <leaf name="SensorStateInactive" path="program:resources/icons/USSpanels/Lamps/lamp-dy.gif" />
+        <leaf name="SensorStateActive" path="program:resources/icons/USSpanels/Lamps/lamp-y.gif" />
+      </node>
+    </node>
+  </catalogTree>
+</catalogTrees>
