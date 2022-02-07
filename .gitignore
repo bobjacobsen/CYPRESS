@@ -1,0 +1,5 @@
+# profile backups
+profile/*/user-interface.xml.*.bak
+
+# backup panels
+backupPanels/*.xml
