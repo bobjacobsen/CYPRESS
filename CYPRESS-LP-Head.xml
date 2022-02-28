@@ -143,7 +143,7 @@
     </turnout>
   </turnouts>
   <memories class="jmri.managers.configurexml.DefaultMemoryManagerXml">
-    <memory value="4:27 PM">
+    <memory value="5:04 PM">
       <systemName>IMCURRENTTIME</systemName>
     </memory>
     <memory value="1.0">
@@ -467,6 +467,36 @@
       <userName>IS12</userName>
       <permissive>no</permissive>
       <occupancysensor>IS12</occupancysensor>
+      <path todir="64" fromdir="128" block="IBIS13">
+        <beansetting setting="2">
+          <turnout systemName="Tr2-T05" />
+        </beansetting>
+        <beansetting setting="2">
+          <turnout systemName="Tr2-T04" />
+        </beansetting>
+        <beansetting setting="4">
+          <turnout systemName="Tr2-T03" />
+        </beansetting>
+      </path>
+      <path todir="64" fromdir="128" block="IBIS14">
+        <beansetting setting="4">
+          <turnout systemName="Tr2-T05" />
+        </beansetting>
+        <beansetting setting="2">
+          <turnout systemName="Tr2-T04" />
+        </beansetting>
+        <beansetting setting="4">
+          <turnout systemName="Tr2-T03" />
+        </beansetting>
+      </path>
+      <path todir="64" fromdir="128" block="IBIS15">
+        <beansetting setting="4">
+          <turnout systemName="Tr2-T04" />
+        </beansetting>
+        <beansetting setting="4">
+          <turnout systemName="Tr2-T03" />
+        </beansetting>
+      </path>
       <path todir="32" fromdir="16" block="IBIS16" />
       <path todir="64" fromdir="128" block="IBIS22">
         <beansetting setting="2">
@@ -479,18 +509,21 @@
       <userName>IS13</userName>
       <permissive>no</permissive>
       <occupancysensor>IS13</occupancysensor>
+      <path todir="128" fromdir="64" block="IBIS12" />
     </block>
     <block systemName="IBIS14" length="0.0" curve="0">
       <systemName>IBIS14</systemName>
       <userName>IS14</userName>
       <permissive>no</permissive>
       <occupancysensor>IS14</occupancysensor>
+      <path todir="128" fromdir="64" block="IBIS12" />
     </block>
     <block systemName="IBIS15" length="0.0" curve="0">
       <systemName>IBIS15</systemName>
       <userName>IS15</userName>
       <permissive>no</permissive>
       <occupancysensor>IS15</occupancysensor>
+      <path todir="128" fromdir="64" block="IBIS12" />
     </block>
     <block systemName="IBIS16" length="0.0" curve="0">
       <systemName>IBIS16</systemName>
@@ -807,22 +840,22 @@
     <signalelement signal="IHTr2-Sd03-U" mode="2" watchedturnout="Tr2-T04" watchedsignal1="IHV1" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="true">
       <comment />
     </signalelement>
-    <signalelement signal="IHTr2-Ss05" mode="1" watchedsignal1="IHTr2-Ss06" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
-      <sensorname>IS21</sensorname>
-      <comment />
-    </signalelement>
     <signalelement signal="IHTr2-Sd02-L" mode="3" watchedturnout="Tr2-T02" watchedsignal1="IHTr1-Ss02" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <sensorname>IS18</sensorname>
       <sensorname>IS27</sensorname>
       <sensorname>IS26</sensorname>
       <comment />
     </signalelement>
-    <signalelement signal="IHTr2-Sd03-L" mode="3" watchedturnout="Tr2-T04" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
-      <sensorname>IS15</sensorname>
+    <signalelement signal="IHTr2-Ss05" mode="1" watchedsignal1="IHTr2-Ss06" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
+      <sensorname>IS21</sensorname>
       <comment />
     </signalelement>
     <signalelement signal="IHTr2-Ss04" mode="1" watchedsignal1="IHTr2-Ss05" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <sensorname>IS8</sensorname>
+      <comment />
+    </signalelement>
+    <signalelement signal="IHTr2-Sd03-L" mode="3" watchedturnout="Tr2-T04" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
+      <sensorname>IS15</sensorname>
       <comment />
     </signalelement>
     <signalelement signal="IHTr1-Sd01-L" mode="3" watchedturnout="Tr1-T01" watchedsignal1="IHTr2-Sd02-L" watchedsignal1alt="IHTr2-Sd02-U" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
@@ -830,9 +863,8 @@
       <sensorname>IS25</sensorname>
       <comment />
     </signalelement>
-    <signalelement signal="IHTr1-Sd02-L" mode="3" watchedturnout="Tr1-T03" watchedsignal1="IHTr1-Ss05" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
-      <sensorname>IS3</sensorname>
-      <sensorname>IS5</sensorname>
+    <signalelement signal="IHTr2-Sd01-L" mode="2" watchedturnout="Tr2-T01" watchedsignal1="IHTr2-Sd02-L" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="true">
+      <sensorname>IS25</sensorname>
       <comment />
     </signalelement>
     <signalelement signal="IHTr2-Ss06" mode="1" watchedsignal1="IHTr2-Sd01-L" watchedsignal1alt="IHTr2-Sd01-U" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
@@ -840,8 +872,9 @@
       <sensorname>IS20</sensorname>
       <comment />
     </signalelement>
-    <signalelement signal="IHTr2-Sd01-L" mode="2" watchedturnout="Tr2-T01" watchedsignal1="IHTr2-Sd02-L" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="true">
-      <sensorname>IS25</sensorname>
+    <signalelement signal="IHTr1-Sd02-L" mode="3" watchedturnout="Tr1-T03" watchedsignal1="IHTr1-Ss05" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
+      <sensorname>IS3</sensorname>
+      <sensorname>IS5</sensorname>
       <comment />
     </signalelement>
     <signalelement signal="IHTr2-Ss01" mode="1" watchedsignal1="IHTr2-Ss02" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
@@ -856,12 +889,12 @@
     <signalelement signal="IHTr2-Ss02" mode="4" watchedturnout="Tr2-T03" watchedsignal1="IHTr2-Ss03" watchedsignal2="IHTr2-Sd03-L" watchedsignal2alt="IHTr2-Sd03-U" watchedsensor1="IS12" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <comment />
     </signalelement>
-    <signalelement signal="IHV1" mode="4" watchedturnout="Tr2-T05" watchedsensor1="IS13" watchedsensor2="IS14" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
-      <comment />
-    </signalelement>
     <signalelement signal="IHTr1-Ss07" mode="1" watchedsignal1="IHTr1-Sd01-L" watchedsignal1alt="IHTr1-Sd01-U" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <sensorname>IS10</sensorname>
       <sensorname>IS19</sensorname>
+      <comment />
+    </signalelement>
+    <signalelement signal="IHV1" mode="4" watchedturnout="Tr2-T05" watchedsensor1="IS13" watchedsensor2="IS14" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <comment />
     </signalelement>
   </signalelements>
@@ -2310,8 +2343,8 @@
     <layoutturnout ident="TO1" type="RH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="331.0" ycen="100.0" xa="311.0" ya="100.0" xb="351.0" yb="100.0" xc="361.0" yc="130.0" xd="311.0" yd="100.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutRHTurnoutXml" turnoutname="Tr1-T03" blockname="IS3" connectaname="T16" connectbname="T1" connectcname="T2" />
     <layoutturnout ident="TO2" type="LH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="499.0" ycen="100.0" xa="527.0" ya="100.0" xb="471.0" yb="100.0" xc="471.0" yc="130.0" xd="527.0" yd="100.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutLHTurnoutXml" turnoutname="Tr1-T04" blockname="IS6" connectaname="T3" connectbname="T1" connectcname="T2" />
     <layoutturnout ident="TO3" type="RH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="202.0" ycen="161.0" xa="182.0" ya="161.0" xb="222.0" yb="161.0" xc="219.0" yc="175.0" xd="182.0" yd="161.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutRHTurnoutXml" turnoutname="Tr2-T03" blockname="IS12" connectaname="T20" connectbname="T9" connectcname="T10" />
-    <layoutturnout ident="TO4" type="LH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="317.0" ycen="250.0" xa="299.85784912109375" ya="237.85784912109375" xb="334.14215087890625" yb="262.14215087890625" xc="353.21319580078125" yc="250.07107543945312" xd="299.85784912109375" yd="237.85784912109375" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutLHTurnoutXml" turnoutname="Tr2-T04" connectaname="T10" connectbname="T11" connectcname="T21" />
-    <layoutturnout ident="TO5" type="LH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="399.0" ycen="311.0" xa="368.85784912109375" ya="289.85784912109375" xb="429.14215087890625" yb="332.14215087890625" xc="421.21319580078125" yc="311.0710754394531" xd="368.85784912109375" yd="289.85784912109375" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutLHTurnoutXml" turnoutname="Tr2-T05" connectaname="T11" connectbname="T23" connectcname="T22" />
+    <layoutturnout ident="TO4" type="LH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="317.0" ycen="250.0" xa="299.85784912109375" ya="237.85784912109375" xb="334.14215087890625" yb="262.14215087890625" xc="353.21319580078125" yc="250.07107543945312" xd="299.85784912109375" yd="237.85784912109375" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutLHTurnoutXml" turnoutname="Tr2-T04" blockname="IS12" connectaname="T10" connectbname="T11" connectcname="T21" />
+    <layoutturnout ident="TO5" type="LH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="399.0" ycen="311.0" xa="368.85784912109375" ya="289.85784912109375" xb="429.14215087890625" yb="332.14215087890625" xc="421.21319580078125" yc="311.0710754394531" xd="368.85784912109375" yd="289.85784912109375" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutLHTurnoutXml" turnoutname="Tr2-T05" blockname="IS12" connectaname="T11" connectbname="T23" connectcname="T22" />
     <layoutturnout ident="TO6" type="RH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="457.0" ycen="480.0" xa="437.0" ya="480.0" xb="477.0" yb="480.0" xc="479.0" yc="496.0" xd="437.0" yd="480.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutRHTurnoutXml" turnoutname="Tr2-T01" blockname="IS25" connectaname="T15" connectbname="T13" connectcname="T4" />
     <layoutturnout ident="TO7" type="RH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="510.0" ycen="518.0" xa="540.0" ya="518.0" xb="480.0" yb="518.0" xc="488.0" yc="504.0" xd="540.0" yd="518.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutRHTurnoutXml" turnoutname="Tr1-T01" blockname="IS17" connectaname="T12" connectbname="T14" connectcname="T4" />
     <layoutturnout ident="TO8" type="LH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="305.0" ycen="518.0" xa="285.0" ya="518.0" xb="325.0" yb="518.0" xc="334.0" yc="502.0" xd="285.0" yd="518.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutLHTurnoutXml" turnoutname="Tr1-T02" blockname="IS26" connectaname="T18" connectbname="T14" connectcname="T28" />
@@ -2343,8 +2376,8 @@
         <controlpoint index="1" x="514.0" y="175.0" />
       </controlpoints>
     </tracksegment>
-    <tracksegment ident="T10" connect1name="TO3" type1="TURNOUT_C" connect2name="TO4" type2="TURNOUT_A" dashed="no" mainline="no" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
-    <tracksegment ident="T11" connect1name="TO4" type1="TURNOUT_B" connect2name="TO5" type2="TURNOUT_A" dashed="no" mainline="no" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T10" blockname="IS12" connect1name="TO3" type1="TURNOUT_C" connect2name="TO4" type2="TURNOUT_A" dashed="no" mainline="no" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T11" blockname="IS12" connect1name="TO4" type1="TURNOUT_B" connect2name="TO5" type2="TURNOUT_A" dashed="no" mainline="no" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
     <tracksegment ident="T12" blockname="IS19" connect1name="TO7" type1="TURNOUT_A" connect2name="X2" type2="LEVEL_XING_B" dashed="no" mainline="yes" hidden="no" bezier="yes" hideConLines="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml">
       <controlpoints>
         <controlpoint index="0" x="582.67" y="518.0" />
@@ -2389,9 +2422,9 @@
         <controlpoint index="1" x="66.0" y="184.33" />
       </controlpoints>
     </tracksegment>
-    <tracksegment ident="T21" connect1name="TO4" type1="TURNOUT_C" connect2name="A7" type2="POS_POINT" dashed="no" mainline="no" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
-    <tracksegment ident="T22" connect1name="TO5" type1="TURNOUT_C" connect2name="A8" type2="POS_POINT" dashed="no" mainline="no" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
-    <tracksegment ident="T23" connect1name="TO5" type1="TURNOUT_B" connect2name="A9" type2="POS_POINT" dashed="no" mainline="no" hidden="no" bezier="yes" hideConLines="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml">
+    <tracksegment ident="T21" blockname="IS12" connect1name="TO4" type1="TURNOUT_C" connect2name="A7" type2="POS_POINT" dashed="no" mainline="no" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T22" blockname="IS12" connect1name="TO5" type1="TURNOUT_C" connect2name="A8" type2="POS_POINT" dashed="no" mainline="no" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T23" blockname="IS12" connect1name="TO5" type1="TURNOUT_B" connect2name="A9" type2="POS_POINT" dashed="no" mainline="no" hidden="no" bezier="yes" hideConLines="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml">
       <controlpoints>
         <controlpoint index="0" x="445.14" y="341.38" />
         <controlpoint index="1" x="493.0" y="340.76" />
@@ -2427,104 +2460,104 @@
   <filehistory>
     <operation>
       <type>app</type>
-      <date>Mon Feb 28 16:11:03 EST 2022</date>
+      <date>Mon Feb 28 16:56:51 EST 2022</date>
       <filename>JMRI program</filename>
     </operation>
     <operation>
       <type>Load OK</type>
-      <date>Mon Feb 28 16:11:06 EST 2022</date>
+      <date>Mon Feb 28 16:56:54 EST 2022</date>
       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS.jmri/CYPRESS-LP-Head.xml</filename>
       <filehistory>
         <operation>
           <type>app</type>
-          <date>Mon Feb 28 12:29:55 EST 2022</date>
+          <date>Mon Feb 28 16:11:03 EST 2022</date>
           <filename>JMRI program</filename>
         </operation>
         <operation>
           <type>Load OK</type>
-          <date>Mon Feb 28 12:29:59 EST 2022</date>
+          <date>Mon Feb 28 16:11:06 EST 2022</date>
           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS.jmri/CYPRESS-LP-Head.xml</filename>
           <filehistory>
             <operation>
               <type>app</type>
-              <date>Mon Feb 28 08:57:34 EST 2022</date>
+              <date>Mon Feb 28 12:29:55 EST 2022</date>
               <filename>JMRI program</filename>
             </operation>
             <operation>
               <type>Load OK</type>
-              <date>Mon Feb 28 08:57:37 EST 2022</date>
+              <date>Mon Feb 28 12:29:59 EST 2022</date>
               <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS.jmri/CYPRESS-LP-Head.xml</filename>
               <filehistory>
                 <operation>
                   <type>app</type>
-                  <date>Mon Feb 28 08:34:07 EST 2022</date>
+                  <date>Mon Feb 28 08:57:34 EST 2022</date>
                   <filename>JMRI program</filename>
                 </operation>
                 <operation>
                   <type>Load OK</type>
-                  <date>Mon Feb 28 08:34:09 EST 2022</date>
+                  <date>Mon Feb 28 08:57:37 EST 2022</date>
                   <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS.jmri/CYPRESS-LP-Head.xml</filename>
                   <filehistory>
                     <operation>
                       <type>app</type>
-                      <date>Mon Feb 28 07:48:37 EST 2022</date>
+                      <date>Mon Feb 28 08:34:07 EST 2022</date>
                       <filename>JMRI program</filename>
                     </operation>
                     <operation>
                       <type>Load OK</type>
-                      <date>Mon Feb 28 07:48:40 EST 2022</date>
+                      <date>Mon Feb 28 08:34:09 EST 2022</date>
                       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS.jmri/CYPRESS-LP-Head.xml</filename>
                       <filehistory>
                         <operation>
                           <type>app</type>
-                          <date>Mon Feb 28 07:44:11 EST 2022</date>
+                          <date>Mon Feb 28 07:48:37 EST 2022</date>
                           <filename>JMRI program</filename>
                         </operation>
                         <operation>
                           <type>Load OK</type>
-                          <date>Mon Feb 28 07:44:14 EST 2022</date>
+                          <date>Mon Feb 28 07:48:40 EST 2022</date>
                           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS.jmri/CYPRESS-LP-Head.xml</filename>
                         </operation>
                         <operation>
                           <type>Store</type>
-                          <date>Mon Feb 28 07:46:37 EST 2022</date>
+                          <date>Mon Feb 28 08:22:45 EST 2022</date>
                           <filename />
                         </operation>
                       </filehistory>
                     </operation>
                     <operation>
                       <type>Store</type>
-                      <date>Mon Feb 28 08:22:45 EST 2022</date>
+                      <date>Mon Feb 28 08:35:58 EST 2022</date>
                       <filename />
                     </operation>
                   </filehistory>
                 </operation>
                 <operation>
                   <type>Store</type>
-                  <date>Mon Feb 28 08:35:58 EST 2022</date>
+                  <date>Mon Feb 28 09:21:45 EST 2022</date>
                   <filename />
                 </operation>
               </filehistory>
             </operation>
             <operation>
               <type>Store</type>
-              <date>Mon Feb 28 09:21:45 EST 2022</date>
+              <date>Mon Feb 28 13:19:16 EST 2022</date>
               <filename />
             </operation>
           </filehistory>
         </operation>
         <operation>
           <type>Store</type>
-          <date>Mon Feb 28 13:19:16 EST 2022</date>
+          <date>Mon Feb 28 16:27:58 EST 2022</date>
           <filename />
         </operation>
       </filehistory>
     </operation>
     <operation>
       <type>Store</type>
-      <date>Mon Feb 28 16:27:58 EST 2022</date>
+      <date>Mon Feb 28 17:04:07 EST 2022</date>
       <filename />
     </operation>
   </filehistory>
-  <!--Written by JMRI version 4.99.3plus+jake+20220228T2110Z+R7e0684dfb2 on Mon Feb 28 16:27:58 EST 2022-->
+  <!--Written by JMRI version 4.99.3plus+jake+20220228T2156Z+R7e0684dfb2 on Mon Feb 28 17:04:07 EST 2022-->
 </layout-config>
