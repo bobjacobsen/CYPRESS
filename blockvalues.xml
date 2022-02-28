@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/xml/XSLT/blockValues.xsl" type="text/xsl"?>
+<!DOCTYPE block_values SYSTEM "/xml/DTD/block-values.dtd">
+<block_values>
+  <!--Written by JMRI version 4.99.3plus+jake+20220228T2128Z+R7e0684dfb2 on Mon Feb 28 16:30:21 EST 2022-->
+  <blockvalues>
+  </blockvalues>
+</block_values>
