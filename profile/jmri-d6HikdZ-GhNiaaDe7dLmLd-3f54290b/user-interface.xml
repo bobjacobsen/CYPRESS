@@ -117,17 +117,24 @@
         </table>
     </tableDetails>
     <windowDetails xmlns="http://jmri.org/xml/schema/auxiliary-configuration/window-details-4-3-5.xsd">
+        <window xmlns="" class="jmri.jmrit.blockboss.BlockBossFrame:Simple Signal Logic" locX="614.0" locY="648.0"/>
+        <window xmlns="" class="Add New Sensor" height="171.0" locX="28.0" locY="26.0" width="852.0"/>
         <window xmlns="" class="Edit Turnout" locX="50.0" locY="25.0"/>
-        <window xmlns="" class="jmri.jmrix.loconet.hexfile.HexFileFrame" height="112.0" locX="0.0" locY="25.0" width="181.0"/>
-        <window xmlns="" class="jmri.jmrit.display.panelEditor.PanelEditor:CYPRESS Panel" locX="115.0" locY="197.0"/>
-        <window xmlns="" class="Script Entry" height="275.0" locX="141.0" locY="514.0" width="641.0"/>
-        <window xmlns="" class="CYPRESS Panel" height="814.0" locX="0.0" locY="25.0" width="1751.0"/>
-        <window xmlns="" class="apps.gui3.tabbedpreferences.TabbedPreferencesFrame:Preferences" height="1069.0" locX="28.0" locY="25.0" width="1013.0"/>
-        <window xmlns="" class="jmri.jmrit.roster.Roster"/>
-        <window xmlns="" class="jmri.jmrit.withrottle.UserInterface" height="250.0" locX="28.0" locY="26.0" width="400.0"/>
-        <window xmlns="" class="jmri.jmrit.beantable.ListedTableFrame:Sensors" height="896.0" locX="28.0" locY="26.0" width="1718.0"/>
+        <window xmlns="" class="Edit Track Segment:2" locX="50.0" locY="25.0"/>
+        <window xmlns="" class="jmri.jmrit.beantable.ListedTableFrame:LRoutes" height="925.0" locX="28.0" locY="26.0" width="1718.0"/>
+        <window xmlns="" class="Edit Track Segment:1" locX="50.0" locY="25.0"/>
+        <window xmlns="" class="Script Output" height="275.0" locX="28.0" locY="26.0" width="424.0"/>
+        <window xmlns="" class="apps.gui3.TabbedPreferencesFrame:Preferences" height="470.0" width="937.0"/>
+        <window xmlns="" class="Edit Level Crossing" locX="50.0" locY="25.0"/>
         <window xmlns="" class="jmri.jmrit.beantable.ListedTableFrame:Turnouts" height="954.0" locX="28.0" locY="26.0" width="1718.0"/>
-        <window xmlns="" class="jmri.jmrit.display.layoutEditor.LayoutEditor:CYPRESS Layout" height="712.0" locX="190.0" locY="333.0" width="1137.0">
+        <window xmlns="" class="jmri.jmrit.display.Editor$JFrameItem:Sensor" height="427.0" locX="0.0" locY="25.0" width="356.0"/>
+        <window xmlns="" class="jmri.jmrit.withrottle.UserInterface" height="250.0" locX="28.0" locY="26.0" width="400.0"/>
+        <window xmlns="" class="apps.gui3.tabbedpreferences.TabbedPreferencesFrame:Preferences" height="1069.0" locX="28.0" locY="25.0" width="1013.0"/>
+        <window xmlns="" class="Edit Track Segment" locX="50.0" locY="25.0"/>
+        <window xmlns="" class="jmri.jmrit.roster.Roster"/>
+        <window xmlns="" class="jmri.jmrit.beantable.ListedTableFrame:Sensors" height="896.0" locX="28.0" locY="26.0" width="1718.0"/>
+        <window xmlns="" class="PanelPro" height="237.0" locX="1102.0" locY="877.0" width="687.0"/>
+        <window xmlns="" class="jmri.jmrit.display.layoutEditor.LayoutEditor:CYPRESS Layout" height="732.0" locX="204.0" locY="379.0" width="1129.0">
             <properties>
                 <property>
                     <key>zoom</key>
@@ -135,13 +142,18 @@
                 </property>
             </properties>
         </window>
-        <window xmlns="" class="jmri.jmrit.beantable.ListedTableFrame:LRoutes" height="925.0" locX="28.0" locY="26.0" width="1718.0"/>
-        <window xmlns="" class="jmri.jmrit.display.Editor$JFrameItem:Sensor" height="427.0" locX="0.0" locY="25.0" width="356.0"/>
-        <window xmlns="" class="apps.gui3.TabbedPreferencesFrame:Preferences" height="470.0" width="937.0"/>
-        <window xmlns="" class="Script Output" height="275.0" locX="28.0" locY="26.0" width="424.0"/>
-        <window xmlns="" class="jmri.jmrit.blockboss.BlockBossFrame:Simple Signal Logic" locX="28.0" locY="26.0"/>
         <window xmlns="" class="jmri.jmrit.beantable.ListedTableFrame:Routes" height="925.0" width="1718.0"/>
-        <window xmlns="" class="PanelPro" height="237.0" locX="1102.0" locY="877.0" width="687.0"/>
-        <window xmlns="" class="Add New Sensor" height="171.0" locX="28.0" locY="26.0" width="852.0"/>
+        <window xmlns="" class="jmri.jmrit.display.layoutEditor.LayoutBlock$LayoutBlockEditAction">
+            <properties>
+                <property>
+                    <key>selectedTabIndex</key>
+                    <value class="java.lang.Integer">0</value>
+                </property>
+            </properties>
+        </window>
+        <window xmlns="" class="jmri.jmrix.loconet.hexfile.HexFileFrame" height="112.0" locX="0.0" locY="25.0" width="181.0"/>
+        <window xmlns="" class="Script Entry" height="275.0" locX="141.0" locY="514.0" width="641.0"/>
+        <window xmlns="" class="CYPRESS Panel" height="814.0" locX="0.0" locY="25.0" width="1751.0"/>
+        <window xmlns="" class="jmri.jmrit.display.panelEditor.PanelEditor:CYPRESS Panel" locX="115.0" locY="197.0"/>
     </windowDetails>
 </auxiliary-configuration>
