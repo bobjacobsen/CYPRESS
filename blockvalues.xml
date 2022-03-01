@@ -2,24 +2,7 @@
 <?xml-stylesheet href="/xml/XSLT/blockValues.xsl" type="text/xsl"?>
 <!DOCTYPE block_values SYSTEM "/xml/DTD/block-values.dtd">
 <block_values>
-  <!--Written by JMRI version 4.99.3plus+jake+20220301T1355Z+R063f427a16 on Tue Mar 01 08:55:39 EST 2022-->
+  <!--Written by JMRI version 4.99.3plus+jake+20220301T1728Z+Rab43c5414d on Tue Mar 01 12:31:35 EST 2022-->
   <blockvalues>
-    <block systemname="IBIS2" value="" />
-    <block systemname="IBIS5" value="" />
-    <block systemname="IBIS6" value="" />
-    <block systemname="IBIS7" value="" />
-    <block systemname="IBIS9" value="" />
-    <block systemname="IBIS10" value="" />
-    <block systemname="IBIS11" value="" />
-    <block systemname="IBIS12" value="" />
-    <block systemname="IBIS17" value="" />
-    <block systemname="IBIS18" value="" />
-    <block systemname="IBIS21" value="" />
-    <block systemname="IBIS22" value="" />
-    <block systemname="IBIS23" value="" />
-    <block systemname="IBIS24" value="" />
-    <block systemname="IBIS25" value="" />
-    <block systemname="IBIS26" value="" />
-    <block systemname="IBIS27" value="" />
   </blockvalues>
 </block_values>
