@@ -1,11 +1,14 @@
-# profile backups
+# automatic file backups
 profile/*/user-interface.xml.*.bak
+
 profile/profile.xml.*.bak
 profile/profile.properties.*.bak
+
 profile/*/profile.xml.*.bak
 profile/*/profile.properties.*.bak
 
 signal/WarrantPreferences.xml.bak
+roster.xml.bak
 
 # backup panels
 backupPanels/*.xml
