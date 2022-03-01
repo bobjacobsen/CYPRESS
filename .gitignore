@@ -12,3 +12,5 @@ roster.xml.bak
 
 # backup panels
 backupPanels/*.xml
+
+.DS_Store
