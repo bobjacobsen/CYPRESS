@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/xml/XSLT/roster2array.xsl" type="text/xsl"?>
+<roster-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://jmri.org/xml/schema/roster.xsd">
+  <!--Written by JMRI version 4.99.3plus+jake+20220301T0354Z+R063f427a16 on Tue Mar 01 07:43:10 EST 2022-->
+  <roster>
+    <locomotive id="Loco 1" fileName="Loco_1.xml" roadNumber="" roadName="" mfg="" owner="" model="" dccAddress="1" comment="" developerID="-1" manufacturerID="999" productID="" maxSpeed="100" imageFilePath="" iconFilePath="" URL="" IsShuntingOn="">
+      <dateUpdated>2022-03-01T12:43:10.770+0000</dateUpdated>
+      <decoder model="NMRA standard CV definitions" family="NMRA standard CV definitions" comment="" maxFnNum="28" />
+      <locoaddress>
+        <dcclocoaddress number="1" longaddress="no" />
+        <number>1</number>
+        <protocol>dcc_short</protocol>
+      </locoaddress>
+      <functionlabels />
+      <soundlabels />
+    </locomotive>
+    <locomotive id="Loco 2" fileName="Loco_2.xml" roadNumber="" roadName="" mfg="" owner="" model="" dccAddress="2" comment="" developerID="-1" manufacturerID="999" productID="" maxSpeed="100" imageFilePath="" iconFilePath="" URL="" IsShuntingOn="">
+      <dateUpdated>2022-03-01T12:43:10.771+0000</dateUpdated>
+      <decoder model="NMRA standard CV definitions" family="NMRA standard CV definitions" comment="" maxFnNum="28" />
+      <locoaddress>
+        <dcclocoaddress number="2" longaddress="no" />
+        <number>2</number>
+        <protocol>dcc_short</protocol>
+      </locoaddress>
+      <functionlabels />
+      <soundlabels />
+    </locomotive>
+    <locomotive id="Loco 3" fileName="Loco_3.xml" roadNumber="" roadName="" mfg="" owner="" model="" dccAddress="3" comment="" developerID="-1" manufacturerID="999" productID="" maxSpeed="100" imageFilePath="" iconFilePath="" URL="" IsShuntingOn="">
+      <dateUpdated>2022-03-01T12:43:10.771+0000</dateUpdated>
+      <decoder model="NMRA standard CV definitions" family="NMRA standard CV definitions" comment="" maxFnNum="28" />
+      <locoaddress>
+        <dcclocoaddress number="3" longaddress="no" />
+        <number>3</number>
+        <protocol>dcc_short</protocol>
+      </locoaddress>
+      <functionlabels />
+      <soundlabels />
+    </locomotive>
+  </roster>
+</roster-config>
