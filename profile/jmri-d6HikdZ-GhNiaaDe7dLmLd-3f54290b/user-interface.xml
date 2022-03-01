@@ -10,6 +10,7 @@
     </comboBoxLastValue>
     <settings xmlns="http://jmri.org/xml/schema/auxiliary-configuration/settings-4-3-5.xsd">
         <setting xmlns="">jmri.jmrit.display.layoutEditor.LayoutEditor:CYPRESS Layout.toolBarThin</setting>
+        <setting xmlns="">jmri.jmrix.loconet.locomon.LocoMonPane.RawData</setting>
     </settings>
     <tableDetails xmlns="http://jmri.org/xml/schema/auxiliary-configuration/table-details-4-3-5.xsd">
         <table xmlns="" name="jmri.jmrit.beantable.SensorTableAction:Internal">
@@ -109,6 +110,24 @@
         <table xmlns="" name="jmri.jmrit.beantable.SectionTableAction:Sections">
             <columns/>
         </table>
+        <table xmlns="" name="jmri.jmrit.roster.swing.RosterFrame:Roster:roster">
+            <columns>
+                <column hidden="false" name="Owner" order="8" width="60"/>
+                <column hidden="false" name="Manufacturer" order="6" width="103"/>
+                <column hidden="false" name="Model" order="7" width="58"/>
+                <column hidden="false" name="ID" order="0" width="47"/>
+                <column hidden="false" name="Icon" order="2" width="47"/>
+                <column hidden="false" name="Road Number" order="5" width="105"/>
+                <column hidden="false" name="Date Modified" order="9" width="108"/>
+                <column hidden="false" name="Decoder Model" order="3" width="195"/>
+                <column hidden="true" name="Protocol" order="10" width="72"/>
+                <column hidden="false" name="Road Name" order="4" width="91"/>
+                <column hidden="false" name="DCC Address" order="1" width="103"/>
+            </columns>
+            <sortOrder>
+                <sortKey column="1" sortOrder="ASCENDING"/>
+            </sortOrder>
+        </table>
         <table xmlns="" name="jmri.jmrit.beantable.SensorTableAction:All">
             <columns/>
         </table>
@@ -117,28 +136,37 @@
         </table>
     </tableDetails>
     <windowDetails xmlns="http://jmri.org/xml/schema/auxiliary-configuration/window-details-4-3-5.xsd">
-        <window xmlns="" class="jmri.jmrit.beantable.ListedTableFrame">
+        <window xmlns="" class="jmri.jmrix.loconet.hexfile.HexFileFrame" height="112.0" locX="0.0" locY="345.0" width="181.0"/>
+        <window xmlns="" class="apps.gui3.tabbedpreferences.TabbedPreferencesFrame:Preferences" height="1069.0" locX="28.0" locY="25.0" width="1013.0"/>
+        <window xmlns="" class="jmri.jmrit.beantable.ListedTableFrame:Sensors" height="896.0" locX="28.0" locY="26.0" width="1718.0"/>
+        <window xmlns="" class="jmri.jmrit.beantable.ListedTableFrame:Routes" height="925.0" width="1718.0"/>
+        <window xmlns="" class="jmri.jmrit.display.layoutEditor.LayoutEditor:CYPRESS Layout" height="664.0" locX="171.0" locY="456.0" width="1145.0">
             <properties>
                 <property>
-                    <key>dividerLocation</key>
-                    <value class="java.lang.Integer">142</value>
+                    <key>zoom</key>
+                    <value class="java.lang.Double">1.0</value>
                 </property>
             </properties>
         </window>
-        <window xmlns="" class="Set Signal Heads at Block Boundary" locX="70.0" locY="25.0"/>
-        <window xmlns="" class="jmri.jmrit.beantable.ListedTableFrame:Routes" height="925.0" width="1718.0"/>
-        <window xmlns="" class="Edit Track Segment:2" locX="50.0" locY="25.0"/>
-        <window xmlns="" class="jmri.jmrit.beantable.ListedTableFrame:Blocks" height="1086.0" locX="2644.0" locY="0.0" width="1824.0"/>
-        <window xmlns="" class="apps.gui3.tabbedpreferences.TabbedPreferencesFrame:Preferences" height="1069.0" locX="28.0" locY="25.0" width="1013.0"/>
+        <window xmlns="" class="jmri.jmrit.display.panelEditor.PanelEditor:CYPRESS Panel" locX="320.0" locY="719.0"/>
         <window xmlns="" class="Edit Track Segment" locX="50.0" locY="25.0"/>
-        <window xmlns="" class="jmri.jmrit.beantable.ListedTableFrame:Sensors" height="896.0" locX="28.0" locY="26.0" width="1718.0"/>
-        <window xmlns="" class="Edit Level Crossing" locX="50.0" locY="25.0"/>
+        <window xmlns="" class="jmri.jmrit.display.Editor$JFrameItem:Reporter" height="314.0" locX="0.0" locY="25.0" width="367.0"/>
+        <window xmlns="" class="jmri.jmrit.beantable.ListedTableFrame:Blocks" height="1070.0" locX="0.0" locY="25.0" width="1792.0"/>
+        <window xmlns="" class="jmri.jmrit.beantable.ListedTableFrame:LRoutes" height="925.0" locX="28.0" locY="26.0" width="1718.0"/>
+        <window xmlns="" class="Set Signal Heads at Block Boundary" locX="70.0" locY="25.0"/>
+        <window xmlns="" class="CYPRESS Panel" height="814.0" locX="8.0" locY="25.0" width="1751.0"/>
+        <window xmlns="" class="jmri.jmrit.blockboss.BlockBossFrame:Simple Signal Logic" locX="614.0" locY="648.0"/>
+        <window xmlns="" class="Edit Track Segment:1" locX="50.0" locY="25.0"/>
+        <window xmlns="" class="jmri.jmrit.roster.swing.RosterFrame:Roster" height="600.0" locX="28.0" locY="26.0" width="1024.0">
+            <properties>
+                <property>
+                    <key>selectedProgrammer</key>
+                    <value class="java.lang.String">service</value>
+                </property>
+            </properties>
+        </window>
         <window xmlns="" class="Edit Turnout" locX="50.0" locY="25.0"/>
-        <window xmlns="" class="jmri.jmrit.display.Editor$JFrameItem:Sensor" height="427.0" locX="0.0" locY="25.0" width="356.0"/>
-        <window xmlns="" class="jmri.jmrit.withrottle.UserInterface" height="250.0" locX="28.0" locY="26.0" width="400.0"/>
         <window xmlns="" class="Add New Sensor" height="171.0" locX="28.0" locY="26.0" width="852.0"/>
-        <window xmlns="" class="jmri.jmrit.display.panelEditor.PanelEditor:CYPRESS Panel" locX="115.0" locY="197.0"/>
-        <window xmlns="" class="jmri.jmrit.roster.Roster"/>
         <window xmlns="" class="jmri.jmrit.display.layoutEditor.LayoutBlock$LayoutBlockEditAction">
             <properties>
                 <property>
@@ -147,25 +175,38 @@
                 </property>
             </properties>
         </window>
+        <window xmlns="" class="Create New Loco" height="561.0" locX="28.0" locY="26.0" width="752.0"/>
+        <window xmlns="" class="Script Entry" height="275.0" locX="141.0" locY="514.0" width="641.0"/>
         <window xmlns="" class="Script Output" height="275.0" locX="28.0" locY="26.0" width="424.0"/>
-        <window xmlns="" class="Set Signal Heads at Level Crossing" locX="70.0" locY="25.0"/>
         <window xmlns="" class="Set Signal Heads at Turnout" locX="70.0" locY="25.0"/>
         <window xmlns="" class="apps.gui3.TabbedPreferencesFrame:Preferences" height="470.0" width="937.0"/>
-        <window xmlns="" class="jmri.jmrix.loconet.hexfile.HexFileFrame" height="112.0" locX="0.0" locY="345.0" width="181.0"/>
-        <window xmlns="" class="Script Entry" height="275.0" locX="141.0" locY="514.0" width="641.0"/>
-        <window xmlns="" class="CYPRESS Panel" height="814.0" locX="74.0" locY="95.0" width="1751.0"/>
-        <window xmlns="" class="jmri.jmrit.display.layoutEditor.LayoutEditor:CYPRESS Layout" height="782.0" locX="212.0" locY="500.0" width="1139.0">
+        <window xmlns="" class="Edit Track Segment:2" locX="50.0" locY="25.0"/>
+        <window xmlns="" class="jmri.jmrix.loconet.locomon.LocoMonPane.FilterField">
             <properties>
                 <property>
-                    <key>zoom</key>
-                    <value class="java.lang.Double">1.0</value>
+                    <key>jmri.jmrix.loconet.locomon.LocoMonPane.FilterField</key>
+                    <value class="java.lang.String"/>
                 </property>
             </properties>
         </window>
-        <window xmlns="" class="jmri.jmrit.blockboss.BlockBossFrame:Simple Signal Logic" locX="614.0" locY="648.0"/>
-        <window xmlns="" class="Edit Track Segment:1" locX="50.0" locY="25.0"/>
-        <window xmlns="" class="jmri.jmrit.beantable.ListedTableFrame:LRoutes" height="925.0" locX="28.0" locY="26.0" width="1718.0"/>
-        <window xmlns="" class="PanelPro" height="237.0" locX="1102.0" locY="1197.0" width="687.0"/>
+        <window xmlns="" class="jmri.jmrit.display.Editor$JFrameItem:BlockLabel" height="314.0" locX="1263.0" locY="797.0" width="446.0"/>
+        <window xmlns="" class="jmri.jmrix.loconet.locomon.LocoMonPane" height="379.0" locX="0.0" locY="25.0" width="974.0"/>
+        <window xmlns="" class="jmri.jmrit.beantable.ListedTableFrame">
+            <properties>
+                <property>
+                    <key>dividerLocation</key>
+                    <value class="java.lang.Integer">142</value>
+                </property>
+            </properties>
+        </window>
+        <window xmlns="" class="Edit Level Crossing" locX="50.0" locY="25.0"/>
+        <window xmlns="" class="jmri.jmrit.withrottle.UserInterface" height="250.0" locX="28.0" locY="26.0" width="400.0"/>
+        <window xmlns="" class="Set Signal Heads at Level Crossing" locX="70.0" locY="25.0"/>
         <window xmlns="" class="jmri.jmrit.beantable.ListedTableFrame:Turnouts" height="954.0" locX="28.0" locY="26.0" width="1718.0"/>
+        <window xmlns="" class="jmri.jmrit.display.Editor$JFrameItem:Sensor" height="427.0" locX="0.0" locY="25.0" width="356.0"/>
+        <window xmlns="" class="jmri.jmrix.loconet.locogen.LocoGenPanel" height="317.0" locX="1147.0" locY="25.0" width="520.0"/>
+        <window xmlns="" class="PanelPro" height="237.0" locX="1085.0" locY="858.0" width="687.0"/>
+        <window xmlns="" class="jmri.jmrit.roster.Roster"/>
+        <window xmlns="" class="Local JMRI throttles" height="228.0" locX="0.0" locY="25.0" width="320.0"/>
     </windowDetails>
 </auxiliary-configuration>
