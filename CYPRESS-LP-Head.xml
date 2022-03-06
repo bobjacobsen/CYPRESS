@@ -91,6 +91,9 @@
       <systemName>IS27</systemName>
     </sensor>
     <sensor inverted="false">
+      <systemName>IS28</systemName>
+    </sensor>
+    <sensor inverted="false">
       <systemName>ISCLOCKRUNNING</systemName>
     </sensor>
   </sensors>
@@ -140,7 +143,7 @@
     </turnout>
   </turnouts>
   <memories class="jmri.managers.configurexml.DefaultMemoryManagerXml">
-    <memory value="1:01 PM">
+    <memory value="3:08 PM">
       <systemName>IMCURRENTTIME</systemName>
     </memory>
     <memory value="1.0">
@@ -867,6 +870,7 @@
     <signalelement signal="IHTr2-Ss06" mode="1" watchedsignal1="IHTr2-Sd01-L" watchedsignal1alt="IHTr2-Sd01-U" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <sensorname>IS10</sensorname>
       <sensorname>IS20</sensorname>
+      <sensorname>IS28</sensorname>
       <comment />
     </signalelement>
     <signalelement signal="IHTr1-Sd02-L" mode="3" watchedturnout="Tr1-T03" watchedsignal1="IHTr1-Ss05" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
@@ -880,6 +884,7 @@
     </signalelement>
     <signalelement signal="IHTr2-Ss03" mode="1" watchedsignal1="IHTr2-Ss04" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <sensorname>IS22</sensorname>
+      <sensorname>IS6</sensorname>
       <sensorname>IS7</sensorname>
       <comment />
     </signalelement>
@@ -889,6 +894,7 @@
     <signalelement signal="IHTr1-Ss07" mode="1" watchedsignal1="IHTr1-Sd01-L" watchedsignal1alt="IHTr1-Sd01-U" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <sensorname>IS10</sensorname>
       <sensorname>IS19</sensorname>
+      <sensorname>IS28</sensorname>
       <comment />
     </signalelement>
     <signalelement signal="IHV1" mode="4" watchedturnout="Tr2-T05" watchedsensor1="IS13" watchedsensor2="IS14" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
@@ -937,6 +943,7 @@
       <conditionalAction option="1" type="9" systemName="IS25" data="4" delay="0" string="" />
       <conditionalAction option="1" type="9" systemName="IS26" data="4" delay="0" string="" />
       <conditionalAction option="1" type="9" systemName="IS27" data="4" delay="0" string="" />
+      <conditionalAction option="1" type="9" systemName="IS28" data="2" delay="0" string="" />
       <conditionalAction option="1" type="2" systemName="Tr1-T01" data="2" delay="0" string="" />
       <conditionalAction option="1" type="2" systemName="Tr1-T02" data="2" delay="0" string="" />
       <conditionalAction option="1" type="2" systemName="Tr1-T03" data="2" delay="0" string="" />
@@ -1243,7 +1250,7 @@
       </inconsistent>
       <iconmaps />
     </sensoricon>
-    <sensoricon sensor="IS10" x="1057" y="469" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+    <sensoricon sensor="IS10" x="1081" y="445" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
       <active url="program:resources/icons/USSpanels/Lamps/lamp-y.gif" degrees="0" scale="1.0">
         <rotation>0</rotation>
       </active>
@@ -1423,7 +1430,7 @@
       </inconsistent>
       <iconmaps />
     </sensoricon>
-    <sensoricon sensor="IS22" x="1011" y="69" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+    <sensoricon sensor="IS22" x="969" y="87" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
       <active url="program:resources/icons/USSpanels/Lamps/lamp-y.gif" degrees="0" scale="1.0">
         <rotation>0</rotation>
       </active>
@@ -1499,6 +1506,21 @@
       <iconmaps />
     </sensoricon>
     <sensoricon sensor="IS27" x="415" y="590" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USSpanels/Lamps/lamp-y.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USSpanels/Lamps/lamp-dy.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USSpanels/Lamps/lamp-w.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USSpanels/Lamps/lamp-w.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="IS28" x="1109" y="470" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
       <active url="program:resources/icons/USSpanels/Lamps/lamp-y.gif" degrees="0" scale="1.0">
         <rotation>0</rotation>
       </active>
@@ -2246,6 +2268,8 @@
     <BlockContentsIcon blockcontents="IS24" x="505" y="681" level="5" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="yes" redBack="192" greenBack="192" blueBack="192" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
     <BlockContentsIcon blockcontents="IS26" x="328" y="671" level="5" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="yes" redBack="192" greenBack="192" blueBack="192" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
     <BlockContentsIcon blockcontents="IS18" x="137" y="634" level="5" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="yes" redBack="192" greenBack="192" blueBack="192" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS10" x="1035" y="449" level="5" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="yes" redBack="192" greenBack="192" blueBack="192" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS22" x="1024" y="97" level="5" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="yes" redBack="192" greenBack="192" blueBack="192" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
   </paneleditor>
   <LayoutEditor class="jmri.jmrit.display.layoutEditor.configurexml.LayoutEditorXml" name="CYPRESS Layout" x="171" y="456" windowheight="664" windowwidth="1145" panelheight="601" panelwidth="1106" sliders="no" scrollable="none" editable="no" positionable="yes" controlling="yes" animating="yes" showhelpbar="no" drawgrid="yes" snaponadd="no" snaponmove="no" antialiasing="no" turnoutcircles="no" tooltipsnotedit="no" tooltipsinedit="yes" mainlinetrackwidth="4" xscale="1.0" yscale="1.0" sidetrackwidth="2" defaulttrackcolor="darkGray" defaultoccupiedtrackcolor="red" defaultalternativetrackcolor="white" defaulttextcolor="black" turnoutcirclecolor="black" turnoutcirclesize="4" turnoutdrawunselectedleg="yes" turnoutbx="20.0" turnoutcx="20.0" turnoutwid="10.0" xoverlong="30.0" xoverhwid="10.0" xovershort="10.0" autoblkgenerate="no" redBackground="192" greenBackground="192" blueBackground="192" gridSize="10" gridSize2nd="10" openDispatcher="no" useDirectTurnoutControl="yes">
     <layoutTrackDrawingOptions name="CYPRESS Layout" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutTrackDrawingOptionsXml">
@@ -3088,104 +3112,104 @@
   <filehistory>
     <operation>
       <type>app</type>
-      <date>Tue Mar 01 12:56:58 EST 2022</date>
+      <date>Sun Mar 06 14:43:23 EST 2022</date>
       <filename>JMRI program</filename>
     </operation>
     <operation>
       <type>Load OK</type>
-      <date>Tue Mar 01 12:57:16 EST 2022</date>
+      <date>Sun Mar 06 14:43:26 EST 2022</date>
       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS.jmri/CYPRESS-LP-Head.xml</filename>
       <filehistory>
         <operation>
           <type>app</type>
-          <date>Tue Mar 01 12:40:58 EST 2022</date>
+          <date>Sun Mar 06 14:40:06 EST 2022</date>
           <filename>JMRI program</filename>
         </operation>
         <operation>
           <type>Load OK</type>
-          <date>Tue Mar 01 12:41:16 EST 2022</date>
+          <date>Sun Mar 06 14:40:10 EST 2022</date>
           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS.jmri/CYPRESS-LP-Head.xml</filename>
           <filehistory>
             <operation>
               <type>app</type>
-              <date>Tue Mar 01 12:28:15 EST 2022</date>
+              <date>Tue Mar 01 13:58:34 EST 2022</date>
               <filename>JMRI program</filename>
             </operation>
             <operation>
               <type>Load OK</type>
-              <date>Tue Mar 01 12:28:32 EST 2022</date>
+              <date>Tue Mar 01 13:58:51 EST 2022</date>
               <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS.jmri/CYPRESS-LP-Head.xml</filename>
               <filehistory>
                 <operation>
                   <type>app</type>
-                  <date>Tue Mar 01 12:22:09 EST 2022</date>
+                  <date>Tue Mar 01 13:52:45 EST 2022</date>
                   <filename>JMRI program</filename>
                 </operation>
                 <operation>
                   <type>Load OK</type>
-                  <date>Tue Mar 01 12:22:26 EST 2022</date>
+                  <date>Tue Mar 01 13:53:03 EST 2022</date>
                   <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS.jmri/CYPRESS-LP-Head.xml</filename>
                   <filehistory>
                     <operation>
                       <type>app</type>
-                      <date>Tue Mar 01 08:55:22 EST 2022</date>
+                      <date>Tue Mar 01 12:56:58 EST 2022</date>
                       <filename>JMRI program</filename>
                     </operation>
                     <operation>
                       <type>Load OK</type>
-                      <date>Tue Mar 01 08:55:24 EST 2022</date>
+                      <date>Tue Mar 01 12:57:16 EST 2022</date>
                       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS.jmri/CYPRESS-LP-Head.xml</filename>
                       <filehistory>
                         <operation>
                           <type>app</type>
-                          <date>Tue Mar 01 08:54:27 EST 2022</date>
+                          <date>Tue Mar 01 12:40:58 EST 2022</date>
                           <filename>JMRI program</filename>
                         </operation>
                         <operation>
                           <type>Load OK</type>
-                          <date>Tue Mar 01 08:54:30 EST 2022</date>
+                          <date>Tue Mar 01 12:41:16 EST 2022</date>
                           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS.jmri/CYPRESS-LP-Head.xml</filename>
                         </operation>
                         <operation>
                           <type>Store</type>
-                          <date>Tue Mar 01 08:54:38 EST 2022</date>
+                          <date>Tue Mar 01 12:54:41 EST 2022</date>
                           <filename />
                         </operation>
                       </filehistory>
                     </operation>
                     <operation>
                       <type>Store</type>
-                      <date>Tue Mar 01 08:55:37 EST 2022</date>
+                      <date>Tue Mar 01 13:01:04 EST 2022</date>
                       <filename />
                     </operation>
                   </filehistory>
                 </operation>
                 <operation>
                   <type>Store</type>
-                  <date>Tue Mar 01 12:26:44 EST 2022</date>
+                  <date>Tue Mar 01 13:57:12 EST 2022</date>
                   <filename />
                 </operation>
               </filehistory>
             </operation>
             <operation>
               <type>Store</type>
-              <date>Tue Mar 01 12:30:27 EST 2022</date>
+              <date>Tue Mar 01 14:22:48 EST 2022</date>
               <filename />
             </operation>
           </filehistory>
         </operation>
         <operation>
           <type>Store</type>
-          <date>Tue Mar 01 12:54:41 EST 2022</date>
+          <date>Sun Mar 06 14:41:57 EST 2022</date>
           <filename />
         </operation>
       </filehistory>
     </operation>
     <operation>
       <type>Store</type>
-      <date>Tue Mar 01 13:01:04 EST 2022</date>
+      <date>Sun Mar 06 15:08:40 EST 2022</date>
       <filename />
     </operation>
   </filehistory>
-  <!--Written by JMRI version 4.99.3plus+jake+20220301T1756Z+Rab43c5414d on Tue Mar 01 13:01:04 EST 2022-->
+  <!--Written by JMRI version 4.99.3plus+jake+20220306T1943Z+R73f68a6b29 on Sun Mar 06 15:08:40 EST 2022-->
 </layout-config>
