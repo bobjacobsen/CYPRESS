@@ -143,7 +143,7 @@
     </turnout>
   </turnouts>
   <memories class="jmri.managers.configurexml.DefaultMemoryManagerXml">
-    <memory value="3:50 PM">
+    <memory value="4:01 PM">
       <systemName>IMCURRENTTIME</systemName>
     </memory>
     <memory value="1.0">
@@ -911,6 +911,8 @@
       <logixConditional systemName="IX:AUTO:0001C1" order="0" />
       <logixConditional systemName="IX:AUTO:0001C2" order="1" />
       <logixConditional systemName="IX:AUTO:0001C3" order="2" />
+      <logixConditional systemName="IX:AUTO:0001C4" order="3" />
+      <logixConditional systemName="IX:AUTO:0001C5" order="4" />
     </logix>
     <logix userName="Initializer" enabled="yes">
       <systemName>IX:RTXINITIALIZER</systemName>
@@ -942,6 +944,26 @@
       <conditionalStateVariable operator="1" negated="no" type="2" systemName="IS9" dataString="" num1="0" num2="0" triggersCalc="yes" />
       <conditionalAction option="1" type="4" systemName="IHTr1-Ss07" data="-1" delay="0" string="" />
       <conditionalAction option="1" type="4" systemName="IHTr2-Ss06" data="-1" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX:AUTO:0001C4" userName="Lower LGURO" antecedent="not R1 and R2 and R3 and R4" logicType="1" triggerOnChange="yes">
+      <systemName>IX:AUTO:0001C4</systemName>
+      <userName>Lower LGURO</userName>
+      <conditionalStateVariable operator="4" negated="yes" type="19" systemName="IHTr2-Ss06" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="19" systemName="IHTr1-Ss07" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="IS9" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="IS21" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="4" systemName="IHTr2-Ss06" data="-1" delay="0" string="" />
+      <conditionalAction option="1" type="5" systemName="IHTr1-Ss07" data="-1" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX:AUTO:0001C5" userName="Lower RGULO" antecedent="not R1 and R2 and R3 and R4" logicType="1" triggerOnChange="yes">
+      <systemName>IX:AUTO:0001C5</systemName>
+      <userName>Lower RGULO</userName>
+      <conditionalStateVariable operator="4" negated="yes" type="19" systemName="IHTr1-Ss07" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="19" systemName="IHTr2-Ss06" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="IS9" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="IS21" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="4" systemName="IHTr1-Ss07" data="-1" delay="0" string="" />
+      <conditionalAction option="1" type="5" systemName="IHTr2-Ss06" data="-1" delay="0" string="" />
     </conditional>
     <conditional systemName="IX:RTXINITIALIZER1T" userName="Route 1C Initializer" antecedent="R1" logicType="3" triggerOnChange="yes">
       <systemName>IX:RTXINITIALIZER1T</systemName>
@@ -3433,9 +3455,9 @@
     </operation>
     <operation>
       <type>Store</type>
-      <date>Sun Mar 06 15:50:26 EST 2022</date>
+      <date>Sun Mar 06 16:01:14 EST 2022</date>
       <filename />
     </operation>
   </filehistory>
-  <!--Written by JMRI version 4.99.3plus+jake+20220306T2018Z+R73f68a6b29 on Sun Mar 06 15:50:26 EST 2022-->
+  <!--Written by JMRI version 4.99.3plus+jake+20220306T2018Z+R73f68a6b29 on Sun Mar 06 16:01:14 EST 2022-->
 </layout-config>
