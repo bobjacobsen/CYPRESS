@@ -914,6 +914,17 @@
       <logixConditional systemName="IX:AUTO:0001C4" order="3" />
       <logixConditional systemName="IX:AUTO:0001C5" order="4" />
     </logix>
+
+    <logix userName="Upper Crossing" enabled="yes">
+      <systemName>IX:AUTO:0002</systemName>
+      <userName>Upper Crossing</userName>
+      <logixConditional systemName="IX:AUTO:0002C1" order="0" />
+      <logixConditional systemName="IX:AUTO:0002C2" order="1" />
+      <logixConditional systemName="IX:AUTO:0002C3" order="2" />
+      <logixConditional systemName="IX:AUTO:0002C4" order="3" />
+      <logixConditional systemName="IX:AUTO:0002C5" order="4" />
+    </logix>
+
     <logix userName="Initializer" enabled="yes">
       <systemName>IX:RTXINITIALIZER</systemName>
       <userName>Initializer</userName>
@@ -965,6 +976,56 @@
       <conditionalAction option="1" type="4" systemName="IHTr1-Ss07" data="-1" delay="0" string="" />
       <conditionalAction option="1" type="5" systemName="IHTr2-Ss06" data="-1" delay="0" string="" />
     </conditional>
+
+    <conditional systemName="IX:AUTO:0002C1" userName="Upper LGO" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX:AUTO:0002C1</systemName>
+      <userName>Upper LGO</userName>
+      <conditionalStateVariable operator="4" negated="no" type="19" systemName="IHTr1-Ss04" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="19" systemName="IHTr2-Ss03" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="IS4" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="5" systemName="IHTr1-Ss04" data="-1" delay="0" string="" />
+      <conditionalAction option="1" type="5" systemName="IHTr1-Ss05" data="-1" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX:AUTO:0002C2" userName="Upper RGO" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+      <systemName>IX:AUTO:0002C2</systemName>
+      <userName>Upper RGO</userName>
+      <conditionalStateVariable operator="4" negated="no" type="19" systemName="IHTr2-Ss03" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="19" systemName="IHTr1-Ss04" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="IS12" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="5" systemName="IHTr2-Ss03" data="-1" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX:AUTO:0002C3" userName="Upper both unoccupied" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+      <systemName>IX:AUTO:0002C3</systemName>
+      <userName>Upper both unoccupied</userName>
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="IS4" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="IS12" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="4" systemName="IHTr2-Ss03" data="-1" delay="0" string="" />
+      <conditionalAction option="1" type="4" systemName="IHTr1-Ss04" data="-1" delay="0" string="" />
+      <conditionalAction option="1" type="4" systemName="IHTr1-Ss05" data="-1" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX:AUTO:0002C4" userName="Upper LGURO" antecedent="not R1 and R2 and R3 and R4" logicType="1" triggerOnChange="yes">
+      <systemName>IX:AUTO:0002C4</systemName>
+      <userName>Upper LGURO</userName>
+      <conditionalStateVariable operator="4" negated="yes" type="19" systemName="IHTr1-Ss04" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="19" systemName="IHTr2-Ss03" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="IS12" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="IS4" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="4" systemName="IHTr1-Ss04" data="-1" delay="0" string="" />
+      <conditionalAction option="1" type="4" systemName="IHTr1-Ss05" data="-1" delay="0" string="" />
+      <conditionalAction option="1" type="5" systemName="IHTr2-Ss03" data="-1" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX:AUTO:0002C5" userName="Upper RGULO" antecedent="not R1 and R2 and R3 and R4" logicType="1" triggerOnChange="yes">
+      <systemName>IX:AUTO:0002C5</systemName>
+      <userName>Upper RGULO</userName>
+      <conditionalStateVariable operator="4" negated="yes" type="19" systemName="IHTr2-Ss03" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="19" systemName="IHTr1-Ss04" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="IS12" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="IS4" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="4" systemName="IHTr2-Ss03" data="-1" delay="0" string="" />
+      <conditionalAction option="1" type="5" systemName="IHTr1-Ss04" data="-1" delay="0" string="" />
+      <conditionalAction option="1" type="5" systemName="IHTr1-Ss05" data="-1" delay="0" string="" />
+    </conditional>
+
     <conditional systemName="IX:RTXINITIALIZER1T" userName="Route 1C Initializer" antecedent="R1" logicType="3" triggerOnChange="yes">
       <systemName>IX:RTXINITIALIZER1T</systemName>
       <userName>Route 1C Initializer</userName>
