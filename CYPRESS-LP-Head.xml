@@ -143,7 +143,7 @@
     </turnout>
   </turnouts>
   <memories class="jmri.managers.configurexml.DefaultMemoryManagerXml">
-    <memory value="2:56 AM">
+    <memory value="4:18 AM">
       <systemName>IMCURRENTTIME</systemName>
     </memory>
     <memory value="1.0">
@@ -914,7 +914,6 @@
       <logixConditional systemName="IX:AUTO:0001C4" order="3" />
       <logixConditional systemName="IX:AUTO:0001C5" order="4" />
     </logix>
-
     <logix userName="Upper Crossing" enabled="yes">
       <systemName>IX:AUTO:0002</systemName>
       <userName>Upper Crossing</userName>
@@ -924,7 +923,6 @@
       <logixConditional systemName="IX:AUTO:0002C4" order="3" />
       <logixConditional systemName="IX:AUTO:0002C5" order="4" />
     </logix>
-
     <logix userName="Initializer" enabled="yes">
       <systemName>IX:RTXINITIALIZER</systemName>
       <userName>Initializer</userName>
@@ -976,13 +974,14 @@
       <conditionalAction option="1" type="4" systemName="IHTr1-Ss07" data="-1" delay="0" string="" />
       <conditionalAction option="1" type="5" systemName="IHTr2-Ss06" data="-1" delay="0" string="" />
     </conditional>
-
-    <conditional systemName="IX:AUTO:0002C1" userName="Upper LGO" antecedent="R1 and R2 and R3" logicType="1" triggerOnChange="yes">
+    <conditional systemName="IX:AUTO:0002C1" userName="Upper LGO" antecedent="R1 and R2 and ((R3 and R5) or (R4 and not R5))" logicType="3" triggerOnChange="yes">
       <systemName>IX:AUTO:0002C1</systemName>
       <userName>Upper LGO</userName>
       <conditionalStateVariable operator="4" negated="no" type="19" systemName="IHTr1-Ss04" dataString="" num1="0" num2="0" triggersCalc="yes" />
       <conditionalStateVariable operator="1" negated="no" type="19" systemName="IHTr2-Ss03" dataString="" num1="0" num2="0" triggersCalc="yes" />
       <conditionalStateVariable operator="1" negated="no" type="1" systemName="IS4" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="IS5" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="4" systemName="Tr1-T04" dataString="" num1="0" num2="0" triggersCalc="yes" />
       <conditionalAction option="1" type="5" systemName="IHTr1-Ss04" data="-1" delay="0" string="" />
       <conditionalAction option="1" type="5" systemName="IHTr1-Ss05" data="-1" delay="0" string="" />
     </conditional>
@@ -994,38 +993,43 @@
       <conditionalStateVariable operator="1" negated="no" type="1" systemName="IS12" dataString="" num1="0" num2="0" triggersCalc="yes" />
       <conditionalAction option="1" type="5" systemName="IHTr2-Ss03" data="-1" delay="0" string="" />
     </conditional>
-    <conditional systemName="IX:AUTO:0002C3" userName="Upper both unoccupied" antecedent="R1 and R2" logicType="1" triggerOnChange="yes">
+    <conditional systemName="IX:AUTO:0002C3" userName="Upper both unoccupied" antecedent="((R1 and R3) or (R2 and not R3)) and R4" logicType="3" triggerOnChange="yes">
       <systemName>IX:AUTO:0002C3</systemName>
       <userName>Upper both unoccupied</userName>
       <conditionalStateVariable operator="4" negated="no" type="2" systemName="IS4" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="4" negated="no" type="2" systemName="IS5" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="4" systemName="Tr1-T04" dataString="" num1="0" num2="0" triggersCalc="yes" />
       <conditionalStateVariable operator="1" negated="no" type="2" systemName="IS12" dataString="" num1="0" num2="0" triggersCalc="yes" />
       <conditionalAction option="1" type="4" systemName="IHTr2-Ss03" data="-1" delay="0" string="" />
       <conditionalAction option="1" type="4" systemName="IHTr1-Ss04" data="-1" delay="0" string="" />
       <conditionalAction option="1" type="4" systemName="IHTr1-Ss05" data="-1" delay="0" string="" />
     </conditional>
-    <conditional systemName="IX:AUTO:0002C4" userName="Upper LGURO" antecedent="not R1 and R2 and R3 and R4" logicType="1" triggerOnChange="yes">
+    <conditional systemName="IX:AUTO:0002C4" userName="Upper LGURO" antecedent="not R1 and R2 and R3 and ((R4 and R6) or (R5 and not R6))" logicType="3" triggerOnChange="yes">
       <systemName>IX:AUTO:0002C4</systemName>
       <userName>Upper LGURO</userName>
       <conditionalStateVariable operator="4" negated="yes" type="19" systemName="IHTr1-Ss04" dataString="" num1="0" num2="0" triggersCalc="yes" />
       <conditionalStateVariable operator="1" negated="no" type="19" systemName="IHTr2-Ss03" dataString="" num1="0" num2="0" triggersCalc="yes" />
       <conditionalStateVariable operator="1" negated="no" type="1" systemName="IS12" dataString="" num1="0" num2="0" triggersCalc="yes" />
       <conditionalStateVariable operator="1" negated="no" type="2" systemName="IS4" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="2" systemName="IS5" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="4" systemName="Tr1-T04" dataString="" num1="0" num2="0" triggersCalc="yes" />
       <conditionalAction option="1" type="4" systemName="IHTr1-Ss04" data="-1" delay="0" string="" />
       <conditionalAction option="1" type="4" systemName="IHTr1-Ss05" data="-1" delay="0" string="" />
       <conditionalAction option="1" type="5" systemName="IHTr2-Ss03" data="-1" delay="0" string="" />
     </conditional>
-    <conditional systemName="IX:AUTO:0002C5" userName="Upper RGULO" antecedent="not R1 and R2 and R3 and R4" logicType="1" triggerOnChange="yes">
+    <conditional systemName="IX:AUTO:0002C5" userName="Upper RGULO" antecedent="not R1 and R2 and R3 and ((R4 and R6) or (R5 and not R6))" logicType="3" triggerOnChange="yes">
       <systemName>IX:AUTO:0002C5</systemName>
       <userName>Upper RGULO</userName>
       <conditionalStateVariable operator="4" negated="yes" type="19" systemName="IHTr2-Ss03" dataString="" num1="0" num2="0" triggersCalc="yes" />
       <conditionalStateVariable operator="1" negated="no" type="19" systemName="IHTr1-Ss04" dataString="" num1="0" num2="0" triggersCalc="yes" />
       <conditionalStateVariable operator="1" negated="no" type="2" systemName="IS12" dataString="" num1="0" num2="0" triggersCalc="yes" />
       <conditionalStateVariable operator="1" negated="no" type="1" systemName="IS4" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="1" systemName="IS5" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="1" negated="no" type="4" systemName="Tr1-T04" dataString="" num1="0" num2="0" triggersCalc="yes" />
       <conditionalAction option="1" type="4" systemName="IHTr2-Ss03" data="-1" delay="0" string="" />
       <conditionalAction option="1" type="5" systemName="IHTr1-Ss04" data="-1" delay="0" string="" />
       <conditionalAction option="1" type="5" systemName="IHTr1-Ss05" data="-1" delay="0" string="" />
     </conditional>
-
     <conditional systemName="IX:RTXINITIALIZER1T" userName="Route 1C Initializer" antecedent="R1" logicType="3" triggerOnChange="yes">
       <systemName>IX:RTXINITIALIZER1T</systemName>
       <userName>Route 1C Initializer</userName>
@@ -1881,7 +1885,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr2-Ss03" x="950" y="105" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="160" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr2-Ss03" x="950" y="105" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="160" clickmode="2" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-marker.gif" degrees="160" scale="1.0">
           <rotation>0</rotation>
@@ -1910,7 +1914,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr1-Ss05" x="884" y="94" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="150" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr1-Ss05" x="884" y="94" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="150" clickmode="2" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-marker.gif" degrees="150" scale="1.0">
           <rotation>0</rotation>
@@ -1939,7 +1943,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr1-Ss04" x="875" y="83" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr1-Ss04" x="875" y="83" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" clickmode="2" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-marker.gif" degrees="0" scale="1.0">
           <rotation>2</rotation>
@@ -3226,104 +3230,104 @@
   <filehistory>
     <operation>
       <type>app</type>
-      <date>Sun Mar 06 16:38:37 EST 2022</date>
+      <date>Mon Mar 07 04:05:34 EST 2022</date>
       <filename>JMRI program</filename>
     </operation>
     <operation>
       <type>Load OK</type>
-      <date>Sun Mar 06 16:38:40 EST 2022</date>
+      <date>Mon Mar 07 04:05:38 EST 2022</date>
       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS.jmri/CYPRESS-LP-Head.xml</filename>
       <filehistory>
         <operation>
           <type>app</type>
-          <date>Sun Mar 06 16:36:24 EST 2022</date>
+          <date>Mon Mar 07 03:44:32 EST 2022</date>
           <filename>JMRI program</filename>
         </operation>
         <operation>
           <type>Load OK</type>
-          <date>Sun Mar 06 16:36:27 EST 2022</date>
+          <date>Mon Mar 07 03:44:35 EST 2022</date>
           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS.jmri/CYPRESS-LP-Head.xml</filename>
           <filehistory>
             <operation>
               <type>app</type>
-              <date>Sun Mar 06 15:18:19 EST 2022</date>
+              <date>Sun Mar 06 16:38:37 EST 2022</date>
               <filename>JMRI program</filename>
             </operation>
             <operation>
               <type>Load OK</type>
-              <date>Sun Mar 06 15:18:21 EST 2022</date>
+              <date>Sun Mar 06 16:38:40 EST 2022</date>
               <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS.jmri/CYPRESS-LP-Head.xml</filename>
               <filehistory>
                 <operation>
                   <type>app</type>
-                  <date>Sun Mar 06 15:16:06 EST 2022</date>
+                  <date>Sun Mar 06 16:36:24 EST 2022</date>
                   <filename>JMRI program</filename>
                 </operation>
                 <operation>
                   <type>Load OK</type>
-                  <date>Sun Mar 06 15:16:09 EST 2022</date>
+                  <date>Sun Mar 06 16:36:27 EST 2022</date>
                   <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS.jmri/CYPRESS-LP-Head.xml</filename>
                   <filehistory>
                     <operation>
                       <type>app</type>
-                      <date>Sun Mar 06 14:43:23 EST 2022</date>
+                      <date>Sun Mar 06 15:18:19 EST 2022</date>
                       <filename>JMRI program</filename>
                     </operation>
                     <operation>
                       <type>Load OK</type>
-                      <date>Sun Mar 06 14:43:26 EST 2022</date>
+                      <date>Sun Mar 06 15:18:21 EST 2022</date>
                       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS.jmri/CYPRESS-LP-Head.xml</filename>
                       <filehistory>
                         <operation>
                           <type>app</type>
-                          <date>Sun Mar 06 14:40:06 EST 2022</date>
+                          <date>Sun Mar 06 15:16:06 EST 2022</date>
                           <filename>JMRI program</filename>
                         </operation>
                         <operation>
                           <type>Load OK</type>
-                          <date>Sun Mar 06 14:40:10 EST 2022</date>
+                          <date>Sun Mar 06 15:16:09 EST 2022</date>
                           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS.jmri/CYPRESS-LP-Head.xml</filename>
                         </operation>
                         <operation>
                           <type>Store</type>
-                          <date>Sun Mar 06 14:41:57 EST 2022</date>
+                          <date>Sun Mar 06 15:17:11 EST 2022</date>
                           <filename />
                         </operation>
                       </filehistory>
                     </operation>
                     <operation>
                       <type>Store</type>
-                      <date>Sun Mar 06 15:08:40 EST 2022</date>
+                      <date>Sun Mar 06 16:16:53 EST 2022</date>
                       <filename />
                     </operation>
                   </filehistory>
                 </operation>
                 <operation>
                   <type>Store</type>
-                  <date>Sun Mar 06 15:17:11 EST 2022</date>
+                  <date>Sun Mar 06 16:36:55 EST 2022</date>
                   <filename />
                 </operation>
               </filehistory>
             </operation>
             <operation>
               <type>Store</type>
-              <date>Sun Mar 06 16:16:53 EST 2022</date>
+              <date>Mon Mar 07 02:56:20 EST 2022</date>
               <filename />
             </operation>
           </filehistory>
         </operation>
         <operation>
           <type>Store</type>
-          <date>Sun Mar 06 16:36:55 EST 2022</date>
+          <date>Mon Mar 07 04:03:38 EST 2022</date>
           <filename />
         </operation>
       </filehistory>
     </operation>
     <operation>
       <type>Store</type>
-      <date>Mon Mar 07 02:56:20 EST 2022</date>
+      <date>Mon Mar 07 04:18:55 EST 2022</date>
       <filename />
     </operation>
   </filehistory>
-  <!--Written by JMRI version 4.99.3plus+jake+20220306T2138Z+Ra70a235e04 on Mon Mar 07 02:56:20 EST 2022-->
+  <!--Written by JMRI version 4.99.3plus+jake+20220307T0905Z+Ra70a235e04 on Mon Mar 07 04:18:55 EST 2022-->
 </layout-config>
