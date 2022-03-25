@@ -173,6 +173,9 @@ class ClearButtonHandler(java.awt.event.ActionListener) :
         # clear blocks
         for key in blockToSensorDict :
             key.setValue(None)
+        # clear sensors
+        for key in sensorToBlockDict :
+            key.setState(INACTIVE)
 class StartTrack1ButtonHandler(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
             sensors.getSensor(blockNameToSensorNameDict["IBIS1"]).setState(ACTIVE)
