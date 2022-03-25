@@ -46,7 +46,7 @@ blockNameToSensorNameDict = {
 class Topology:
     # Arguments are name strings, converted here.
     # For a simple block and trailing points provide None as needed
-    def __init__(self, thisBlock, nextBlock, turnout, nextDivergingBlock, typeTurnout) :
+    def __init__(self, thisBlock, nextBlock, turnout, nextDivergingBlock, typeTurnout, signals) :
         self.thisBlock = blocks.provideBlock(thisBlock)
         self.nextBlock = blocks.provideBlock(nextBlock)
         if (turnout != None) :
@@ -58,6 +58,7 @@ class Topology:
         else :
             self.nextDivergingBlock = None
         self.typeTurnout = typeTurnout
+        self.signals = signals
         return
     def __repr__(self):
         return "Topology for "+self.thisBlock.getDisplayName()
@@ -81,19 +82,31 @@ class Topology:
                 return self.nextDivergingBlock
             else :
                 return self.nextBlock
+    def anyCleared(self) : # true is any signals allow movement
+        # special case of no signals
+        if (not self.signals) : return True
+        for signal in self.signals :
+            if (signals.getSignalHead(signal).isCleared() and not signals.getSignalHead(signal).getHeld()) : return True
+        return False
     def willAdvanceFront(self) : # can only advance into empty block
-        # TODO: block exit signals should be checked here
+        if (not self.anyCleared()) :
+            return False
         #print ("from "+self.thisBlock.displayName+" to "+str(self.dynamicNext())+" is "+str(occupied(self.dynamicNext())) )
         if (occupied(self.thisBlock) and not occupied(self.dynamicNext())) : return True
         return False
     def advanceFront(self) :
-        print ("setting "+blockToSensorDict[self.dynamicNext()].getSystemName()+" ACTIVE")
+        #print ("setting "+blockToSensorDict[self.dynamicNext()].getSystemName()+" ACTIVE")
         blockToSensorDict[self.dynamicNext()].setState(ACTIVE)
         return
-    def willAdvanceRear(self) :
+    def willAdvanceRear(self, moveTrains) :
         # TODO: should check for adjacent but different trains
-        # TODO: don't drop back if front didn't move e.g. due to signal
-        if (not occupied(self.thisBlock) and occupied(self.dynamicNext())) : return True
+        # will advance rear if this is trailing block
+        if (not occupied(self.thisBlock) and occupied(self.dynamicNext())) :
+            # don't drop back of train if train didn't move e.g. due to signal
+            if (not self.dynamicNext().getValue() in moveTrains) :
+                return False
+            else:
+                return True
         return False
     def advanceRear(self) :
         #print ("setting "+blockToSensorDict[self.dynamicNext()].getSystemName()+" INACTIVE for "+self.thisBlock.getSystemName())
@@ -109,33 +122,33 @@ Topology.TRAILING_DIVERGING = 3
 # create the topology array
 topologyNodes = [
     # track 1
-    Topology("IBIS1", "IBIS2",  None,       None,   Topology.SIMPLE),
-    Topology("IBIS2", "IBIS3",  None,       None,   Topology.SIMPLE),
-    Topology("IBIS3", "IBIS4",  "Tr1-T03", "IBIS5", Topology.FACING),
-    Topology("IBIS4", "IBIS6",  "Tr1-T04",  None,   Topology.TRAILING_MAIN),
-    Topology("IBIS5", "IBIS6",  "Tr1-T04",  None,   Topology.TRAILING_DIVERGING),
-    Topology("IBIS6", "IBIS23", None,       None,   Topology.SIMPLE),
-    Topology("IBIS23","IBIS9",  None,       None,   Topology.SIMPLE),
-    Topology("IBIS9", "IBIS10", None,       None,   Topology.SIMPLE),
-    Topology("IBIS10","IBIS19", None,       None,   Topology.SIMPLE),
-    Topology("IBIS19","IBIS17", None,       None,   Topology.SIMPLE),
-    Topology("IBIS17","IBIS24", "Tr1-T01","IBIS25", Topology.FACING),
-    Topology("IBIS24","IBIS26", "Tr1-T02",  None,   Topology.TRAILING_MAIN),
-    Topology("IBIS26","IBIS18", None,       None,   Topology.SIMPLE),
-    Topology("IBIS18","IBIS1",  None,       None,   Topology.SIMPLE),
+    Topology("IBIS1", "IBIS2",  None,       None,   Topology.SIMPLE,            ["IHTr1-Ss03"]),
+    Topology("IBIS2", "IBIS3",  None,       None,   Topology.SIMPLE,            ["IHTr1-Sd02-U", "IHTr1-Sd02-L"]),
+    Topology("IBIS3", "IBIS4",  "Tr1-T03", "IBIS5", Topology.FACING,            []),
+    Topology("IBIS4", "IBIS6",  "Tr1-T04",  None,   Topology.TRAILING_MAIN,     ["IHTr1-Ss04"]),
+    Topology("IBIS5", "IBIS6",  "Tr1-T04",  None,   Topology.TRAILING_DIVERGING,["IHTr1-Ss05"]),
+    Topology("IBIS6", "IBIS23", None,       None,   Topology.SIMPLE,            []),
+    Topology("IBIS23","IBIS9",  None,       None,   Topology.SIMPLE,            ["IHTr1-Ss06"]),
+    Topology("IBIS9", "IBIS10", None,       None,   Topology.SIMPLE,            ["IHTr1-Ss07"]),
+    Topology("IBIS10","IBIS19", None,       None,   Topology.SIMPLE,            []),
+    Topology("IBIS19","IBIS17", None,       None,   Topology.SIMPLE,            ["IHTr1-Sd01-U", "IHTr1-Sd01-L"]),
+    Topology("IBIS17","IBIS24", "Tr1-T01","IBIS25", Topology.FACING,            []),
+    Topology("IBIS24","IBIS26", "Tr1-T02",  None,   Topology.TRAILING_MAIN,     ["IHTr1-Ss01"]),
+    Topology("IBIS26","IBIS18", None,       None,   Topology.SIMPLE,            []),
+    Topology("IBIS18","IBIS1",  None,       None,   Topology.SIMPLE,            ["IHTr1-Ss02"]),
 
     # track 2
-    Topology("IBIS16","IBIS12", None,       None,   Topology.SIMPLE),
-    Topology("IBIS12","IBIS22", None,       None,   Topology.SIMPLE),
-    Topology("IBIS22","IBIS7",  None,       None,   Topology.SIMPLE),
-    Topology("IBIS7","IBIS8",   None,       None,   Topology.SIMPLE),
-    Topology("IBIS8","IBIS21",  None,       None,   Topology.SIMPLE),
-    Topology("IBIS21","IBIS28", None,       None,   Topology.SIMPLE),
-    Topology("IBIS28","IBIS20", None,       None,   Topology.SIMPLE),
-    Topology("IBIS20","IBIS25", "Tr2-T01",  None,   Topology.TRAILING_MAIN),
-    Topology("IBIS25","IBIS27", None,       None,   Topology.SIMPLE),
-    Topology("IBIS27","IBIS11", "Tr2-T02", "IBIS26",Topology.FACING),
-    Topology("IBIS11","IBIS16", None,       None,   Topology.SIMPLE),
+    Topology("IBIS16","IBIS12", None,       None,   Topology.SIMPLE,            ["IHTr2-Ss02"]),
+    Topology("IBIS12","IBIS22", None,       None,   Topology.SIMPLE,            ["IHTr2-Ss03"]),
+    Topology("IBIS22","IBIS7",  None,       None,   Topology.SIMPLE,            []),
+    Topology("IBIS7","IBIS8",   None,       None,   Topology.SIMPLE,            ["IHTr2-Ss04"]),
+    Topology("IBIS8","IBIS21",  None,       None,   Topology.SIMPLE,            ["IHTr2-Ss05"]),
+    Topology("IBIS21","IBIS28", None,       None,   Topology.SIMPLE,            ["IHTr2-Ss06"]),
+    Topology("IBIS28","IBIS20", None,       None,   Topology.SIMPLE,            []),
+    Topology("IBIS20","IBIS25", "Tr2-T01",  None,   Topology.TRAILING_MAIN,     ["IHTr2-Sd01-U", "IHTr2-Sd01-L"]),
+    Topology("IBIS25","IBIS27", None,       None,   Topology.SIMPLE,            ["IHTr2-Sd02-U", "IHTr2-Sd02-L"]),
+    Topology("IBIS27","IBIS11", "Tr2-T02", "IBIS26",Topology.FACING,            []),
+    Topology("IBIS11","IBIS16", None,       None,   Topology.SIMPLE,            ["IHTr2-Ss01"]),
 ]
 
 # create additional data structures
@@ -213,16 +226,18 @@ def stepTrains() :
     # extend front of trains
     # make a list of those to move
     moveNodes = []
+    moveTrains = []
     for node in topologyNodes :
         if (node.willAdvanceFront()) :
             moveNodes.append(node)
     for node in moveNodes :
+        moveTrains.append(node.thisBlock.getValue())
         node.advanceFront()
 
     # catch up rear of train
     moveNodes = []
     for node in topologyNodes :
-        if (node.willAdvanceRear()) :
+        if (node.willAdvanceRear(moveTrains)) :
             moveNodes.append(node)
     for node in moveNodes :
         node.advanceRear()
