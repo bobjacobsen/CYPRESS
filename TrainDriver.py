@@ -83,17 +83,20 @@ class Topology:
                 return self.nextBlock
     def willAdvanceFront(self) : # can only advance into empty block
         # TODO: block exit signals should be checked here
+        #print ("from "+self.thisBlock.displayName+" to "+str(self.dynamicNext())+" is "+str(occupied(self.dynamicNext())) )
         if (occupied(self.thisBlock) and not occupied(self.dynamicNext())) : return True
         return False
     def advanceFront(self) :
         print ("setting "+blockToSensorDict[self.dynamicNext()].getSystemName()+" ACTIVE")
         blockToSensorDict[self.dynamicNext()].setState(ACTIVE)
         return
-    def willAdvanceRear(self) : # TODO: should check for adjacent but different trains too
+    def willAdvanceRear(self) :
+        # TODO: should check for adjacent but different trains
+        # TODO: don't drop back if front didn't move e.g. due to signal
         if (not occupied(self.thisBlock) and occupied(self.dynamicNext())) : return True
         return False
     def advanceRear(self) :
-        print ("setting "+blockToSensorDict[self.dynamicNext()].getSystemName()+" INACTIVE for "+self.thisBlock.getSystemName())
+        #print ("setting "+blockToSensorDict[self.dynamicNext()].getSystemName()+" INACTIVE for "+self.thisBlock.getSystemName())
         blockToSensorDict[self.dynamicNext()].setState(INACTIVE)
         return
 
@@ -117,8 +120,8 @@ topologyNodes = [
     Topology("IBIS10","IBIS19", None,       None,   Topology.SIMPLE),
     Topology("IBIS19","IBIS17", None,       None,   Topology.SIMPLE),
     Topology("IBIS17","IBIS24", "Tr1-T01","IBIS25", Topology.FACING),
-    Topology("IBIS24","IBIS26", None,       None,   Topology.SIMPLE),
-    Topology("IBIS26","IBIS18", None,       None,   Topology.SIMPLE),  # TODO missing lower turnouts
+    Topology("IBIS24","IBIS26", "Tr1-T02",  None,   Topology.TRAILING_MAIN),
+    Topology("IBIS26","IBIS18", None,       None,   Topology.SIMPLE),
     Topology("IBIS18","IBIS1",  None,       None,   Topology.SIMPLE),
 
     # track 2
@@ -129,9 +132,9 @@ topologyNodes = [
     Topology("IBIS8","IBIS21",  None,       None,   Topology.SIMPLE),
     Topology("IBIS21","IBIS28", None,       None,   Topology.SIMPLE),
     Topology("IBIS28","IBIS20", None,       None,   Topology.SIMPLE),
-    Topology("IBIS20","IBIS25", None,       None,   Topology.SIMPLE),
-    Topology("IBIS25","IBIS27", None,       None,   Topology.SIMPLE), # TODO missing lower turnouts
-    Topology("IBIS27","IBIS11", None,       None,   Topology.SIMPLE),
+    Topology("IBIS20","IBIS25", "Tr2-T01",  None,   Topology.TRAILING_MAIN),
+    Topology("IBIS25","IBIS27", None,       None,   Topology.SIMPLE),
+    Topology("IBIS27","IBIS11", "Tr2-T02", "IBIS26",Topology.FACING),
     Topology("IBIS11","IBIS16", None,       None,   Topology.SIMPLE),
 ]
 
