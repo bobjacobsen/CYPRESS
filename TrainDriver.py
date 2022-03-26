@@ -216,6 +216,9 @@ h.name = "Step Trains"
 b.addActionListener(h)
 f.contentPane.add(b)
 
+runCheckBox = javax.swing.JCheckBox("Run")
+f.contentPane.add(runCheckBox)
+
 f.pack()
 f.show()
 
@@ -245,4 +248,11 @@ def stepTrains() :
     for node in moveNodes :
         node.advanceRear()
 
-
+# start an auto-run threading
+class AutoRun(jmri.jmrit.automat.AbstractAutomaton) :
+    def handle(self) :
+        if (runCheckBox.isSelected()) :
+            stepTrains()
+        self.waitMsec(2000)
+        return True
+AutoRun().start()
