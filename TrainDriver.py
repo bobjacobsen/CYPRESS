@@ -11,7 +11,7 @@ import javax.swing
 # Manual data initialization
 #   Map Sensors <-> BLOCKSIZE via names
 blockNameToSensorNameDict = {
-    # TODO: make automatically from block contents
+    # TODO: make automatically by iterating over blocks and getting sensors from block contents
     "IBIS1":"IS1",
     "IBIS2":"IS2",
     "IBIS3":"IS3",
@@ -252,21 +252,22 @@ def stepTrains() :
     moveNodes = []
     for train in moveTrains :
         #print("scanning for "+str(train))
-        # find rear of train
+        # find rear of this train in prior block
         for node in topologyNodes :
             if (node.thisBlock.getValue() == train) :
                 #print ("   found train \""+str(train)+"\" in \""+str(node)+"\"")
-                # node contains train, but not last if also in prior
+                # node contains train, so check if also in prior
                 prior = findPrior(node, train)
                 if (prior == None) :
-                    # no prior, this is last
+                    # no prior, this is back of train
                     moveNodes.append(node)
-                    break
+                    break # found end, go to next train entry
                 else :
-                    # there is a prior, check it
+                    # there is a prior, check to see if train there too
                     if (prior.thisBlock.getValue() != train) :
+                        # no, this is back end of train
                        moveNodes.append(node)
-                       break
+                       break # found end, go to next train entry
     # 4) advance the rear blocks
     for node in moveNodes :
         node.advanceRear()
