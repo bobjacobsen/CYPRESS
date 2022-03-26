@@ -144,24 +144,35 @@ print (blockToSensorDict)
 #print (topologyNodes)
 #print "Setup done"
 
+# counter for train names
+global nextTrainNumber
+nextTrainNumber = 1
+
 # Set up frame with initialization buttons.
 # First, define listener classes to handle each button
 class ClearButtonHandler(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
+        global nextTrainNumber
         # clear blocks
         for key in blockToSensorDict :
             key.setValue(None)
         # clear sensors
         for key in sensorToBlockDict :
             key.setState(INACTIVE)
+        # reset train numbers
+        nextTrainNumber = 1
 class StartTrack1ButtonHandler(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
-            sensors.getSensor(blockNameToSensorNameDict["IBIS1"]).setState(ACTIVE)
-            blocks.getBlock("IBIS1").setValue("Train 1")
+        global nextTrainNumber
+        sensors.getSensor(blockNameToSensorNameDict["IBIS1"]).setState(ACTIVE)
+        blocks.getBlock("IBIS1").setValue("Train "+str(nextTrainNumber))
+        nextTrainNumber = nextTrainNumber+1
 class StartTrack2ButtonHandler(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
-            sensors.getSensor(blockNameToSensorNameDict["IBIS16"]).setState(ACTIVE)
-            blocks.getBlock("IBIS16").setValue("Train 2")
+        global nextTrainNumber
+        sensors.getSensor(blockNameToSensorNameDict["IBIS16"]).setState(ACTIVE)
+        blocks.getBlock("IBIS16").setValue("Train "+str(nextTrainNumber))
+        nextTrainNumber = nextTrainNumber+1
 class StepTrainsButtonHandler(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
             stepTrains()
