@@ -1,0 +1,25 @@
+@startuml
+hide empty description
+
+note as N1 #E0E0FF
+    State diagram for allocating a crossing
+    to the first train to arrive. Requires
+    both unoccupied at start.
+end note
+
+state "Both Held" as Start
+[*] --> Start
+
+state "Left Unheld\nRight Held" as Left
+state "Right Unheld\nLeft Held" as Right
+
+Start -up-> Left : Left Goes Occupied
+Start -down-> Right : Right Goes Occupied
+
+Right --> Left : Right Goes Unoccupied\nand Left is Occupied
+Left --> Right : Left Goes Unoccupied\nand Right is Occupied
+
+Right -> Start : Right Goes Unoccupied\nand Left Is Unoccupied
+Left -> Start : Left Goes Unoccupied\nand Right Is Unoccupied
+
+@enduml
