@@ -42,10 +42,15 @@ blockNameToSensorNameDict = {
     "IBIS28":"IS28",
 }
 
-# One node of the topology
+# Represent one node of the layout topology
 class Topology:
     # Arguments are name strings, converted here.
-    # For a simple block and trailing points provide None as needed
+    #   thisBlock - the block this node represents
+    #   nextBlock - next block along the main line
+    #   turnout   - name of turnout in block, if any, or None
+    #   nextDivergingBlock - name of diverging track, if turnout present and relevant, or None
+    #   typeTurnout - one of the Topology constants for connectivity
+    #   signals - array of signals at exit or None if none; empty array not supported (TODO)
     def __init__(self, thisBlock, nextBlock, turnout, nextDivergingBlock, typeTurnout, signals) :
         self.thisBlock = blocks.provideBlock(thisBlock)
         self.nextBlock = blocks.provideBlock(nextBlock)
@@ -64,7 +69,9 @@ class Topology:
         return "Topology for "+self.thisBlock.getDisplayName()
     def _str_(self):
         return "Topology for "+self.thisBlock.getDisplayName()+" to "+self.nextBlock.getDisplayName()
-    def dynamicNext(self) : # takes account of turnout type as needed; None, if move prohibite
+    # calculate the next block for the train given turnout position as needed
+    # None if no move allowed i.e. due to turnout set against
+    def dynamicNext(self) :
         if (self.typeTurnout == Topology.SIMPLE) :
             return self.nextBlock
         if (self.typeTurnout == Topology.TRAILING_MAIN) :
@@ -82,34 +89,39 @@ class Topology:
                 return self.nextDivergingBlock
             else :
                 return self.nextBlock
-    def anyCleared(self) : # true is any signals allow movement
+    # true is any of the exit signal heads allow movement
+    # (usually there's just one, but there's also the case of double head signals...)
+    def anyCleared(self) :
         # special case of no signals
         if (not self.signals) : return True
         for signal in self.signals :
             if (signals.getSignalHead(signal).isCleared() and not signals.getSignalHead(signal).getHeld()) : return True
         return False
-    def willAdvanceFront(self) : # can only advance into empty block
+    # is it possible for the train in this block to advance?
+    def willAdvanceFront(self) :
         if (not self.anyCleared()) :
             return False
         #print ("from "+self.thisBlock.displayName+" to "+str(self.dynamicNext())+" is "+str(occupied(self.dynamicNext())) )
         if (occupied(self.thisBlock) and not occupied(self.dynamicNext())) : return True
         return False
+    # advance the front of the train in this block, i.e. move into next block
     def advanceFront(self) :
         #print ("setting "+blockToSensorDict[self.dynamicNext()].getSystemName()+" ACTIVE")
         blockToSensorDict[self.dynamicNext()].setState(ACTIVE)
         return
+    # advance the rear of the train in this block, i.e. clear the block
     def advanceRear(self) :
         #print ("setting "+blockToSensorDict[self.dynamicNext()].getSystemName()+" INACTIVE for "+self.thisBlock.getSystemName())
         blockToSensorDict[self.thisBlock].setState(INACTIVE)
         return
 
-Topology.SIMPLE = 0
-Topology.FACING = 1
-Topology.TRAILING_MAIN = 2
-Topology.TRAILING_DIVERGING = 3
+Topology.SIMPLE = 0             # straight through block
+Topology.FACING = 1             # facing point, with two exits
+Topology.TRAILING_MAIN = 2      # entering next block on main line of turnout there
+Topology.TRAILING_DIVERGING = 3 # entering next block on diverging leg of turnout there
 
 
-# create the topology array
+# create the topology array for this specific layout
 topologyNodes = [
     # track 1
     Topology("IBIS1", "IBIS2",  None,       None,   Topology.SIMPLE,            ["IHTr1-Ss03"]),
@@ -127,7 +139,7 @@ topologyNodes = [
     Topology("IBIS26","IBIS18", None,       None,   Topology.SIMPLE,            []),
     Topology("IBIS18","IBIS1",  None,       None,   Topology.SIMPLE,            ["IHTr1-Ss02"]),
 
-    # track 2
+    # Track 2
     Topology("IBIS16","IBIS12", None,       None,   Topology.SIMPLE,            ["IHTr2-Ss02"]),
     Topology("IBIS12","IBIS22", None,       None,   Topology.SIMPLE,            ["IHTr2-Ss03"]),
     Topology("IBIS22","IBIS7",  None,       None,   Topology.SIMPLE,            []),
@@ -141,7 +153,7 @@ topologyNodes = [
     Topology("IBIS11","IBIS16", None,       None,   Topology.SIMPLE,            ["IHTr2-Ss01"]),
 ]
 
-# create additional data structures
+# Create additional data structures
 blockToSensorDict = {}
 for key in blockNameToSensorNameDict :
     blockToSensorDict[blocks.provideBlock(key)] = sensors.provideSensor(blockNameToSensorNameDict[key])
@@ -153,11 +165,10 @@ for key in blockToSensorDict :
 #print (blockToSensorDict)
 #print (sensorToBlockDict)
 #print (topologyNodes)
-
-print "Setup done"
+#print "Setup done"
 
 # set up frame with initialization buttons
-# define a classes to handle buttons
+# define listener classes to handle each button
 class ClearButtonHandler(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
         # clear blocks
@@ -177,61 +188,67 @@ class StartTrack2ButtonHandler(java.awt.event.ActionListener) :
 class StepTrainsButtonHandler(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
             stepTrains()
-
-# create a frame to hold the button, put button in it, and display
+# create a frame to hold the buttons, put buttons in it, and display
 f = javax.swing.JFrame("Autorun Control")
 f.setLayout(java.awt.FlowLayout())
-
+#
 b = javax.swing.JButton("Clear Blocks")
 h = ClearButtonHandler()
 h.name = "Clear Blocks"
 b.addActionListener(h)
 f.contentPane.add(b)
-
+#
 b = javax.swing.JButton("Start Track 1")
 h = StartTrack1ButtonHandler()
 h.name = "Start Track 1"
 b.addActionListener(h)
 f.contentPane.add(b)
-
+#
 b = javax.swing.JButton("Start Track 2")
 h = StartTrack2ButtonHandler()
 h.name = "Start Track 2"
 b.addActionListener(h)
 f.contentPane.add(b)
-
+#
 b = javax.swing.JButton("Step Trains")
 h = StepTrainsButtonHandler()
 h.name = "Step Trains"
 b.addActionListener(h)
 f.contentPane.add(b)
-
+#
 runCheckBox = javax.swing.JCheckBox("Run")
 f.contentPane.add(runCheckBox)
-
+#
 f.pack()
 f.show()
 
-# service routine for checking occupied
+# Service routine for checking whether a block is occupied
 def occupied(block) :
     if (block == None) : return False
     return not (block.getValue() == None or block.getValue() == "")
 
-# Method for moving all trains forward one step
+# Method for moving all trains forward one step.
+# Multiple phases to avoid trains stepping on each other:
+#  1) Find all trains that can move into a next block
+#  2) Move all those
+#  3) Find the block of the back end of all trains that can move
+#  4) Move those back ends
 def stepTrains() :
     # extend front of trains
-    # make a list of those to move
+    # 1) make a list of those to move
     moveNodes = []
     moveTrains = []
     for node in topologyNodes :
         if (node.willAdvanceFront()) :
             moveNodes.append(node)
+    # 2) move them
     for node in moveNodes :
         train = node.thisBlock.getValue()
         if (not train in moveTrains) : moveTrains.append(train)
         node.advanceFront()
 
     # catch up rear of train
+    # 3) find rear block of moved trains
     moveNodes = []
     for train in moveTrains :
         #print("scanning for "+str(train))
@@ -250,10 +267,11 @@ def stepTrains() :
                     if (prior.thisBlock.getValue() != train) :
                        moveNodes.append(node)
                        break
-
+    # 4) advance the rear blocks
     for node in moveNodes :
         node.advanceRear()
 
+# Service routine to find the prior block to this one
 def findPrior(node, train) :
     # node contains train, but not last if also in prior
     for prior in topologyNodes : #scan for prior
@@ -263,9 +281,9 @@ def findPrior(node, train) :
             return prior
     # did not find one, return None
 
-# start an auto-run threading
+# Start a thread to do the auto-run if box checked
 class AutoRun(jmri.jmrit.automat.AbstractAutomaton) :
-    def handle(self) :
+    def handle(self) : # this loops around until stopped
         if (runCheckBox.isSelected()) :
             stepTrains()
         self.waitMsec(2000)
