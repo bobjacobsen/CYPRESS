@@ -143,7 +143,7 @@
     </turnout>
   </turnouts>
   <memories class="jmri.managers.configurexml.DefaultMemoryManagerXml">
-    <memory value="4:10 PM">
+    <memory value="6:51 AM">
       <systemName>IMCURRENTTIME</systemName>
     </memory>
     <memory value="1.0">
@@ -852,22 +852,22 @@
     <signalelement signal="IHTr2-Sd03-U" mode="2" watchedturnout="Tr2-T04" watchedsignal1="IHV1" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="true">
       <comment />
     </signalelement>
-    <signalelement signal="IHTr2-Ss05" mode="1" watchedsignal1="IHTr2-Ss06" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
-      <sensorname>IS21</sensorname>
-      <comment />
-    </signalelement>
     <signalelement signal="IHTr2-Sd02-L" mode="3" watchedturnout="Tr2-T02" watchedsignal1="IHTr1-Ss02" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <sensorname>IS18</sensorname>
       <sensorname>IS27</sensorname>
       <sensorname>IS26</sensorname>
       <comment />
     </signalelement>
-    <signalelement signal="IHTr2-Sd03-L" mode="3" watchedturnout="Tr2-T04" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
-      <sensorname>IS15</sensorname>
+    <signalelement signal="IHTr2-Ss05" mode="1" watchedsignal1="IHTr2-Ss06" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
+      <sensorname>IS21</sensorname>
       <comment />
     </signalelement>
     <signalelement signal="IHTr2-Ss04" mode="1" watchedsignal1="IHTr2-Ss05" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <sensorname>IS8</sensorname>
+      <comment />
+    </signalelement>
+    <signalelement signal="IHTr2-Sd03-L" mode="3" watchedturnout="Tr2-T04" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
+      <sensorname>IS15</sensorname>
       <comment />
     </signalelement>
     <signalelement signal="IHTr1-Sd01-L" mode="3" watchedturnout="Tr1-T01" watchedsignal1="IHTr2-Sd02-L" watchedsignal1alt="IHTr2-Sd02-U" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
@@ -875,9 +875,8 @@
       <sensorname>IS25</sensorname>
       <comment />
     </signalelement>
-    <signalelement signal="IHTr1-Sd02-L" mode="3" watchedturnout="Tr1-T03" watchedsignal1="IHTr1-Ss05" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
-      <sensorname>IS3</sensorname>
-      <sensorname>IS5</sensorname>
+    <signalelement signal="IHTr2-Sd01-L" mode="2" watchedturnout="Tr2-T01" watchedsignal1="IHTr2-Sd02-L" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="true">
+      <sensorname>IS25</sensorname>
       <comment />
     </signalelement>
     <signalelement signal="IHTr2-Ss06" mode="1" watchedsignal1="IHTr2-Sd01-L" watchedsignal1alt="IHTr2-Sd01-U" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
@@ -886,8 +885,9 @@
       <sensorname>IS28</sensorname>
       <comment />
     </signalelement>
-    <signalelement signal="IHTr2-Sd01-L" mode="2" watchedturnout="Tr2-T01" watchedsignal1="IHTr2-Sd02-L" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="true">
-      <sensorname>IS25</sensorname>
+    <signalelement signal="IHTr1-Sd02-L" mode="3" watchedturnout="Tr1-T03" watchedsignal1="IHTr1-Ss05" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
+      <sensorname>IS3</sensorname>
+      <sensorname>IS5</sensorname>
       <comment />
     </signalelement>
     <signalelement signal="IHTr2-Ss01" mode="1" watchedsignal1="IHTr2-Ss02" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
@@ -903,13 +903,13 @@
     <signalelement signal="IHTr2-Ss02" mode="4" watchedturnout="Tr2-T03" watchedsignal1="IHTr2-Ss03" watchedsignal2="IHTr2-Sd03-L" watchedsignal2alt="IHTr2-Sd03-U" watchedsensor1="IS12" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <comment />
     </signalelement>
-    <signalelement signal="IHV1" mode="4" watchedturnout="Tr2-T05" watchedsensor1="IS13" watchedsensor2="IS14" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
-      <comment />
-    </signalelement>
     <signalelement signal="IHTr1-Ss07" mode="1" watchedsignal1="IHTr1-Sd01-L" watchedsignal1alt="IHTr1-Sd01-U" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <sensorname>IS10</sensorname>
       <sensorname>IS19</sensorname>
       <sensorname>IS28</sensorname>
+      <comment />
+    </signalelement>
+    <signalelement signal="IHV1" mode="4" watchedturnout="Tr2-T05" watchedsensor1="IS13" watchedsensor2="IS14" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <comment />
     </signalelement>
   </signalelements>
@@ -917,23 +917,35 @@
     <logicDelay>500</logicDelay>
   </signalmastlogics>
   <logixs class="jmri.managers.configurexml.DefaultLogixManagerXml">
-    <logix userName="Lower Crossing" enabled="yes">
+    <logix userName="Lower Crossing Dispatch" enabled="yes">
       <systemName>IX:AUTO:0001</systemName>
-      <userName>Lower Crossing</userName>
+      <userName>Lower Crossing Dispatch</userName>
       <logixConditional systemName="IX:AUTO:0001C1" order="0" />
       <logixConditional systemName="IX:AUTO:0001C2" order="1" />
       <logixConditional systemName="IX:AUTO:0001C3" order="2" />
       <logixConditional systemName="IX:AUTO:0001C4" order="3" />
       <logixConditional systemName="IX:AUTO:0001C5" order="4" />
     </logix>
-    <logix userName="Upper Crossing" enabled="yes">
+    <logix userName="Upper Crossing Dispatch" enabled="yes">
       <systemName>IX:AUTO:0002</systemName>
-      <userName>Upper Crossing</userName>
+      <userName>Upper Crossing Dispatch</userName>
       <logixConditional systemName="IX:AUTO:0002C1" order="0" />
       <logixConditional systemName="IX:AUTO:0002C2" order="1" />
       <logixConditional systemName="IX:AUTO:0002C3" order="2" />
       <logixConditional systemName="IX:AUTO:0002C4" order="3" />
       <logixConditional systemName="IX:AUTO:0002C5" order="4" />
+    </logix>
+    <logix userName="Lower Crossing Vital" enabled="yes">
+      <systemName>IX:AUTO:0003</systemName>
+      <userName>Lower Crossing Vital</userName>
+      <logixConditional systemName="IX:AUTO:0003C1" order="0" />
+      <logixConditional systemName="IX:AUTO:0003C2" order="1" />
+    </logix>
+    <logix userName="Upper Crossing Vital" enabled="yes">
+      <systemName>IX:AUTO:0004</systemName>
+      <userName>Upper Crossing Vital</userName>
+      <logixConditional systemName="IX:AUTO:0004C1" order="0" />
+      <logixConditional systemName="IX:AUTO:0004C2" order="1" />
     </logix>
     <logix userName="Initializer" enabled="yes">
       <systemName>IX:RTXINITIALIZER</systemName>
@@ -1042,6 +1054,28 @@
       <conditionalAction option="1" type="5" systemName="IHTr1-Ss04" data="-1" delay="0" string="" />
       <conditionalAction option="1" type="5" systemName="IHTr1-Ss05" data="-1" delay="0" string="" />
     </conditional>
+    <conditional systemName="IX:AUTO:0003C1" antecedent="not R1" logicType="1" triggerOnChange="yes">
+      <systemName>IX:AUTO:0003C1</systemName>
+      <conditionalStateVariable operator="4" negated="yes" type="19" systemName="IHTr1-Ss07" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="4" systemName="IHTr2-Ss06" data="-1" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX:AUTO:0003C2" antecedent="not R1" logicType="1" triggerOnChange="yes">
+      <systemName>IX:AUTO:0003C2</systemName>
+      <conditionalStateVariable operator="4" negated="yes" type="19" systemName="IHTr2-Ss06" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="4" systemName="IHTr1-Ss07" data="-1" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX:AUTO:0004C1" antecedent="not R1" logicType="1" triggerOnChange="no">
+      <systemName>IX:AUTO:0004C1</systemName>
+      <conditionalStateVariable operator="4" negated="yes" type="19" systemName="IHTr2-Ss03" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="4" systemName="IHTr1-Ss04" data="-1" delay="0" string="" />
+      <conditionalAction option="1" type="4" systemName="IHTr1-Ss05" data="-1" delay="0" string="" />
+    </conditional>
+    <conditional systemName="IX:AUTO:0004C2" antecedent="not R1 or not R2" logicType="2" triggerOnChange="no">
+      <systemName>IX:AUTO:0004C2</systemName>
+      <conditionalStateVariable operator="4" negated="yes" type="19" systemName="IHTr1-Ss04" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalStateVariable operator="5" negated="yes" type="19" systemName="IHTr1-Ss05" dataString="" num1="0" num2="0" triggersCalc="yes" />
+      <conditionalAction option="1" type="4" systemName="IHTr2-Ss03" data="-1" delay="0" string="" />
+    </conditional>
     <conditional systemName="IX:RTXINITIALIZER1T" userName="Route 1C Initializer" antecedent="R1" logicType="3" triggerOnChange="yes">
       <systemName>IX:RTXINITIALIZER1T</systemName>
       <userName>Route 1C Initializer</userName>
@@ -1086,7 +1120,7 @@
     </conditional>
   </conditionals>
   <timebase class="jmri.jmrit.simpleclock.configurexml.SimpleTimebaseXml" time="Fri Feb 04 12:30:38 EST 2022" rate="1.0" startrate="1.0" run="yes" master="yes" sync="no" correct="no" display="no" startstopped="no" startrunning="yes" startsettime="no" startclockoption="0" showbutton="no" startsetrate="yes" />
-  <paneleditor class="jmri.jmrit.display.panelEditor.configurexml.PanelEditorXml" name="CYPRESS Panel" x="182" y="437" height="814" width="1751" editable="yes" positionable="yes" showtooltips="yes" controlling="yes" hide="yes" panelmenu="yes" scrollable="both" redBackground="255" greenBackground="255" blueBackground="255">
+  <paneleditor class="jmri.jmrit.display.panelEditor.configurexml.PanelEditorXml" name="CYPRESS Panel" x="0" y="301" height="1079" width="1751" editable="yes" positionable="yes" showtooltips="yes" controlling="yes" hide="yes" panelmenu="yes" scrollable="both" redBackground="255" greenBackground="255" blueBackground="255">
     <positionablelabel x="0" y="0" level="1" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
       <icon url="preference:QNIempire3b.png" degrees="0" scale="1.0">
         <rotation>0</rotation>
@@ -2402,7 +2436,7 @@
     <BlockContentsIcon blockcontents="IS22" x="1024" y="97" level="5" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="yes" redBack="192" greenBack="192" blueBack="192" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
     <BlockContentsIcon blockcontents="IS28" x="1093" y="491" level="5" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="yes" redBack="192" greenBack="192" blueBack="192" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
   </paneleditor>
-  <LayoutEditor class="jmri.jmrit.display.layoutEditor.configurexml.LayoutEditorXml" name="CYPRESS Layout" x="1294" y="25" windowheight="781" windowwidth="1157" panelheight="601" panelwidth="1106" sliders="no" scrollable="none" editable="no" positionable="yes" controlling="yes" animating="yes" showhelpbar="no" drawgrid="yes" snaponadd="no" snaponmove="no" antialiasing="no" turnoutcircles="no" tooltipsnotedit="no" tooltipsinedit="yes" mainlinetrackwidth="4" xscale="1.0" yscale="1.0" sidetrackwidth="2" defaulttrackcolor="darkGray" defaultoccupiedtrackcolor="red" defaultalternativetrackcolor="white" defaulttextcolor="black" turnoutcirclecolor="black" turnoutcirclesize="4" turnoutdrawunselectedleg="yes" turnoutbx="20.0" turnoutcx="20.0" turnoutwid="10.0" xoverlong="30.0" xoverhwid="10.0" xovershort="10.0" autoblkgenerate="no" redBackground="192" greenBackground="192" blueBackground="192" gridSize="10" gridSize2nd="10" openDispatcher="no" useDirectTurnoutControl="yes">
+  <LayoutEditor class="jmri.jmrit.display.layoutEditor.configurexml.LayoutEditorXml" name="CYPRESS Layout" x="171" y="453" windowheight="664" windowwidth="1145" panelheight="601" panelwidth="1106" sliders="no" scrollable="none" editable="no" positionable="yes" controlling="yes" animating="yes" showhelpbar="no" drawgrid="yes" snaponadd="no" snaponmove="no" antialiasing="no" turnoutcircles="no" tooltipsnotedit="no" tooltipsinedit="yes" mainlinetrackwidth="4" xscale="1.0" yscale="1.0" sidetrackwidth="2" defaulttrackcolor="darkGray" defaultoccupiedtrackcolor="red" defaultalternativetrackcolor="white" defaulttextcolor="black" turnoutcirclecolor="black" turnoutcirclesize="4" turnoutdrawunselectedleg="yes" turnoutbx="20.0" turnoutcx="20.0" turnoutwid="10.0" xoverlong="30.0" xoverhwid="10.0" xovershort="10.0" autoblkgenerate="no" redBackground="192" greenBackground="192" blueBackground="192" gridSize="10" gridSize2nd="10" openDispatcher="no" useDirectTurnoutControl="yes">
     <layoutTrackDrawingOptions name="CYPRESS Layout" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutTrackDrawingOptionsXml">
       <mainBallastColor>#000000</mainBallastColor>
       <mainBallastWidth>0</mainBallastWidth>
@@ -3243,104 +3277,104 @@
   <filehistory>
     <operation>
       <type>app</type>
-      <date>Fri Mar 25 16:06:57 EDT 2022</date>
+      <date>Fri Mar 25 22:49:40 EDT 2022</date>
       <filename>JMRI program</filename>
     </operation>
     <operation>
       <type>Load OK</type>
-      <date>Fri Mar 25 16:06:58 EDT 2022</date>
+      <date>Fri Mar 25 22:49:42 EDT 2022</date>
       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
       <filehistory>
         <operation>
           <type>app</type>
-          <date>Fri Mar 25 15:59:47 EDT 2022</date>
+          <date>Fri Mar 25 16:06:57 EDT 2022</date>
           <filename>JMRI program</filename>
         </operation>
         <operation>
           <type>Load OK</type>
-          <date>Fri Mar 25 15:59:49 EDT 2022</date>
+          <date>Fri Mar 25 16:06:58 EDT 2022</date>
           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
           <filehistory>
             <operation>
               <type>app</type>
-              <date>Fri Mar 25 15:44:58 EDT 2022</date>
+              <date>Fri Mar 25 15:59:47 EDT 2022</date>
               <filename>JMRI program</filename>
             </operation>
             <operation>
               <type>Load OK</type>
-              <date>Fri Mar 25 15:44:59 EDT 2022</date>
+              <date>Fri Mar 25 15:59:49 EDT 2022</date>
               <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
               <filehistory>
                 <operation>
                   <type>app</type>
-                  <date>Fri Mar 25 15:41:48 EDT 2022</date>
+                  <date>Fri Mar 25 15:44:58 EDT 2022</date>
                   <filename>JMRI program</filename>
                 </operation>
                 <operation>
                   <type>Load OK</type>
-                  <date>Fri Mar 25 15:41:50 EDT 2022</date>
+                  <date>Fri Mar 25 15:44:59 EDT 2022</date>
                   <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                   <filehistory>
                     <operation>
                       <type>app</type>
-                      <date>Fri Mar 25 15:32:14 EDT 2022</date>
+                      <date>Fri Mar 25 15:41:48 EDT 2022</date>
                       <filename>JMRI program</filename>
                     </operation>
                     <operation>
                       <type>Load OK</type>
-                      <date>Fri Mar 25 15:32:16 EDT 2022</date>
+                      <date>Fri Mar 25 15:41:50 EDT 2022</date>
                       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                       <filehistory>
                         <operation>
                           <type>app</type>
-                          <date>Mon Mar 07 04:05:34 EST 2022</date>
+                          <date>Fri Mar 25 15:32:14 EDT 2022</date>
                           <filename>JMRI program</filename>
                         </operation>
                         <operation>
                           <type>Load OK</type>
-                          <date>Mon Mar 07 04:05:38 EST 2022</date>
-                          <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS.jmri/CYPRESS-LP-Head.xml</filename>
+                          <date>Fri Mar 25 15:32:16 EDT 2022</date>
+                          <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                         </operation>
                         <operation>
                           <type>Store</type>
-                          <date>Mon Mar 07 04:18:55 EST 2022</date>
+                          <date>Fri Mar 25 15:41:39 EDT 2022</date>
                           <filename />
                         </operation>
                       </filehistory>
                     </operation>
                     <operation>
                       <type>Store</type>
-                      <date>Fri Mar 25 15:41:39 EDT 2022</date>
+                      <date>Fri Mar 25 15:44:32 EDT 2022</date>
                       <filename />
                     </operation>
                   </filehistory>
                 </operation>
                 <operation>
                   <type>Store</type>
-                  <date>Fri Mar 25 15:44:32 EDT 2022</date>
+                  <date>Fri Mar 25 15:49:57 EDT 2022</date>
                   <filename />
                 </operation>
               </filehistory>
             </operation>
             <operation>
               <type>Store</type>
-              <date>Fri Mar 25 15:49:57 EDT 2022</date>
+              <date>Fri Mar 25 16:06:48 EDT 2022</date>
               <filename />
             </operation>
           </filehistory>
         </operation>
         <operation>
           <type>Store</type>
-          <date>Fri Mar 25 16:06:48 EDT 2022</date>
+          <date>Fri Mar 25 16:10:44 EDT 2022</date>
           <filename />
         </operation>
       </filehistory>
     </operation>
     <operation>
       <type>Store</type>
-      <date>Fri Mar 25 16:10:44 EDT 2022</date>
+      <date>Sat Mar 26 06:51:44 EDT 2022</date>
       <filename />
     </operation>
   </filehistory>
-  <!--Written by JMRI version 4.99.4plus+jake+20220325T2006Z+R870a8125e4 on Fri Mar 25 16:10:44 EDT 2022-->
+  <!--Written by JMRI version 4.99.4plus+jake+20220326T0249Z+R870a8125e4 on Sat Mar 26 06:51:44 EDT 2022-->
 </layout-config>
