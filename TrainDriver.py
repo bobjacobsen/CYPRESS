@@ -1,4 +1,6 @@
-# CYPRESS-specific script to drive a (virtual) train around the layout
+# CYPRESS-specific script to drive (virtual) trains around the layout
+#   by setting occupancy sensors, which in turn will cause train-tracking to follow.
+#
 # Bob Jacobsen 2022
 
 import jmri
@@ -8,41 +10,22 @@ import java.awt
 import java.awt.event
 import javax.swing
 
-# Manual data initialization
-#   Map Sensors <-> BLOCKSIZE via names
-blockNameToSensorNameDict = {
-    # TODO: make automatically by iterating over blocks and getting sensors from block contents
-    "IBIS1":"IS1",
-    "IBIS2":"IS2",
-    "IBIS3":"IS3",
-    "IBIS4":"IS4",
-    "IBIS5":"IS5",
-    "IBIS6":"IS6",
-    "IBIS7":"IS7",
-    "IBIS8":"IS8",
-    "IBIS9":"IS9",
-    "IBIS10":"IS10",
-    "IBIS11":"IS11",
-    "IBIS12":"IS12",
-    "IBIS13":"IS13",
-    "IBIS14":"IS14",
-    "IBIS15":"IS15",
-    "IBIS16":"IS16",
-    "IBIS17":"IS17",
-    "IBIS18":"IS18",
-    "IBIS19":"IS19",
-    "IBIS20":"IS20",
-    "IBIS21":"IS21",
-    "IBIS22":"IS22",
-    "IBIS23":"IS23",
-    "IBIS24":"IS24",
-    "IBIS25":"IS25",
-    "IBIS26":"IS26",
-    "IBIS27":"IS27",
-    "IBIS28":"IS28",
-}
+# Create connectivity data structures from pre-loaded Block structure
+#   Map Block name to Sensor name
+blockNameToSensorNameDict = {}
+for block in blocks.getNamedBeanSet() :
+    blockNameToSensorNameDict[block.getSystemName()] = block.getSensor().getSystemName()
+# Map Block object reference to Sensor object reference
+blockToSensorDict = {}
+for key in blockNameToSensorNameDict :
+    blockToSensorDict[blocks.provideBlock(key)] = sensors.provideSensor(blockNameToSensorNameDict[key])
+# Map Sensor object reference to Block object reference
+sensorToBlockDict = {}
+for key in blockToSensorDict :
+    sensorToBlockDict[blockToSensorDict[key]] = key
 
 # Represent one node of the layout topology
+# N.B. This is redundant with JMRI LayoutEditor info, but this script is meant to be an example of standalone operation outside JMRI
 class Topology:
     # Arguments are name strings, converted here.
     #   thisBlock - the block this node represents
@@ -65,12 +48,13 @@ class Topology:
         self.typeTurnout = typeTurnout
         self.signals = signals
         return
+    # Representations
     def __repr__(self):
         return "Topology for "+self.thisBlock.getDisplayName()
     def _str_(self):
         return "Topology for "+self.thisBlock.getDisplayName()+" to "+self.nextBlock.getDisplayName()
-    # calculate the next block for the train given turnout position as needed
-    # None if no move allowed i.e. due to turnout set against
+    # Calculate the next block for the train given turnout position as needed
+    #   Returns None if no move allowed i.e. due to turnout set against
     def dynamicNext(self) :
         if (self.typeTurnout == Topology.SIMPLE) :
             return self.nextBlock
@@ -89,27 +73,28 @@ class Topology:
                 return self.nextDivergingBlock
             else :
                 return self.nextBlock
-    # true is any of the exit signal heads allow movement
-    # (usually there's just one, but there's also the case of double head signals...)
+    # Check if any of the exit signals allow movement.
+    # Return True if movement allowed
+    # (often there's just one signal, but there's also the case of double head signals and no signals...)
     def anyCleared(self) :
         # special case of no signals
         if (not self.signals) : return True
         for signal in self.signals :
             if (signals.getSignalHead(signal).isCleared() and not signals.getSignalHead(signal).getHeld()) : return True
         return False
-    # is it possible for the train in this block to advance?
+    # Is it possible for the train in this block to advance?
     def willAdvanceFront(self) :
         if (not self.anyCleared()) :
             return False
         #print ("from "+self.thisBlock.displayName+" to "+str(self.dynamicNext())+" is "+str(occupied(self.dynamicNext())) )
         if (occupied(self.thisBlock) and not occupied(self.dynamicNext())) : return True
         return False
-    # advance the front of the train in this block, i.e. move into next block
+    # Advance the front of the train in this block, i.e. move into next block
     def advanceFront(self) :
         #print ("setting "+blockToSensorDict[self.dynamicNext()].getSystemName()+" ACTIVE")
         blockToSensorDict[self.dynamicNext()].setState(ACTIVE)
         return
-    # advance the rear of the train in this block, i.e. clear the block
+    # Advance the rear of the train in this block, i.e. clear the block
     def advanceRear(self) :
         #print ("setting "+blockToSensorDict[self.dynamicNext()].getSystemName()+" INACTIVE for "+self.thisBlock.getSystemName())
         blockToSensorDict[self.thisBlock].setState(INACTIVE)
@@ -121,7 +106,7 @@ Topology.TRAILING_MAIN = 2      # entering next block on main line of turnout th
 Topology.TRAILING_DIVERGING = 3 # entering next block on diverging leg of turnout there
 
 
-# create the topology array for this specific layout
+# Create the topology array for this specific layout
 topologyNodes = [
     # track 1
     Topology("IBIS1", "IBIS2",  None,       None,   Topology.SIMPLE,            ["IHTr1-Ss03"]),
@@ -153,22 +138,14 @@ topologyNodes = [
     Topology("IBIS11","IBIS16", None,       None,   Topology.SIMPLE,            ["IHTr2-Ss01"]),
 ]
 
-# Create additional data structures
-blockToSensorDict = {}
-for key in blockNameToSensorNameDict :
-    blockToSensorDict[blocks.provideBlock(key)] = sensors.provideSensor(blockNameToSensorNameDict[key])
-sensorToBlockDict = {}
-for key in blockToSensorDict :
-    sensorToBlockDict[blockToSensorDict[key]] = key
-
-# debug printout
-#print (blockToSensorDict)
+# Debugging printout
+print (blockToSensorDict)
 #print (sensorToBlockDict)
 #print (topologyNodes)
 #print "Setup done"
 
-# set up frame with initialization buttons
-# define listener classes to handle each button
+# Set up frame with initialization buttons.
+# First, define listener classes to handle each button
 class ClearButtonHandler(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
         # clear blocks
@@ -188,7 +165,7 @@ class StartTrack2ButtonHandler(java.awt.event.ActionListener) :
 class StepTrainsButtonHandler(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
             stepTrains()
-# create a frame to hold the buttons, put buttons in it, and display
+# Second, create a frame to hold the buttons, put buttons in it, and display
 f = javax.swing.JFrame("Autorun Control")
 f.setLayout(java.awt.FlowLayout())
 #
