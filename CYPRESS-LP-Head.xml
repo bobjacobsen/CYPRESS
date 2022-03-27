@@ -158,7 +158,7 @@
     </turnout>
   </turnouts>
   <memories class="jmri.managers.configurexml.DefaultMemoryManagerXml">
-    <memory value="4:18 PM">
+    <memory value="6:35 PM">
       <systemName>IMCURRENTTIME</systemName>
     </memory>
     <memory value="1.0">
@@ -812,6 +812,26 @@
     </layoutblock>
   </layoutblocks>
   <signalelements class="jmri.jmrit.blockboss.configurexml.BlockBossLogicProviderXml">
+    <signalelement signal="IHTr1-Sd01-L" mode="3" watchedturnout="Tr1-T01" watchedsignal1="IHTr2-Sd02-L" watchedsignal1alt="IHTr2-Sd02-U" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
+      <sensorname>IS17</sensorname>
+      <sensorname>IS25</sensorname>
+      <comment />
+    </signalelement>
+    <signalelement signal="IHTr1-Sd01-U" mode="2" watchedturnout="Tr1-T01" watchedsignal1="IHTr1-Ss01" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
+      <sensorname>IS17</sensorname>
+      <sensorname>IS24</sensorname>
+      <comment />
+    </signalelement>
+    <signalelement signal="IHTr1-Sd02-L" mode="3" watchedturnout="Tr1-T03" watchedsignal1="IHTr1-Ss05" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
+      <sensorname>IS3</sensorname>
+      <sensorname>IS5</sensorname>
+      <comment />
+    </signalelement>
+    <signalelement signal="IHTr1-Sd02-U" mode="2" watchedturnout="Tr1-T03" watchedsignal1="IHTr1-Ss04" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
+      <sensorname>IS3</sensorname>
+      <sensorname>IS4</sensorname>
+      <comment />
+    </signalelement>
     <signalelement signal="IHTr1-Ss01" mode="2" watchedturnout="Tr1-T02" watchedsignal1="IHTr1-Ss02" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <sensorname>IS18</sensorname>
       <sensorname>IS26</sensorname>
@@ -841,26 +861,18 @@
       <sensorname>IS9</sensorname>
       <comment />
     </signalelement>
-    <signalelement signal="IHTr2-Sd01-U" mode="2" watchedturnout="Tr2-T01" watchedsignal1="IHTr2-Sd02-U" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="true">
+    <signalelement signal="IHTr1-Ss07" mode="1" watchedsignal1="IHTr1-Sd01-L" watchedsignal1alt="IHTr1-Sd01-U" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
+      <sensorname>IS10</sensorname>
+      <sensorname>IS19</sensorname>
+      <sensorname>IS28</sensorname>
+      <comment />
+    </signalelement>
+    <signalelement signal="IHTr2-Sd01-L" mode="2" watchedturnout="Tr2-T01" watchedsignal1="IHTr2-Sd02-L" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="true">
       <sensorname>IS25</sensorname>
       <comment />
     </signalelement>
-    <signalelement signal="IHTr2-Sd02-U" mode="2" watchedturnout="Tr2-T02" watchedsignal1="IHTr2-Ss01" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
-      <sensorname>IS11</sensorname>
-      <sensorname>IS27</sensorname>
-      <comment />
-    </signalelement>
-    <signalelement signal="IHTr1-Sd01-U" mode="2" watchedturnout="Tr1-T01" watchedsignal1="IHTr1-Ss01" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
-      <sensorname>IS17</sensorname>
-      <sensorname>IS24</sensorname>
-      <comment />
-    </signalelement>
-    <signalelement signal="IHTr1-Sd02-U" mode="2" watchedturnout="Tr1-T03" watchedsignal1="IHTr1-Ss04" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
-      <sensorname>IS3</sensorname>
-      <sensorname>IS4</sensorname>
-      <comment />
-    </signalelement>
-    <signalelement signal="IHTr2-Sd03-U" mode="2" watchedturnout="Tr2-T04" watchedsignal1="IHV1" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="true">
+    <signalelement signal="IHTr2-Sd01-U" mode="2" watchedturnout="Tr2-T01" watchedsignal1="IHTr2-Sd02-U" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="true">
+      <sensorname>IS25</sensorname>
       <comment />
     </signalelement>
     <signalelement signal="IHTr2-Sd02-L" mode="3" watchedturnout="Tr2-T02" watchedsignal1="IHTr1-Ss02" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
@@ -869,40 +881,23 @@
       <sensorname>IS26</sensorname>
       <comment />
     </signalelement>
-    <signalelement signal="IHTr2-Ss05" mode="1" watchedsignal1="IHTr2-Ss06" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
-      <sensorname>IS21</sensorname>
-      <comment />
-    </signalelement>
-    <signalelement signal="IHTr2-Ss04" mode="1" watchedsignal1="IHTr2-Ss05" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
-      <sensorname>IS8</sensorname>
+    <signalelement signal="IHTr2-Sd02-U" mode="2" watchedturnout="Tr2-T02" watchedsignal1="IHTr2-Ss01" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
+      <sensorname>IS11</sensorname>
+      <sensorname>IS27</sensorname>
       <comment />
     </signalelement>
     <signalelement signal="IHTr2-Sd03-L" mode="3" watchedturnout="Tr2-T04" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <sensorname>IS15</sensorname>
       <comment />
     </signalelement>
-    <signalelement signal="IHTr1-Sd01-L" mode="3" watchedturnout="Tr1-T01" watchedsignal1="IHTr2-Sd02-L" watchedsignal1alt="IHTr2-Sd02-U" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
-      <sensorname>IS17</sensorname>
-      <sensorname>IS25</sensorname>
-      <comment />
-    </signalelement>
-    <signalelement signal="IHTr2-Sd01-L" mode="2" watchedturnout="Tr2-T01" watchedsignal1="IHTr2-Sd02-L" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="true">
-      <sensorname>IS25</sensorname>
-      <comment />
-    </signalelement>
-    <signalelement signal="IHTr2-Ss06" mode="1" watchedsignal1="IHTr2-Sd01-L" watchedsignal1alt="IHTr2-Sd01-U" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
-      <sensorname>IS10</sensorname>
-      <sensorname>IS20</sensorname>
-      <sensorname>IS28</sensorname>
-      <comment />
-    </signalelement>
-    <signalelement signal="IHTr1-Sd02-L" mode="3" watchedturnout="Tr1-T03" watchedsignal1="IHTr1-Ss05" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
-      <sensorname>IS3</sensorname>
-      <sensorname>IS5</sensorname>
+    <signalelement signal="IHTr2-Sd03-U" mode="2" watchedturnout="Tr2-T04" watchedsignal1="IHV1" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="true">
       <comment />
     </signalelement>
     <signalelement signal="IHTr2-Ss01" mode="1" watchedsignal1="IHTr2-Ss02" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <sensorname>IS16</sensorname>
+      <comment />
+    </signalelement>
+    <signalelement signal="IHTr2-Ss02" mode="4" watchedturnout="Tr2-T03" watchedsignal1="IHTr2-Ss03" watchedsignal2="IHTr2-Sd03-L" watchedsignal2alt="IHTr2-Sd03-U" watchedsensor1="IS12" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <comment />
     </signalelement>
     <signalelement signal="IHTr2-Ss03" mode="1" watchedsignal1="IHTr2-Ss04" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
@@ -911,12 +906,17 @@
       <sensorname>IS7</sensorname>
       <comment />
     </signalelement>
-    <signalelement signal="IHTr2-Ss02" mode="4" watchedturnout="Tr2-T03" watchedsignal1="IHTr2-Ss03" watchedsignal2="IHTr2-Sd03-L" watchedsignal2alt="IHTr2-Sd03-U" watchedsensor1="IS12" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
+    <signalelement signal="IHTr2-Ss04" mode="1" watchedsignal1="IHTr2-Ss05" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
+      <sensorname>IS8</sensorname>
       <comment />
     </signalelement>
-    <signalelement signal="IHTr1-Ss07" mode="1" watchedsignal1="IHTr1-Sd01-L" watchedsignal1alt="IHTr1-Sd01-U" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
+    <signalelement signal="IHTr2-Ss05" mode="1" watchedsignal1="IHTr2-Ss06" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
+      <sensorname>IS21</sensorname>
+      <comment />
+    </signalelement>
+    <signalelement signal="IHTr2-Ss06" mode="1" watchedsignal1="IHTr2-Sd01-L" watchedsignal1alt="IHTr2-Sd01-U" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <sensorname>IS10</sensorname>
-      <sensorname>IS19</sensorname>
+      <sensorname>IS20</sensorname>
       <sensorname>IS28</sensorname>
       <comment />
     </signalelement>
@@ -3349,104 +3349,104 @@
   <filehistory>
     <operation>
       <type>app</type>
-      <date>Sun Mar 27 16:07:06 EDT 2022</date>
+      <date>Sun Mar 27 18:34:50 EDT 2022</date>
       <filename>JMRI program</filename>
     </operation>
     <operation>
       <type>Load OK</type>
-      <date>Sun Mar 27 16:07:08 EDT 2022</date>
+      <date>Sun Mar 27 18:34:51 EDT 2022</date>
       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
       <filehistory>
         <operation>
           <type>app</type>
-          <date>Sun Mar 27 15:52:55 EDT 2022</date>
+          <date>Sun Mar 27 16:53:03 EDT 2022</date>
           <filename>JMRI program</filename>
         </operation>
         <operation>
           <type>Load OK</type>
-          <date>Sun Mar 27 15:52:56 EDT 2022</date>
+          <date>Sun Mar 27 16:53:05 EDT 2022</date>
           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
           <filehistory>
             <operation>
               <type>app</type>
-              <date>Sun Mar 27 13:43:29 EDT 2022</date>
+              <date>Sun Mar 27 16:07:06 EDT 2022</date>
               <filename>JMRI program</filename>
             </operation>
             <operation>
               <type>Load OK</type>
-              <date>Sun Mar 27 13:43:31 EDT 2022</date>
+              <date>Sun Mar 27 16:07:08 EDT 2022</date>
               <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
               <filehistory>
                 <operation>
                   <type>app</type>
-                  <date>Sun Mar 27 13:38:30 EDT 2022</date>
+                  <date>Sun Mar 27 15:52:55 EDT 2022</date>
                   <filename>JMRI program</filename>
                 </operation>
                 <operation>
                   <type>Load OK</type>
-                  <date>Sun Mar 27 13:38:32 EDT 2022</date>
+                  <date>Sun Mar 27 15:52:56 EDT 2022</date>
                   <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                   <filehistory>
                     <operation>
                       <type>app</type>
-                      <date>Sun Mar 27 11:42:34 EDT 2022</date>
+                      <date>Sun Mar 27 13:43:29 EDT 2022</date>
                       <filename>JMRI program</filename>
                     </operation>
                     <operation>
                       <type>Load OK</type>
-                      <date>Sun Mar 27 11:42:36 EDT 2022</date>
+                      <date>Sun Mar 27 13:43:31 EDT 2022</date>
                       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                       <filehistory>
                         <operation>
                           <type>app</type>
-                          <date>Sun Mar 27 11:36:38 EDT 2022</date>
+                          <date>Sun Mar 27 13:38:30 EDT 2022</date>
                           <filename>JMRI program</filename>
                         </operation>
                         <operation>
                           <type>Load OK</type>
-                          <date>Sun Mar 27 11:36:40 EDT 2022</date>
+                          <date>Sun Mar 27 13:38:32 EDT 2022</date>
                           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                         </operation>
                         <operation>
                           <type>Store</type>
-                          <date>Sun Mar 27 11:37:40 EDT 2022</date>
+                          <date>Sun Mar 27 13:43:20 EDT 2022</date>
                           <filename />
                         </operation>
                       </filehistory>
                     </operation>
                     <operation>
                       <type>Store</type>
-                      <date>Sun Mar 27 13:37:40 EDT 2022</date>
+                      <date>Sun Mar 27 13:47:32 EDT 2022</date>
                       <filename />
                     </operation>
                   </filehistory>
                 </operation>
                 <operation>
                   <type>Store</type>
-                  <date>Sun Mar 27 13:43:20 EDT 2022</date>
+                  <date>Sun Mar 27 16:06:53 EDT 2022</date>
                   <filename />
                 </operation>
               </filehistory>
             </operation>
             <operation>
               <type>Store</type>
-              <date>Sun Mar 27 13:47:32 EDT 2022</date>
+              <date>Sun Mar 27 16:19:49 EDT 2022</date>
               <filename />
             </operation>
           </filehistory>
         </operation>
         <operation>
           <type>Store</type>
-          <date>Sun Mar 27 16:06:53 EDT 2022</date>
+          <date>Sun Mar 27 16:53:22 EDT 2022</date>
           <filename />
         </operation>
       </filehistory>
     </operation>
     <operation>
       <type>Store</type>
-      <date>Sun Mar 27 16:18:26 EDT 2022</date>
+      <date>Sun Mar 27 18:35:07 EDT 2022</date>
       <filename />
     </operation>
   </filehistory>
-  <!--Written by JMRI version 4.99.4plus+jake+20220327T2007Z+R8e343808a1 on Sun Mar 27 16:18:26 EDT 2022-->
+  <!--Written by JMRI version 4.99.4plus+jake+20220327T2234Z+R887851edab on Sun Mar 27 18:35:07 EDT 2022-->
 </layout-config>
