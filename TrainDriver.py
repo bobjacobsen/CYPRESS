@@ -139,7 +139,7 @@ topologyNodes = [
 ]
 
 # Debugging printout
-print (blockToSensorDict)
+#print (blockToSensorDict)
 #print (sensorToBlockDict)
 #print (topologyNodes)
 #print "Setup done"
