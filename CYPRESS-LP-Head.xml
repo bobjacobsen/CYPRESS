@@ -94,6 +94,22 @@
       <systemName>IS28</systemName>
     </sensor>
     <sensor inverted="false">
+      <systemName>IS29</systemName>
+      <comment>Wye upper leg</comment>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS30</systemName>
+      <comment>Wye lower leg</comment>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS31</systemName>
+      <comment>Wye tip turnout</comment>
+    </sensor>
+    <sensor inverted="false">
+      <systemName>IS32</systemName>
+      <comment>Wye tail track</comment>
+    </sensor>
+    <sensor inverted="false">
       <systemName>ISCLOCKRUNNING</systemName>
     </sensor>
   </sensors>
@@ -158,7 +174,7 @@
     </turnout>
   </turnouts>
   <memories class="jmri.managers.configurexml.DefaultMemoryManagerXml">
-    <memory value="6:35 PM">
+    <memory value="9:00 AM">
       <systemName>IMCURRENTTIME</systemName>
     </memory>
     <memory value="1.0">
@@ -1119,6 +1135,10 @@
       <conditionalAction option="1" type="9" systemName="IS26" data="4" delay="0" string="" />
       <conditionalAction option="1" type="9" systemName="IS27" data="4" delay="0" string="" />
       <conditionalAction option="1" type="9" systemName="IS28" data="4" delay="0" string="" />
+      <conditionalAction option="1" type="9" systemName="IS29" data="4" delay="0" string="" />
+      <conditionalAction option="1" type="9" systemName="IS30" data="4" delay="0" string="" />
+      <conditionalAction option="1" type="9" systemName="IS31" data="4" delay="0" string="" />
+      <conditionalAction option="1" type="9" systemName="IS32" data="4" delay="0" string="" />
       <conditionalAction option="1" type="2" systemName="Tr1-T01" data="2" delay="0" string="" />
       <conditionalAction option="1" type="2" systemName="Tr1-T02" data="2" delay="0" string="" />
       <conditionalAction option="1" type="2" systemName="Tr1-T03" data="2" delay="0" string="" />
@@ -2500,8 +2520,68 @@
       </icons>
       <iconmaps />
     </turnouticon>
+    <sensoricon sensor="IS29" x="539" y="319" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USSpanels/Lamps/lamp-y.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USSpanels/Lamps/lamp-dy.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USSpanels/Lamps/lamp-w.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USSpanels/Lamps/lamp-w.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="IS30" x="619" y="387" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USSpanels/Lamps/lamp-y.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USSpanels/Lamps/lamp-dy.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USSpanels/Lamps/lamp-w.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USSpanels/Lamps/lamp-w.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="IS31" x="372" y="476" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USSpanels/Lamps/lamp-y.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USSpanels/Lamps/lamp-dy.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USSpanels/Lamps/lamp-w.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USSpanels/Lamps/lamp-w.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <sensoricon sensor="IS32" x="299" y="477" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USSpanels/Lamps/lamp-y.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USSpanels/Lamps/lamp-dy.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USSpanels/Lamps/lamp-w.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USSpanels/Lamps/lamp-w.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
   </paneleditor>
-  <LayoutEditor class="jmri.jmrit.display.layoutEditor.configurexml.LayoutEditorXml" name="CYPRESS Layout" x="681" y="489" windowheight="854" windowwidth="1640" panelheight="590" panelwidth="1106" sliders="no" scrollable="none" editable="no" positionable="yes" controlling="yes" animating="yes" showhelpbar="no" drawgrid="yes" snaponadd="no" snaponmove="no" antialiasing="no" turnoutcircles="no" tooltipsnotedit="no" tooltipsinedit="yes" mainlinetrackwidth="4" xscale="1.0" yscale="1.0" sidetrackwidth="2" defaulttrackcolor="darkGray" defaultoccupiedtrackcolor="red" defaultalternativetrackcolor="white" defaulttextcolor="black" turnoutcirclecolor="black" turnoutcirclesize="4" turnoutdrawunselectedleg="yes" turnoutbx="20.0" turnoutcx="20.0" turnoutwid="10.0" xoverlong="30.0" xoverhwid="10.0" xovershort="10.0" autoblkgenerate="no" redBackground="192" greenBackground="192" blueBackground="192" gridSize="10" gridSize2nd="10" openDispatcher="no" useDirectTurnoutControl="yes">
+  <LayoutEditor class="jmri.jmrit.display.layoutEditor.configurexml.LayoutEditorXml" name="CYPRESS Layout" x="88" y="263" windowheight="854" windowwidth="1640" panelheight="590" panelwidth="1106" sliders="no" scrollable="none" editable="no" positionable="yes" controlling="yes" animating="yes" showhelpbar="no" drawgrid="yes" snaponadd="no" snaponmove="no" antialiasing="no" turnoutcircles="no" tooltipsnotedit="no" tooltipsinedit="yes" mainlinetrackwidth="4" xscale="1.0" yscale="1.0" sidetrackwidth="2" defaulttrackcolor="darkGray" defaultoccupiedtrackcolor="red" defaultalternativetrackcolor="white" defaulttextcolor="black" turnoutcirclecolor="black" turnoutcirclesize="4" turnoutdrawunselectedleg="yes" turnoutbx="20.0" turnoutcx="20.0" turnoutwid="10.0" xoverlong="30.0" xoverhwid="10.0" xovershort="10.0" autoblkgenerate="no" redBackground="192" greenBackground="192" blueBackground="192" gridSize="10" gridSize2nd="10" openDispatcher="no" useDirectTurnoutControl="yes">
     <layoutTrackDrawingOptions name="CYPRESS Layout" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutTrackDrawingOptionsXml">
       <mainBallastColor>#000000</mainBallastColor>
       <mainBallastWidth>0</mainBallastWidth>
@@ -3349,104 +3429,104 @@
   <filehistory>
     <operation>
       <type>app</type>
-      <date>Sun Mar 27 18:34:50 EDT 2022</date>
+      <date>Mon Mar 28 08:57:46 EDT 2022</date>
       <filename>JMRI program</filename>
     </operation>
     <operation>
       <type>Load OK</type>
-      <date>Sun Mar 27 18:34:51 EDT 2022</date>
+      <date>Mon Mar 28 08:57:48 EDT 2022</date>
       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
       <filehistory>
         <operation>
           <type>app</type>
-          <date>Sun Mar 27 16:53:03 EDT 2022</date>
+          <date>Mon Mar 28 08:52:57 EDT 2022</date>
           <filename>JMRI program</filename>
         </operation>
         <operation>
           <type>Load OK</type>
-          <date>Sun Mar 27 16:53:05 EDT 2022</date>
+          <date>Mon Mar 28 08:52:59 EDT 2022</date>
           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
           <filehistory>
             <operation>
               <type>app</type>
-              <date>Sun Mar 27 16:07:06 EDT 2022</date>
+              <date>Mon Mar 28 08:52:01 EDT 2022</date>
               <filename>JMRI program</filename>
             </operation>
             <operation>
               <type>Load OK</type>
-              <date>Sun Mar 27 16:07:08 EDT 2022</date>
+              <date>Mon Mar 28 08:52:03 EDT 2022</date>
               <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
               <filehistory>
                 <operation>
                   <type>app</type>
-                  <date>Sun Mar 27 15:52:55 EDT 2022</date>
+                  <date>Sun Mar 27 18:34:50 EDT 2022</date>
                   <filename>JMRI program</filename>
                 </operation>
                 <operation>
                   <type>Load OK</type>
-                  <date>Sun Mar 27 15:52:56 EDT 2022</date>
+                  <date>Sun Mar 27 18:34:51 EDT 2022</date>
                   <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                   <filehistory>
                     <operation>
                       <type>app</type>
-                      <date>Sun Mar 27 13:43:29 EDT 2022</date>
+                      <date>Sun Mar 27 16:53:03 EDT 2022</date>
                       <filename>JMRI program</filename>
                     </operation>
                     <operation>
                       <type>Load OK</type>
-                      <date>Sun Mar 27 13:43:31 EDT 2022</date>
+                      <date>Sun Mar 27 16:53:05 EDT 2022</date>
                       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                       <filehistory>
                         <operation>
                           <type>app</type>
-                          <date>Sun Mar 27 13:38:30 EDT 2022</date>
+                          <date>Sun Mar 27 16:07:06 EDT 2022</date>
                           <filename>JMRI program</filename>
                         </operation>
                         <operation>
                           <type>Load OK</type>
-                          <date>Sun Mar 27 13:38:32 EDT 2022</date>
+                          <date>Sun Mar 27 16:07:08 EDT 2022</date>
                           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                         </operation>
                         <operation>
                           <type>Store</type>
-                          <date>Sun Mar 27 13:43:20 EDT 2022</date>
+                          <date>Sun Mar 27 16:19:49 EDT 2022</date>
                           <filename />
                         </operation>
                       </filehistory>
                     </operation>
                     <operation>
                       <type>Store</type>
-                      <date>Sun Mar 27 13:47:32 EDT 2022</date>
+                      <date>Sun Mar 27 16:53:22 EDT 2022</date>
                       <filename />
                     </operation>
                   </filehistory>
                 </operation>
                 <operation>
                   <type>Store</type>
-                  <date>Sun Mar 27 16:06:53 EDT 2022</date>
+                  <date>Sun Mar 27 18:35:07 EDT 2022</date>
                   <filename />
                 </operation>
               </filehistory>
             </operation>
             <operation>
               <type>Store</type>
-              <date>Sun Mar 27 16:19:49 EDT 2022</date>
+              <date>Mon Mar 28 08:52:12 EDT 2022</date>
               <filename />
             </operation>
           </filehistory>
         </operation>
         <operation>
           <type>Store</type>
-          <date>Sun Mar 27 16:53:22 EDT 2022</date>
+          <date>Mon Mar 28 08:56:29 EDT 2022</date>
           <filename />
         </operation>
       </filehistory>
     </operation>
     <operation>
       <type>Store</type>
-      <date>Sun Mar 27 18:35:07 EDT 2022</date>
+      <date>Mon Mar 28 09:00:09 EDT 2022</date>
       <filename />
     </operation>
   </filehistory>
-  <!--Written by JMRI version 4.99.4plus+jake+20220327T2234Z+R887851edab on Sun Mar 27 18:35:07 EDT 2022-->
+  <!--Written by JMRI version 4.99.4plus+jake+20220328T1257Z+R887851edab on Mon Mar 28 09:00:09 EDT 2022-->
 </layout-config>
