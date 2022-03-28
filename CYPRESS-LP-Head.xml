@@ -177,7 +177,7 @@
     </turnout>
   </turnouts>
   <memories class="jmri.managers.configurexml.DefaultMemoryManagerXml">
-    <memory value="4:49 PM">
+    <memory value="4:52 PM">
       <systemName>IMCURRENTTIME</systemName>
     </memory>
     <memory value="1.0">
@@ -1774,16 +1774,16 @@
     </signalheadicon>
     <positionablelabel x="330" y="77" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="B" size="24" style="0" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
     <sensoricon sensor="IS33" x="532" y="166" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
-      <active url="program:resources/icons/smallschematics/tracksegments/circuit-occupied.gif" degrees="0" scale="1.0">
+      <active url="program:resources/icons/USSpanels/Lamps/lamp-y.gif" degrees="0" scale="1.0">
         <rotation>0</rotation>
       </active>
-      <inactive url="program:resources/icons/smallschematics/tracksegments/circuit-empty.gif" degrees="0" scale="1.0">
+      <inactive url="program:resources/icons/USSpanels/Lamps/lamp-dy.gif" degrees="0" scale="1.0">
         <rotation>0</rotation>
       </inactive>
-      <unknown url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+      <unknown url="program:resources/icons/USSpanels/Lamps/lamp-w.gif" degrees="0" scale="1.0">
         <rotation>0</rotation>
       </unknown>
-      <inconsistent url="program:resources/icons/smallschematics/tracksegments/circuit-error.gif" degrees="0" scale="1.0">
+      <inconsistent url="program:resources/icons/USSpanels/Lamps/lamp-w.gif" degrees="0" scale="1.0">
         <rotation>0</rotation>
       </inconsistent>
       <iconmaps />
@@ -4064,104 +4064,104 @@
   <filehistory>
     <operation>
       <type>app</type>
-      <date>Mon Mar 28 16:40:47 EDT 2022</date>
+      <date>Mon Mar 28 16:50:59 EDT 2022</date>
       <filename>JMRI program</filename>
     </operation>
     <operation>
       <type>Load OK</type>
-      <date>Mon Mar 28 16:40:49 EDT 2022</date>
+      <date>Mon Mar 28 16:51:01 EDT 2022</date>
       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
       <filehistory>
         <operation>
           <type>app</type>
-          <date>Mon Mar 28 15:49:32 EDT 2022</date>
+          <date>Mon Mar 28 16:40:47 EDT 2022</date>
           <filename>JMRI program</filename>
         </operation>
         <operation>
           <type>Load OK</type>
-          <date>Mon Mar 28 15:49:34 EDT 2022</date>
+          <date>Mon Mar 28 16:40:49 EDT 2022</date>
           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
           <filehistory>
             <operation>
               <type>app</type>
-              <date>Mon Mar 28 12:49:58 EDT 2022</date>
+              <date>Mon Mar 28 15:49:32 EDT 2022</date>
               <filename>JMRI program</filename>
             </operation>
             <operation>
               <type>Load OK</type>
-              <date>Mon Mar 28 12:50:00 EDT 2022</date>
+              <date>Mon Mar 28 15:49:34 EDT 2022</date>
               <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
               <filehistory>
                 <operation>
                   <type>app</type>
-                  <date>Mon Mar 28 11:09:47 EDT 2022</date>
+                  <date>Mon Mar 28 12:49:58 EDT 2022</date>
                   <filename>JMRI program</filename>
                 </operation>
                 <operation>
                   <type>Load OK</type>
-                  <date>Mon Mar 28 11:09:49 EDT 2022</date>
+                  <date>Mon Mar 28 12:50:00 EDT 2022</date>
                   <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                   <filehistory>
                     <operation>
                       <type>app</type>
-                      <date>Mon Mar 28 10:47:26 EDT 2022</date>
+                      <date>Mon Mar 28 11:09:47 EDT 2022</date>
                       <filename>JMRI program</filename>
                     </operation>
                     <operation>
                       <type>Load OK</type>
-                      <date>Mon Mar 28 10:47:28 EDT 2022</date>
+                      <date>Mon Mar 28 11:09:49 EDT 2022</date>
                       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                       <filehistory>
                         <operation>
                           <type>app</type>
-                          <date>Mon Mar 28 10:45:58 EDT 2022</date>
+                          <date>Mon Mar 28 10:47:26 EDT 2022</date>
                           <filename>JMRI program</filename>
                         </operation>
                         <operation>
                           <type>Load OK</type>
-                          <date>Mon Mar 28 10:46:00 EDT 2022</date>
+                          <date>Mon Mar 28 10:47:28 EDT 2022</date>
                           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                         </operation>
                         <operation>
                           <type>Store</type>
-                          <date>Mon Mar 28 10:46:36 EDT 2022</date>
+                          <date>Mon Mar 28 11:09:35 EDT 2022</date>
                           <filename />
                         </operation>
                       </filehistory>
                     </operation>
                     <operation>
                       <type>Store</type>
-                      <date>Mon Mar 28 11:09:35 EDT 2022</date>
+                      <date>Mon Mar 28 11:36:57 EDT 2022</date>
                       <filename />
                     </operation>
                   </filehistory>
                 </operation>
                 <operation>
                   <type>Store</type>
-                  <date>Mon Mar 28 11:36:57 EDT 2022</date>
+                  <date>Mon Mar 28 15:49:18 EDT 2022</date>
                   <filename />
                 </operation>
               </filehistory>
             </operation>
             <operation>
               <type>Store</type>
-              <date>Mon Mar 28 15:49:18 EDT 2022</date>
+              <date>Mon Mar 28 15:56:48 EDT 2022</date>
               <filename />
             </operation>
           </filehistory>
         </operation>
         <operation>
           <type>Store</type>
-          <date>Mon Mar 28 15:56:48 EDT 2022</date>
+          <date>Mon Mar 28 16:49:45 EDT 2022</date>
           <filename />
         </operation>
       </filehistory>
     </operation>
     <operation>
       <type>Store</type>
-      <date>Mon Mar 28 16:49:45 EDT 2022</date>
+      <date>Mon Mar 28 16:52:23 EDT 2022</date>
       <filename />
     </operation>
   </filehistory>
-  <!--Written by JMRI version 4.99.4plus+jake+20220328T2040Z+R887851edab on Mon Mar 28 16:49:45 EDT 2022-->
+  <!--Written by JMRI version 4.99.4plus+jake+20220328T2050Z+R887851edab on Mon Mar 28 16:52:23 EDT 2022-->
 </layout-config>
