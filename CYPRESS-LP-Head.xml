@@ -174,7 +174,7 @@
     </turnout>
   </turnouts>
   <memories class="jmri.managers.configurexml.DefaultMemoryManagerXml">
-    <memory value="9:00 AM">
+    <memory value="9:10 AM">
       <systemName>IMCURRENTTIME</systemName>
     </memory>
     <memory value="1.0">
@@ -2581,7 +2581,7 @@
       <iconmaps />
     </sensoricon>
   </paneleditor>
-  <LayoutEditor class="jmri.jmrit.display.layoutEditor.configurexml.LayoutEditorXml" name="CYPRESS Layout" x="88" y="263" windowheight="854" windowwidth="1640" panelheight="590" panelwidth="1106" sliders="no" scrollable="none" editable="no" positionable="yes" controlling="yes" animating="yes" showhelpbar="no" drawgrid="yes" snaponadd="no" snaponmove="no" antialiasing="no" turnoutcircles="no" tooltipsnotedit="no" tooltipsinedit="yes" mainlinetrackwidth="4" xscale="1.0" yscale="1.0" sidetrackwidth="2" defaulttrackcolor="darkGray" defaultoccupiedtrackcolor="red" defaultalternativetrackcolor="white" defaulttextcolor="black" turnoutcirclecolor="black" turnoutcirclesize="4" turnoutdrawunselectedleg="yes" turnoutbx="20.0" turnoutcx="20.0" turnoutwid="10.0" xoverlong="30.0" xoverhwid="10.0" xovershort="10.0" autoblkgenerate="no" redBackground="192" greenBackground="192" blueBackground="192" gridSize="10" gridSize2nd="10" openDispatcher="no" useDirectTurnoutControl="yes">
+  <LayoutEditor class="jmri.jmrit.display.layoutEditor.configurexml.LayoutEditorXml" name="CYPRESS Layout" x="54" y="150" windowheight="854" windowwidth="1640" panelheight="590" panelwidth="1106" sliders="no" scrollable="none" editable="no" positionable="yes" controlling="yes" animating="yes" showhelpbar="no" drawgrid="yes" snaponadd="no" snaponmove="no" antialiasing="yes" turnoutcircles="no" tooltipsnotedit="no" tooltipsinedit="yes" mainlinetrackwidth="4" xscale="1.0" yscale="1.0" sidetrackwidth="2" defaulttrackcolor="darkGray" defaultoccupiedtrackcolor="red" defaultalternativetrackcolor="white" defaulttextcolor="black" turnoutcirclecolor="black" turnoutcirclesize="4" turnoutdrawunselectedleg="yes" turnoutbx="20.0" turnoutcx="20.0" turnoutwid="10.0" xoverlong="30.0" xoverhwid="10.0" xovershort="10.0" autoblkgenerate="no" redBackground="192" greenBackground="192" blueBackground="192" gridSize="10" gridSize2nd="10" openDispatcher="no" useDirectTurnoutControl="yes">
     <layoutTrackDrawingOptions name="CYPRESS Layout" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutTrackDrawingOptionsXml">
       <mainBallastColor>#000000</mainBallastColor>
       <mainBallastWidth>0</mainBallastWidth>
@@ -3429,104 +3429,104 @@
   <filehistory>
     <operation>
       <type>app</type>
-      <date>Mon Mar 28 08:57:46 EDT 2022</date>
+      <date>Mon Mar 28 09:06:14 EDT 2022</date>
       <filename>JMRI program</filename>
     </operation>
     <operation>
       <type>Load OK</type>
-      <date>Mon Mar 28 08:57:48 EDT 2022</date>
+      <date>Mon Mar 28 09:06:16 EDT 2022</date>
       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
       <filehistory>
         <operation>
           <type>app</type>
-          <date>Mon Mar 28 08:52:57 EDT 2022</date>
+          <date>Mon Mar 28 08:57:46 EDT 2022</date>
           <filename>JMRI program</filename>
         </operation>
         <operation>
           <type>Load OK</type>
-          <date>Mon Mar 28 08:52:59 EDT 2022</date>
+          <date>Mon Mar 28 08:57:48 EDT 2022</date>
           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
           <filehistory>
             <operation>
               <type>app</type>
-              <date>Mon Mar 28 08:52:01 EDT 2022</date>
+              <date>Mon Mar 28 08:52:57 EDT 2022</date>
               <filename>JMRI program</filename>
             </operation>
             <operation>
               <type>Load OK</type>
-              <date>Mon Mar 28 08:52:03 EDT 2022</date>
+              <date>Mon Mar 28 08:52:59 EDT 2022</date>
               <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
               <filehistory>
                 <operation>
                   <type>app</type>
-                  <date>Sun Mar 27 18:34:50 EDT 2022</date>
+                  <date>Mon Mar 28 08:52:01 EDT 2022</date>
                   <filename>JMRI program</filename>
                 </operation>
                 <operation>
                   <type>Load OK</type>
-                  <date>Sun Mar 27 18:34:51 EDT 2022</date>
+                  <date>Mon Mar 28 08:52:03 EDT 2022</date>
                   <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                   <filehistory>
                     <operation>
                       <type>app</type>
-                      <date>Sun Mar 27 16:53:03 EDT 2022</date>
+                      <date>Sun Mar 27 18:34:50 EDT 2022</date>
                       <filename>JMRI program</filename>
                     </operation>
                     <operation>
                       <type>Load OK</type>
-                      <date>Sun Mar 27 16:53:05 EDT 2022</date>
+                      <date>Sun Mar 27 18:34:51 EDT 2022</date>
                       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                       <filehistory>
                         <operation>
                           <type>app</type>
-                          <date>Sun Mar 27 16:07:06 EDT 2022</date>
+                          <date>Sun Mar 27 16:53:03 EDT 2022</date>
                           <filename>JMRI program</filename>
                         </operation>
                         <operation>
                           <type>Load OK</type>
-                          <date>Sun Mar 27 16:07:08 EDT 2022</date>
+                          <date>Sun Mar 27 16:53:05 EDT 2022</date>
                           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                         </operation>
                         <operation>
                           <type>Store</type>
-                          <date>Sun Mar 27 16:19:49 EDT 2022</date>
+                          <date>Sun Mar 27 16:53:22 EDT 2022</date>
                           <filename />
                         </operation>
                       </filehistory>
                     </operation>
                     <operation>
                       <type>Store</type>
-                      <date>Sun Mar 27 16:53:22 EDT 2022</date>
+                      <date>Sun Mar 27 18:35:07 EDT 2022</date>
                       <filename />
                     </operation>
                   </filehistory>
                 </operation>
                 <operation>
                   <type>Store</type>
-                  <date>Sun Mar 27 18:35:07 EDT 2022</date>
+                  <date>Mon Mar 28 08:52:12 EDT 2022</date>
                   <filename />
                 </operation>
               </filehistory>
             </operation>
             <operation>
               <type>Store</type>
-              <date>Mon Mar 28 08:52:12 EDT 2022</date>
+              <date>Mon Mar 28 08:56:29 EDT 2022</date>
               <filename />
             </operation>
           </filehistory>
         </operation>
         <operation>
           <type>Store</type>
-          <date>Mon Mar 28 08:56:29 EDT 2022</date>
+          <date>Mon Mar 28 09:00:09 EDT 2022</date>
           <filename />
         </operation>
       </filehistory>
     </operation>
     <operation>
       <type>Store</type>
-      <date>Mon Mar 28 09:00:09 EDT 2022</date>
+      <date>Mon Mar 28 09:10:35 EDT 2022</date>
       <filename />
     </operation>
   </filehistory>
-  <!--Written by JMRI version 4.99.4plus+jake+20220328T1257Z+R887851edab on Mon Mar 28 09:00:09 EDT 2022-->
+  <!--Written by JMRI version 4.99.4plus+jake+20220328T1306Z+R887851edab on Mon Mar 28 09:10:35 EDT 2022-->
 </layout-config>
