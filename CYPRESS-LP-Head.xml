@@ -174,7 +174,7 @@
     </turnout>
   </turnouts>
   <memories class="jmri.managers.configurexml.DefaultMemoryManagerXml">
-    <memory value="9:10 AM">
+    <memory value="9:18 AM">
       <systemName>IMCURRENTTIME</systemName>
     </memory>
     <memory value="1.0">
@@ -257,6 +257,22 @@
   </signalheads>
   <blocks class="jmri.configurexml.BlockManagerXml">
     <defaultspeed>Normal</defaultspeed>
+    <block systemName="IBIS32">
+      <systemName>IBIS32</systemName>
+      <userName>IS32</userName>
+    </block>
+    <block systemName="IBIS29">
+      <systemName>IBIS29</systemName>
+      <userName>IS29</userName>
+    </block>
+    <block systemName="IBIS30">
+      <systemName>IBIS30</systemName>
+      <userName>IS30</userName>
+    </block>
+    <block systemName="IBIS31">
+      <systemName>IBIS31</systemName>
+      <userName>IS31</userName>
+    </block>
     <block systemName="IBIS1">
       <systemName>IBIS1</systemName>
       <userName>IS1</userName>
@@ -368,6 +384,62 @@
     <block systemName="IBIS28">
       <systemName>IBIS28</systemName>
       <userName>IS28</userName>
+    </block>
+    <block systemName="IBIS32" length="0.0" curve="0">
+      <systemName>IBIS32</systemName>
+      <userName>IS32</userName>
+      <permissive>no</permissive>
+      <occupancysensor>IS32</occupancysensor>
+      <path todir="64" fromdir="128" block="IBIS31" />
+    </block>
+    <block systemName="IBIS29" length="0.0" curve="0">
+      <systemName>IBIS29</systemName>
+      <userName>IS29</userName>
+      <permissive>no</permissive>
+      <occupancysensor>IS29</occupancysensor>
+      <path todir="32" fromdir="16" block="IBIS31">
+        <beansetting setting="4">
+          <turnout systemName="Tr2-T08" />
+        </beansetting>
+      </path>
+      <path todir="16" fromdir="32" block="IBIS12">
+        <beansetting setting="4">
+          <turnout systemName="Tr2-T06" />
+        </beansetting>
+      </path>
+    </block>
+    <block systemName="IBIS30" length="0.0" curve="0">
+      <systemName>IBIS30</systemName>
+      <userName>IS30</userName>
+      <permissive>no</permissive>
+      <occupancysensor>IS30</occupancysensor>
+      <path todir="128" fromdir="64" block="IBIS31">
+        <beansetting setting="2">
+          <turnout systemName="Tr2-T08" />
+        </beansetting>
+      </path>
+      <path todir="64" fromdir="128" block="IBIS12">
+        <beansetting setting="2">
+          <turnout systemName="Tr2-T07" />
+        </beansetting>
+      </path>
+    </block>
+    <block systemName="IBIS31" length="0.0" curve="0">
+      <systemName>IBIS31</systemName>
+      <userName>IS31</userName>
+      <permissive>no</permissive>
+      <occupancysensor>IS31</occupancysensor>
+      <path todir="128" fromdir="64" block="IBIS32" />
+      <path todir="16" fromdir="32" block="IBIS29">
+        <beansetting setting="4">
+          <turnout systemName="Tr2-T08" />
+        </beansetting>
+      </path>
+      <path todir="64" fromdir="128" block="IBIS30">
+        <beansetting setting="2">
+          <turnout systemName="Tr2-T08" />
+        </beansetting>
+      </path>
     </block>
     <block systemName="IBIS1" length="0.0" curve="0">
       <systemName>IBIS1</systemName>
@@ -500,6 +572,19 @@
       <userName>IS12</userName>
       <permissive>no</permissive>
       <occupancysensor>IS12</occupancysensor>
+      <path todir="32" fromdir="16" block="IBIS29">
+        <beansetting setting="4">
+          <turnout systemName="Tr2-T06" />
+        </beansetting>
+        <beansetting setting="4">
+          <turnout systemName="Tr2-T03" />
+        </beansetting>
+      </path>
+      <path todir="128" fromdir="64" block="IBIS30">
+        <beansetting setting="2">
+          <turnout systemName="Tr2-T07" />
+        </beansetting>
+      </path>
       <path todir="64" fromdir="128" block="IBIS13" />
       <path todir="64" fromdir="128" block="IBIS14">
         <beansetting setting="4">
@@ -825,6 +910,22 @@
     <layoutblock systemName="ILB28" occupancysensor="IS28" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
       <systemName>ILB28</systemName>
       <userName>IS28</userName>
+    </layoutblock>
+    <layoutblock systemName="ILB29" occupancysensor="IS32" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB29</systemName>
+      <userName>IS32</userName>
+    </layoutblock>
+    <layoutblock systemName="ILB30" occupancysensor="IS29" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB30</systemName>
+      <userName>IS29</userName>
+    </layoutblock>
+    <layoutblock systemName="ILB31" occupancysensor="IS30" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB31</systemName>
+      <userName>IS30</userName>
+    </layoutblock>
+    <layoutblock systemName="ILB32" occupancysensor="IS31" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB32</systemName>
+      <userName>IS31</userName>
     </layoutblock>
   </layoutblocks>
   <signalelements class="jmri.jmrit.blockboss.configurexml.BlockBossLogicProviderXml">
@@ -1154,7 +1255,7 @@
     </conditional>
   </conditionals>
   <timebase class="jmri.jmrit.simpleclock.configurexml.SimpleTimebaseXml" time="Fri Feb 04 12:30:38 EST 2022" rate="1.0" startrate="1.0" run="yes" master="yes" sync="no" correct="no" display="no" startstopped="no" startrunning="yes" startsettime="no" startclockoption="0" showbutton="no" startsetrate="yes" />
-  <paneleditor class="jmri.jmrit.display.panelEditor.configurexml.PanelEditorXml" name="CYPRESS Panel" x="463" y="82" height="1011" width="1849" editable="yes" positionable="yes" showtooltips="yes" controlling="yes" hide="yes" panelmenu="yes" scrollable="both" redBackground="255" greenBackground="255" blueBackground="255">
+  <paneleditor class="jmri.jmrit.display.panelEditor.configurexml.PanelEditorXml" name="CYPRESS Panel" x="860" y="90" height="1011" width="1849" editable="yes" positionable="yes" showtooltips="yes" controlling="yes" hide="yes" panelmenu="yes" scrollable="both" redBackground="255" greenBackground="255" blueBackground="255">
     <positionablelabel x="0" y="0" level="1" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
       <icon url="preference:QNIempire3b-WYE.png" degrees="0" scale="1.0">
         <rotation>0</rotation>
@@ -3312,7 +3413,7 @@
     <layoutturnout ident="TO8" type="LH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="305.0" ycen="518.0" xa="285.0" ya="518.0" xb="325.0" yb="518.0" xc="334.0" yc="502.0" xd="285.0" yd="518.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutLHTurnoutXml" turnoutname="Tr1-T02" blockname="IS26" connectaname="T18" connectbname="T14" connectcname="T28" />
     <layoutturnout ident="TO9" type="LH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="371.0" ycen="481.0" xa="391.0" ya="481.0" xb="351.0" yb="481.0" xc="345.0" yc="495.0" xd="391.0" yd="481.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutLHTurnoutXml" turnoutname="Tr2-T02" blockname="IS27" connectaname="T15" connectbname="T19" connectcname="T28" />
     <layoutturnout ident="TO10" type="RH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="457.3363952636719" ycen="350.9179992675781" xa="513.0776977539062" ya="351.1243591308594" xb="401.5950927734375" yb="350.7116394042969" xc="429.14215087890625" yc="331.14215087890625" xd="513.0776977539062" yd="351.1243591308594" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutRHTurnoutXml" turnoutname="Tr2-T07" blockname="IS12" connectaname="T26" connectbname="T29" connectcname="T23" />
-    <layoutturnout ident="TO11" type="LH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="214.0" ycen="351.0" xa="194.0" ya="351.0" xb="234.0" yb="351.0" xc="233.0" yc="335.0" xd="194.0" yd="351.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutLHTurnoutXml" turnoutname="Tr2-T08" blockname="IS12" connectaname="T30" connectbname="T29" connectcname="T32" />
+    <layoutturnout ident="TO11" type="LH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="214.0" ycen="351.0" xa="194.0" ya="351.0" xb="234.0" yb="351.0" xc="233.0" yc="335.0" xd="194.0" yd="351.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutLHTurnoutXml" turnoutname="Tr2-T08" blockname="IS31" connectaname="T30" connectbname="T29" connectcname="T32" />
     <layoutturnout ident="TO12" type="RH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="255.0" ycen="205.0" xa="239.85784912109375" ya="192.85784912109375" xb="270.14215087890625" yb="217.14215087890625" xc="261.0710754394531" yc="236.21319580078125" xd="239.85784912109375" yd="192.85784912109375" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutRHTurnoutXml" turnoutname="Tr2-T06" blockname="IS12" connectaname="T10" connectbname="T31" connectcname="T32" />
     <tracksegment ident="T1" blockname="IS4" connect1name="TO1" type1="TURNOUT_B" connect2name="TO2" type2="TURNOUT_B" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
     <tracksegment ident="T3" blockname="IS6" connect1name="TO2" type1="TURNOUT_A" connect2name="X1" type2="LEVEL_XING_A" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
@@ -3401,11 +3502,11 @@
     <tracksegment ident="T28" blockname="IS27" connect1name="TO8" type1="TURNOUT_C" connect2name="TO9" type2="TURNOUT_C" dashed="no" mainline="no" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
     <tracksegment ident="T2" blockname="IS5" connect1name="TO1" type1="TURNOUT_C" connect2name="TO2" type2="TURNOUT_C" dashed="no" mainline="no" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
     <tracksegment ident="T23" blockname="IS12" connect1name="TO10" type1="TURNOUT_C" connect2name="TO5" type2="TURNOUT_B" dashed="no" mainline="no" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
-    <tracksegment ident="T29" blockname="IS12" connect1name="TO11" type1="TURNOUT_B" connect2name="TO10" type2="TURNOUT_B" dashed="no" mainline="no" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
-    <tracksegment ident="T30" blockname="IS12" connect1name="EB4" type1="POS_POINT" connect2name="TO11" type2="TURNOUT_A" dashed="no" mainline="no" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T29" blockname="IS30" connect1name="TO11" type1="TURNOUT_B" connect2name="TO10" type2="TURNOUT_B" dashed="no" mainline="no" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
+    <tracksegment ident="T30" blockname="IS32" connect1name="EB4" type1="POS_POINT" connect2name="TO11" type2="TURNOUT_A" dashed="no" mainline="no" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
     <tracksegment ident="T10" blockname="IS12" connect1name="TO3" type1="TURNOUT_C" connect2name="TO12" type2="TURNOUT_A" dashed="no" mainline="no" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
     <tracksegment ident="T31" blockname="IS12" connect1name="TO12" type1="TURNOUT_B" connect2name="TO4" type2="TURNOUT_A" dashed="no" mainline="no" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
-    <tracksegment ident="T32" blockname="IS12" connect1name="TO12" type1="TURNOUT_C" connect2name="TO11" type2="TURNOUT_C" dashed="no" mainline="no" hidden="no" bezier="yes" hideConLines="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml">
+    <tracksegment ident="T32" blockname="IS29" connect1name="TO12" type1="TURNOUT_C" connect2name="TO11" type2="TURNOUT_C" dashed="no" mainline="no" hidden="no" bezier="yes" hideConLines="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml">
       <controlpoints>
         <controlpoint index="0" x="262.79" y="259.45" />
         <controlpoint index="1" x="272.29" y="309.76" />
@@ -3429,104 +3530,104 @@
   <filehistory>
     <operation>
       <type>app</type>
-      <date>Mon Mar 28 09:06:14 EDT 2022</date>
+      <date>Mon Mar 28 09:13:33 EDT 2022</date>
       <filename>JMRI program</filename>
     </operation>
     <operation>
       <type>Load OK</type>
-      <date>Mon Mar 28 09:06:16 EDT 2022</date>
+      <date>Mon Mar 28 09:13:35 EDT 2022</date>
       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
       <filehistory>
         <operation>
           <type>app</type>
-          <date>Mon Mar 28 08:57:46 EDT 2022</date>
+          <date>Mon Mar 28 09:06:14 EDT 2022</date>
           <filename>JMRI program</filename>
         </operation>
         <operation>
           <type>Load OK</type>
-          <date>Mon Mar 28 08:57:48 EDT 2022</date>
+          <date>Mon Mar 28 09:06:16 EDT 2022</date>
           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
           <filehistory>
             <operation>
               <type>app</type>
-              <date>Mon Mar 28 08:52:57 EDT 2022</date>
+              <date>Mon Mar 28 08:57:46 EDT 2022</date>
               <filename>JMRI program</filename>
             </operation>
             <operation>
               <type>Load OK</type>
-              <date>Mon Mar 28 08:52:59 EDT 2022</date>
+              <date>Mon Mar 28 08:57:48 EDT 2022</date>
               <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
               <filehistory>
                 <operation>
                   <type>app</type>
-                  <date>Mon Mar 28 08:52:01 EDT 2022</date>
+                  <date>Mon Mar 28 08:52:57 EDT 2022</date>
                   <filename>JMRI program</filename>
                 </operation>
                 <operation>
                   <type>Load OK</type>
-                  <date>Mon Mar 28 08:52:03 EDT 2022</date>
+                  <date>Mon Mar 28 08:52:59 EDT 2022</date>
                   <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                   <filehistory>
                     <operation>
                       <type>app</type>
-                      <date>Sun Mar 27 18:34:50 EDT 2022</date>
+                      <date>Mon Mar 28 08:52:01 EDT 2022</date>
                       <filename>JMRI program</filename>
                     </operation>
                     <operation>
                       <type>Load OK</type>
-                      <date>Sun Mar 27 18:34:51 EDT 2022</date>
+                      <date>Mon Mar 28 08:52:03 EDT 2022</date>
                       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                       <filehistory>
                         <operation>
                           <type>app</type>
-                          <date>Sun Mar 27 16:53:03 EDT 2022</date>
+                          <date>Sun Mar 27 18:34:50 EDT 2022</date>
                           <filename>JMRI program</filename>
                         </operation>
                         <operation>
                           <type>Load OK</type>
-                          <date>Sun Mar 27 16:53:05 EDT 2022</date>
+                          <date>Sun Mar 27 18:34:51 EDT 2022</date>
                           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                         </operation>
                         <operation>
                           <type>Store</type>
-                          <date>Sun Mar 27 16:53:22 EDT 2022</date>
+                          <date>Sun Mar 27 18:35:07 EDT 2022</date>
                           <filename />
                         </operation>
                       </filehistory>
                     </operation>
                     <operation>
                       <type>Store</type>
-                      <date>Sun Mar 27 18:35:07 EDT 2022</date>
+                      <date>Mon Mar 28 08:52:12 EDT 2022</date>
                       <filename />
                     </operation>
                   </filehistory>
                 </operation>
                 <operation>
                   <type>Store</type>
-                  <date>Mon Mar 28 08:52:12 EDT 2022</date>
+                  <date>Mon Mar 28 08:56:29 EDT 2022</date>
                   <filename />
                 </operation>
               </filehistory>
             </operation>
             <operation>
               <type>Store</type>
-              <date>Mon Mar 28 08:56:29 EDT 2022</date>
+              <date>Mon Mar 28 09:00:09 EDT 2022</date>
               <filename />
             </operation>
           </filehistory>
         </operation>
         <operation>
           <type>Store</type>
-          <date>Mon Mar 28 09:00:09 EDT 2022</date>
+          <date>Mon Mar 28 09:10:35 EDT 2022</date>
           <filename />
         </operation>
       </filehistory>
     </operation>
     <operation>
       <type>Store</type>
-      <date>Mon Mar 28 09:10:35 EDT 2022</date>
+      <date>Mon Mar 28 09:18:36 EDT 2022</date>
       <filename />
     </operation>
   </filehistory>
-  <!--Written by JMRI version 4.99.4plus+jake+20220328T1306Z+R887851edab on Mon Mar 28 09:10:35 EDT 2022-->
+  <!--Written by JMRI version 4.99.4plus+jake+20220328T1313Z+R887851edab on Mon Mar 28 09:18:36 EDT 2022-->
 </layout-config>
