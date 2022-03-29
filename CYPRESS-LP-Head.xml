@@ -177,7 +177,7 @@
     </turnout>
   </turnouts>
   <memories class="jmri.managers.configurexml.DefaultMemoryManagerXml">
-    <memory value="5:31 PM">
+    <memory value="7:32 PM">
       <systemName>IMCURRENTTIME</systemName>
     </memory>
     <memory value="1.0">
@@ -1305,7 +1305,7 @@
     </conditional>
   </conditionals>
   <timebase class="jmri.jmrit.simpleclock.configurexml.SimpleTimebaseXml" time="Fri Feb 04 12:30:38 EST 2022" rate="1.0" startrate="1.0" run="yes" master="yes" sync="no" correct="no" display="no" startstopped="no" startrunning="yes" startsettime="no" startclockoption="0" showbutton="no" startsetrate="yes" />
-  <paneleditor class="jmri.jmrit.display.panelEditor.configurexml.PanelEditorXml" name="Wye Details" x="55" y="194" height="875" width="1447" editable="yes" positionable="yes" showtooltips="yes" controlling="yes" hide="yes" panelmenu="yes" scrollable="both" redBackground="255" greenBackground="255" blueBackground="255">
+  <paneleditor class="jmri.jmrit.display.panelEditor.configurexml.PanelEditorXml" name="Wye Details" x="55" y="517" height="875" width="1447" editable="yes" positionable="yes" showtooltips="yes" controlling="yes" hide="yes" panelmenu="yes" scrollable="both" redBackground="255" greenBackground="255" blueBackground="255">
     <positionablelabel x="0" y="0" level="1" forcecontroloff="false" hidden="yes" positionable="true" showtooltip="false" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
       <icon url="preference:Wye-Zoomed.png" degrees="0" scale="1.0">
         <rotation>0</rotation>
@@ -1820,7 +1820,7 @@
       <iconmaps />
     </sensoricon>
   </paneleditor>
-  <paneleditor class="jmri.jmrit.display.panelEditor.configurexml.PanelEditorXml" name="CYPRESS Panel" x="3" y="100" height="1011" width="1849" editable="yes" positionable="yes" showtooltips="yes" controlling="yes" hide="yes" panelmenu="yes" scrollable="both" redBackground="255" greenBackground="255" blueBackground="255">
+  <paneleditor class="jmri.jmrit.display.panelEditor.configurexml.PanelEditorXml" name="CYPRESS Panel" x="0" y="423" height="1011" width="1849" editable="yes" positionable="yes" showtooltips="yes" controlling="yes" hide="yes" panelmenu="yes" scrollable="both" redBackground="255" greenBackground="255" blueBackground="255">
     <positionablelabel x="0" y="0" level="1" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
       <icon url="preference:QNIempire3b-WYE.png" degrees="0" scale="1.0">
         <rotation>0</rotation>
@@ -3085,7 +3085,7 @@
     <BlockContentsIcon blockcontents="IS1" x="22" y="233" level="5" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="yes" redBack="192" greenBack="192" blueBack="192" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
     <BlockContentsIcon blockcontents="IS20" x="893" y="465" level="5" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="yes" redBack="192" greenBack="192" blueBack="192" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
     <BlockContentsIcon blockcontents="IS19" x="943" y="610" level="5" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="yes" redBack="192" greenBack="192" blueBack="192" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS8" x="1508" y="227" level="5" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="yes" redBack="192" greenBack="192" blueBack="192" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS8" x="1484" y="213" level="5" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="yes" redBack="192" greenBack="192" blueBack="192" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
     <BlockContentsIcon blockcontents="IS2" x="288" y="42" level="5" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="yes" redBack="192" greenBack="192" blueBack="192" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
     <BlockContentsIcon blockcontents="IS3" x="516" y="45" level="5" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="yes" redBack="192" greenBack="192" blueBack="192" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
     <BlockContentsIcon blockcontents="IS4" x="659" y="52" level="5" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="yes" redBack="192" greenBack="192" blueBack="192" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
@@ -3244,7 +3244,7 @@
     </sensoricon>
     <BlockContentsIcon blockcontents="IS33" x="541" y="185" level="5" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="yes" redBack="192" greenBack="192" blueBack="192" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
   </paneleditor>
-  <LayoutEditor class="jmri.jmrit.display.layoutEditor.configurexml.LayoutEditorXml" name="CYPRESS Layout" x="53" y="150" windowheight="854" windowwidth="1640" panelheight="590" panelwidth="1106" sliders="no" scrollable="none" editable="no" positionable="yes" controlling="yes" animating="yes" showhelpbar="no" drawgrid="yes" snaponadd="no" snaponmove="no" antialiasing="yes" turnoutcircles="no" tooltipsnotedit="no" tooltipsinedit="yes" mainlinetrackwidth="4" xscale="1.0" yscale="1.0" sidetrackwidth="2" defaulttrackcolor="darkGray" defaultoccupiedtrackcolor="red" defaultalternativetrackcolor="white" defaulttextcolor="black" turnoutcirclecolor="black" turnoutcirclesize="4" turnoutdrawunselectedleg="yes" turnoutbx="20.0" turnoutcx="20.0" turnoutwid="10.0" xoverlong="30.0" xoverhwid="10.0" xovershort="10.0" autoblkgenerate="no" redBackground="192" greenBackground="192" blueBackground="192" gridSize="10" gridSize2nd="10" openDispatcher="no" useDirectTurnoutControl="yes">
+  <LayoutEditor class="jmri.jmrit.display.layoutEditor.configurexml.LayoutEditorXml" name="CYPRESS Layout" x="53" y="473" windowheight="854" windowwidth="1640" panelheight="590" panelwidth="1106" sliders="no" scrollable="none" editable="no" positionable="yes" controlling="yes" animating="yes" showhelpbar="no" drawgrid="yes" snaponadd="no" snaponmove="no" antialiasing="yes" turnoutcircles="no" tooltipsnotedit="no" tooltipsinedit="yes" mainlinetrackwidth="4" xscale="1.0" yscale="1.0" sidetrackwidth="2" defaulttrackcolor="darkGray" defaultoccupiedtrackcolor="red" defaultalternativetrackcolor="white" defaulttextcolor="black" turnoutcirclecolor="black" turnoutcirclesize="4" turnoutdrawunselectedleg="yes" turnoutbx="20.0" turnoutcx="20.0" turnoutwid="10.0" xoverlong="30.0" xoverhwid="10.0" xovershort="10.0" autoblkgenerate="no" redBackground="192" greenBackground="192" blueBackground="192" gridSize="10" gridSize2nd="10" openDispatcher="no" useDirectTurnoutControl="yes">
     <layoutTrackDrawingOptions name="CYPRESS Layout" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutTrackDrawingOptionsXml">
       <mainBallastColor>#000000</mainBallastColor>
       <mainBallastWidth>0</mainBallastWidth>
@@ -4097,104 +4097,104 @@
   <filehistory>
     <operation>
       <type>app</type>
-      <date>Mon Mar 28 17:19:54 EDT 2022</date>
+      <date>Mon Mar 28 17:54:06 EDT 2022</date>
       <filename>JMRI program</filename>
     </operation>
     <operation>
       <type>Load OK</type>
-      <date>Mon Mar 28 17:19:56 EDT 2022</date>
+      <date>Mon Mar 28 17:54:08 EDT 2022</date>
       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
       <filehistory>
         <operation>
           <type>app</type>
-          <date>Mon Mar 28 16:55:35 EDT 2022</date>
+          <date>Mon Mar 28 17:19:54 EDT 2022</date>
           <filename>JMRI program</filename>
         </operation>
         <operation>
           <type>Load OK</type>
-          <date>Mon Mar 28 16:55:37 EDT 2022</date>
+          <date>Mon Mar 28 17:19:56 EDT 2022</date>
           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
           <filehistory>
             <operation>
               <type>app</type>
-              <date>Mon Mar 28 16:53:58 EDT 2022</date>
+              <date>Mon Mar 28 16:55:35 EDT 2022</date>
               <filename>JMRI program</filename>
             </operation>
             <operation>
               <type>Load OK</type>
-              <date>Mon Mar 28 16:54:00 EDT 2022</date>
+              <date>Mon Mar 28 16:55:37 EDT 2022</date>
               <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
               <filehistory>
                 <operation>
                   <type>app</type>
-                  <date>Mon Mar 28 16:50:59 EDT 2022</date>
+                  <date>Mon Mar 28 16:53:58 EDT 2022</date>
                   <filename>JMRI program</filename>
                 </operation>
                 <operation>
                   <type>Load OK</type>
-                  <date>Mon Mar 28 16:51:01 EDT 2022</date>
+                  <date>Mon Mar 28 16:54:00 EDT 2022</date>
                   <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                   <filehistory>
                     <operation>
                       <type>app</type>
-                      <date>Mon Mar 28 16:40:47 EDT 2022</date>
+                      <date>Mon Mar 28 16:50:59 EDT 2022</date>
                       <filename>JMRI program</filename>
                     </operation>
                     <operation>
                       <type>Load OK</type>
-                      <date>Mon Mar 28 16:40:49 EDT 2022</date>
+                      <date>Mon Mar 28 16:51:01 EDT 2022</date>
                       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                       <filehistory>
                         <operation>
                           <type>app</type>
-                          <date>Mon Mar 28 15:49:32 EDT 2022</date>
+                          <date>Mon Mar 28 16:40:47 EDT 2022</date>
                           <filename>JMRI program</filename>
                         </operation>
                         <operation>
                           <type>Load OK</type>
-                          <date>Mon Mar 28 15:49:34 EDT 2022</date>
+                          <date>Mon Mar 28 16:40:49 EDT 2022</date>
                           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                         </operation>
                         <operation>
                           <type>Store</type>
-                          <date>Mon Mar 28 15:56:48 EDT 2022</date>
+                          <date>Mon Mar 28 16:49:45 EDT 2022</date>
                           <filename />
                         </operation>
                       </filehistory>
                     </operation>
                     <operation>
                       <type>Store</type>
-                      <date>Mon Mar 28 16:49:45 EDT 2022</date>
+                      <date>Mon Mar 28 16:52:23 EDT 2022</date>
                       <filename />
                     </operation>
                   </filehistory>
                 </operation>
                 <operation>
                   <type>Store</type>
-                  <date>Mon Mar 28 16:52:23 EDT 2022</date>
+                  <date>Mon Mar 28 16:54:50 EDT 2022</date>
                   <filename />
                 </operation>
               </filehistory>
             </operation>
             <operation>
               <type>Store</type>
-              <date>Mon Mar 28 16:54:50 EDT 2022</date>
+              <date>Mon Mar 28 17:03:24 EDT 2022</date>
               <filename />
             </operation>
           </filehistory>
         </operation>
         <operation>
           <type>Store</type>
-          <date>Mon Mar 28 17:03:24 EDT 2022</date>
+          <date>Mon Mar 28 17:31:44 EDT 2022</date>
           <filename />
         </operation>
       </filehistory>
     </operation>
     <operation>
       <type>Store</type>
-      <date>Mon Mar 28 17:31:44 EDT 2022</date>
+      <date>Mon Mar 28 19:32:44 EDT 2022</date>
       <filename />
     </operation>
   </filehistory>
-  <!--Written by JMRI version 4.99.4plus+jake+20220328T2119Z+R887851edab on Mon Mar 28 17:31:44 EDT 2022-->
+  <!--Written by JMRI version 4.99.4plus+jake+20220328T2154Z+R887851edab on Mon Mar 28 19:32:44 EDT 2022-->
 </layout-config>
