@@ -51,7 +51,7 @@ class Topology:
     # Representations
     def __repr__(self):
         return "Topology for "+self.thisBlock.getDisplayName()
-    def _str_(self):
+    def __str__(self):
         return "Topology for "+self.thisBlock.getDisplayName()+" to "+self.nextBlock.getDisplayName()
     # Calculate the next block for the train given turnout position as needed
     #   Returns None if no move allowed i.e. due to turnout set against
