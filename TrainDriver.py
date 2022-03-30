@@ -24,6 +24,19 @@ sensorToBlockDict = {}
 for key in blockToSensorDict :
     sensorToBlockDict[blockToSensorDict[key]] = key
 
+# Represent a train
+class Train:
+    # Argument is name of train
+    def __init__(self, name):
+        self.name = name
+        return
+    def __repr__(self):
+        return self.name
+    def __str__(self):
+        return self.name
+    def toString(self):
+        return self.__str__()
+
 # Represent one node of the layout topology
 # N.B. This is redundant with JMRI LayoutEditor info, but this script is meant to be an example of standalone operation outside JMRI
 class Topology:
@@ -51,7 +64,7 @@ class Topology:
     # Representations
     def __repr__(self):
         return "Topology for "+self.thisBlock.getDisplayName()
-    def _str_(self):
+    def __str__(self):
         return "Topology for "+self.thisBlock.getDisplayName()+" to "+self.nextBlock.getDisplayName()
     # Calculate the next block for the train given turnout position as needed
     #   Returns None if no move allowed i.e. due to turnout set against
@@ -165,13 +178,13 @@ class StartTrack1ButtonHandler(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
         global nextTrainNumber
         sensors.getSensor(blockNameToSensorNameDict["IBIS1"]).setState(ACTIVE)
-        blocks.getBlock("IBIS1").setValue("Train "+str(nextTrainNumber))
+        blocks.getBlock("IBIS1").setValue(Train("Train "+str(nextTrainNumber)))
         nextTrainNumber = nextTrainNumber+1
 class StartTrack2ButtonHandler(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
         global nextTrainNumber
         sensors.getSensor(blockNameToSensorNameDict["IBIS16"]).setState(ACTIVE)
-        blocks.getBlock("IBIS16").setValue("Train "+str(nextTrainNumber))
+        blocks.getBlock("IBIS16").setValue(Train("Train "+str(nextTrainNumber)))
         nextTrainNumber = nextTrainNumber+1
 class StepTrainsButtonHandler(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
