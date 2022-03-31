@@ -79,7 +79,7 @@ class Topology:
     #   turnout   - name of turnout in block, if any, or None
     #   nextDivergingBlock - name of diverging track, if turnout present and relevant, or None
     #   typeTurnout - one of the Topology constants for connectivity
-    #   signals - array of signals at exit or None if none; empty array not supported (TODO)
+    #   signals - array of signals at exit; empty array or None if none
     def __init__(self, thisBlock, nextBlock, turnout, nextDivergingBlock, typeTurnout, signals) :
         self.thisBlock = blocks.provideBlock(thisBlock)
         self.nextBlock = blocks.provideBlock(nextBlock)
@@ -135,7 +135,7 @@ class Topology:
     # (often there's just one signal, but there's also the case of double head signals and no signals...)
     def anyCleared(self) :
         # special case of no signals
-        if (not self.signals) : return True
+        if (not self.signals) : return True  # empty or None
         for signal in self.signals :
             if (signals.getSignalHead(signal).isCleared() and not signals.getSignalHead(signal).getHeld()) : return True
         return False
@@ -270,34 +270,32 @@ def occupied(block) :
 
 # Method for moving all trains forward one step.
 # Multiple phases to avoid trains stepping on each other:
-#  1) Train status checks (avoids having to edit blocks by hand, you can just add or remove with sensors)
+#  1) Train location checks (avoids having to edit blocks by hand, you can just add or remove with sensors)
 #  2) Find all trains that can move into a next block
 #  3) Move all those
 #  4) Move those back ends
 def stepTrains() :
     # 1) Train status checks - this is a bit brute-force for now, but
-    #                          needed because Block doesn't notify when
-    #                          a block content (train) is removed
-    # check for removed trains
+    #                          needed because we're not yet using Block listeners to
+    #                          be notified if a block content (train) is added/removed.
+    # check for extended or shrunk trains by recreating the front and rear references
     allTrains = []
     for node in topologyNodes :
         train = node.thisBlock.getValue()
-        if (train != None) :
+        if (train != None and not train in allTrains) : # do each train only once
             allTrains.append(train)
-    # check for trains that have had blocks added at front
-    for train in allTrains :
-        #print ("first check "+str(train)+" vs "+str(train.frontNode.dynamicNext().getValue()))
-        while (train == train.frontNode.dynamicNext().getValue()) :
-            print("extended "+str(train)+" to "+str(getTopoFromBlockName(train.frontNode.dynamicNext())))
-            train.frontNode = getTopoFromBlockName(train.frontNode.dynamicNext().getSystemName())
-    # check for trains that have had blocks added at back
-    for train in allTrains :
-        #print ("second check "+str(train)+" vs "+str(train.rearNode.dynamicPrior().getValue()))
-        while (train == train.rearNode.dynamicPrior().getValue()) :
-            print("extended "+str(train)+" to "+str(getTopoFromBlockName(train.rearNode.dynamicPrior())))
-            train.rearNode = getTopoFromBlockName(train.rearNode.dynamicPrior().getSystemName())
-    # check for trains that have had blocks removed at front
-    # check for trains that have had blocks removed at back
+            # locate the train on the block we found it
+            train.frontNode = node
+            train.rearNode = node
+            # scan for the front of the train and exend as needed
+            while (train.frontNode.dynamicNext() != None and train == train.frontNode.dynamicNext().getValue()) :
+                #print("extended "+str(train)+" to front to "+str(getTopoFromBlockName(train.frontNode.dynamicNext())))
+                train.frontNode = getTopoFromBlockName(train.frontNode.dynamicNext().getSystemName())
+            # scan for the back of the train and extend as needed
+            while (train.rearNode.dynamicPrior() != None and train == train.rearNode.dynamicPrior().getValue()) :
+                #print("extended "+str(train)+" to rear to "+str(getTopoFromBlockName(train.rearNode.dynamicPrior())))
+                train.rearNode = getTopoFromBlockName(train.rearNode.dynamicPrior().getSystemName())
+            #print(str(train)+" from "+str(train.rearNode)+" to "+str(train.frontNode))
 
     # 2) make a list of those to move to extend front of trains
     moveNodes = []
