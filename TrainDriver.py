@@ -15,6 +15,9 @@ import javax.swing
 blockNameToSensorNameDict = {}
 for block in blocks.getNamedBeanSet() :
     blockNameToSensorNameDict[block.getSystemName()] = block.getSensor().getSystemName()
+    # check for incomplete block -> sensor setup (should never happen if JMRI config OK)
+    if (block.getSystemName()== "" or block.getSystemName()== None) :
+        print ("Unexpected config: block "+block.getSystemName()+" has no defined sensor")
 # Map Block object reference to Sensor object reference
 blockToSensorDict = {}
 for key in blockNameToSensorNameDict :
@@ -26,9 +29,14 @@ for key in blockToSensorDict :
 
 # Represent a train
 class Train:
-    # Argument is name of train
-    def __init__(self, name):
+    # Arguments
+    #   (visible) name of train
+    #   node that front and rear start in (or None)
+    def __init__(self, name, node):
         self.name = name
+        self.frontNode = node
+        self.rearNode = node
+        allTrains.append(self)
         return
     def __repr__(self):
         return self.name
@@ -36,6 +44,18 @@ class Train:
         return self.name
     def toString(self):
         return self.__str__()
+    # Is it possible for this train to advance?
+    def willAdvanceFront(self) :
+        if (not self.frontNode.anyCleared()) :
+            print (str(self)+" in "+str(self.frontNode.thisBlock)+" stopped due to signal")
+            return False
+        print ("from "+str(self.frontNode.thisBlock.displayName)+" to "+str(self.frontNode.dynamicNext())+" is "+str(occupied(self.frontNode.dynamicNext())) )
+        if (occupied(self.frontNode.thisBlock) and not occupied(self.frontNode.dynamicNext())) : return True
+        return False
+
+# Collection of all Trains
+# N.B: not (yet) removing trains from this if they're dropped on the layout
+allTrains = []
 
 # Represent one node of the layout topology
 # N.B. This is redundant with JMRI LayoutEditor info, but this script is meant to be an example of standalone operation outside JMRI
@@ -103,9 +123,11 @@ class Topology:
         if (occupied(self.thisBlock) and not occupied(self.dynamicNext())) : return True
         return False
     # Advance the front of the train in this block, i.e. move into next block
-    def advanceFront(self) :
+    def advanceFront(self, train) :
         #print ("setting "+blockToSensorDict[self.dynamicNext()].getSystemName()+" ACTIVE")
         blockToSensorDict[self.dynamicNext()].setState(ACTIVE)
+        #print("setting "+str(train)+" frontNode to "+str(getTopoFromBlockName(self.dynamicNext().getSystemName())))
+        train.frontNode = getTopoFromBlockName(self.dynamicNext().getSystemName())
         return
     # Advance the rear of the train in this block, i.e. clear the block
     def advanceRear(self) :
@@ -151,6 +173,16 @@ topologyNodes = [
     Topology("IBIS11","IBIS16", None,       None,   Topology.SIMPLE,            ["IHTr2-Ss01"]),
 ]
 
+# Get topology element for a particular block or none
+# Used for convenience when you have e.g. the initial block name
+def getTopoFromBlockName(blockName):
+    for node in topologyNodes:
+        if (node.thisBlock.getSystemName() == blockName):
+            return node
+        if (node.thisBlock.getUserName() == blockName):  # can specify either for convenience
+            return node
+    return None
+
 # Debugging printout
 #print (blockToSensorDict)
 #print (sensorToBlockDict)
@@ -176,19 +208,22 @@ class ClearButtonHandler(java.awt.event.ActionListener) :
         nextTrainNumber = 1
 class StartTrack1ButtonHandler(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
-        global nextTrainNumber
-        sensors.getSensor(blockNameToSensorNameDict["IBIS1"]).setState(ACTIVE)
-        blocks.getBlock("IBIS1").setValue(Train("Train "+str(nextTrainNumber)))
-        nextTrainNumber = nextTrainNumber+1
+        blockName = "IBIS1"
+        launchNewTrain(blockName)
 class StartTrack2ButtonHandler(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
-        global nextTrainNumber
-        sensors.getSensor(blockNameToSensorNameDict["IBIS16"]).setState(ACTIVE)
-        blocks.getBlock("IBIS16").setValue(Train("Train "+str(nextTrainNumber)))
-        nextTrainNumber = nextTrainNumber+1
+        blockName = "IBIS16"
+        launchNewTrain(blockName)
 class StepTrainsButtonHandler(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
-            stepTrains()
+        stepTrains()
+def launchNewTrain(blockName) :
+    global nextTrainNumber
+    train = Train("Train "+str(nextTrainNumber), getTopoFromBlockName(blockName))
+    sensors.getSensor(blockNameToSensorNameDict[blockName]).setState(ACTIVE)
+    blocks.getBlock(blockName).setValue(train)
+    nextTrainNumber = nextTrainNumber+1
+
 # Second, create a frame to hold the buttons, put buttons in it, and display
 f = javax.swing.JFrame("Autorun Control")
 f.setLayout(java.awt.FlowLayout())
@@ -235,18 +270,20 @@ def occupied(block) :
 #  3) Find the block of the back end of all trains that can move
 #  4) Move those back ends
 def stepTrains() :
+    # check for removed trains
+
     # extend front of trains
     # 1) make a list of those to move
     moveNodes = []
     moveTrains = []
     for node in topologyNodes :
-        if (node.willAdvanceFront()) :
+        if (node.thisBlock.getValue()!=None and node.thisBlock.getValue().willAdvanceFront()) :
             moveNodes.append(node)
     # 2) move them
     for node in moveNodes :
         train = node.thisBlock.getValue()
         if (not train in moveTrains) : moveTrains.append(train)
-        node.advanceFront()
+        node.advanceFront(train)
 
     # catch up rear of train
     # 3) find rear block of moved trains
