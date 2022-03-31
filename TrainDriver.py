@@ -47,11 +47,18 @@ class Train:
     # Is it possible for this train to advance?
     def willAdvanceFront(self) :
         if (not self.frontNode.anyCleared()) :
-            print (str(self)+" in "+str(self.frontNode.thisBlock)+" stopped due to signal")
+            #print (str(self)+" in "+str(self.frontNode.thisBlock)+" stopped due to signal")
             return False
-        print ("from "+str(self.frontNode.thisBlock.displayName)+" to "+str(self.frontNode.dynamicNext())+" is "+str(occupied(self.frontNode.dynamicNext())) )
+        #print ("from "+str(self.frontNode.thisBlock.displayName)+" to "+str(self.frontNode.dynamicNext())+" is "+str(occupied(self.frontNode.dynamicNext())) )
         if (occupied(self.frontNode.thisBlock) and not occupied(self.frontNode.dynamicNext())) : return True
         return False
+    # Advance the front of the train, i.e. move into next block
+    def advanceFront(self) :
+        #print ("setting "+blockToSensorDict[self.dynamicNext()].getSystemName()+" ACTIVE")
+        blockToSensorDict[self.frontNode.dynamicNext()].setState(ACTIVE)
+        #print("setting "+str(self)+" frontNode to "+str(getTopoFromBlockName(self.frontNode.dynamicNext().getSystemName())))
+        self.frontNode = getTopoFromBlockName(self.frontNode.dynamicNext().getSystemName())
+        return
 
 # Collection of all Trains
 # N.B: not (yet) removing trains from this if they're dropped on the layout
@@ -115,20 +122,6 @@ class Topology:
         for signal in self.signals :
             if (signals.getSignalHead(signal).isCleared() and not signals.getSignalHead(signal).getHeld()) : return True
         return False
-    # Is it possible for the train in this block to advance?
-    def willAdvanceFront(self) :
-        if (not self.anyCleared()) :
-            return False
-        #print ("from "+self.thisBlock.displayName+" to "+str(self.dynamicNext())+" is "+str(occupied(self.dynamicNext())) )
-        if (occupied(self.thisBlock) and not occupied(self.dynamicNext())) : return True
-        return False
-    # Advance the front of the train in this block, i.e. move into next block
-    def advanceFront(self, train) :
-        #print ("setting "+blockToSensorDict[self.dynamicNext()].getSystemName()+" ACTIVE")
-        blockToSensorDict[self.dynamicNext()].setState(ACTIVE)
-        #print("setting "+str(train)+" frontNode to "+str(getTopoFromBlockName(self.dynamicNext().getSystemName())))
-        train.frontNode = getTopoFromBlockName(self.dynamicNext().getSystemName())
-        return
     # Advance the rear of the train in this block, i.e. clear the block
     def advanceRear(self) :
         #print ("setting "+blockToSensorDict[self.dynamicNext()].getSystemName()+" INACTIVE for "+self.thisBlock.getSystemName())
@@ -270,20 +263,26 @@ def occupied(block) :
 #  3) Find the block of the back end of all trains that can move
 #  4) Move those back ends
 def stepTrains() :
-    # check for removed trains
+    # check for removed trains - this is a bit brute-force for now, but
+    #                            needed because Block doesn't notify when
+    #                            a block content (train) is removed
+    allTrains = []
+    for node in topologyNodes :
+        train = node.thisBlock.getValue()
+        if (train != None) :
+            allTrains.append(train)
 
     # extend front of trains
     # 1) make a list of those to move
     moveNodes = []
     moveTrains = []
-    for node in topologyNodes :
-        if (node.thisBlock.getValue()!=None and node.thisBlock.getValue().willAdvanceFront()) :
-            moveNodes.append(node)
+    for train in allTrains :
+        if (train.frontNode.thisBlock.getValue()!=None and train.frontNode.thisBlock.getValue().willAdvanceFront()) :
+            moveNodes.append(train.frontNode)
+            moveTrains.append(train)
     # 2) move them
-    for node in moveNodes :
-        train = node.thisBlock.getValue()
-        if (not train in moveTrains) : moveTrains.append(train)
-        node.advanceFront(train)
+    for train in moveTrains :
+        train.advanceFront()
 
     # catch up rear of train
     # 3) find rear block of moved trains
@@ -328,3 +327,4 @@ class AutoRun(jmri.jmrit.automat.AbstractAutomaton) :
         self.waitMsec(2000)
         return True
 AutoRun().start()
+
