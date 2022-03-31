@@ -59,6 +59,12 @@ class Train:
         #print("setting "+str(self)+" frontNode to "+str(getTopoFromBlockName(self.frontNode.dynamicNext().getSystemName())))
         self.frontNode = getTopoFromBlockName(self.frontNode.dynamicNext().getSystemName())
         return
+    # Advance the rear of the train, i.e. clear the block
+    def advanceRear(self) :
+        #print ("setting "+blockToSensorDict[self.dynamicNext()].getSystemName()+" INACTIVE for "+self.thisBlock.getSystemName())
+        blockToSensorDict[self.rearNode.thisBlock].setState(INACTIVE)
+        self.rearNode = getTopoFromBlockName(self.rearNode.dynamicNext().getSystemName())
+        return
 
 # Collection of all Trains
 # N.B: not (yet) removing trains from this if they're dropped on the layout
@@ -113,6 +119,17 @@ class Topology:
                 return self.nextDivergingBlock
             else :
                 return self.nextBlock
+    # Find the prior block to this one
+    # Can return None if there is no prior block, i.e. in wye or turnout set against
+    def dynamicPrior(self) :
+        # node contains train, but not last if also in prior
+        for prior in topologyNodes : #scan for prior
+            #print("      check prior \""+str(prior)+"\" with next \""+str(prior.dynamicNext())+"\"")
+            if (prior.dynamicNext() == self.thisBlock) :
+                #print ("         found prior "+str(prior)+" for train "+str(self.thisBlock.getValue()))
+                return prior.thisBlock
+        # did not find one, return None
+        return None
     # Check if any of the exit signals allow movement.
     # Return True if movement allowed
     # (often there's just one signal, but there's also the case of double head signals and no signals...)
@@ -122,11 +139,6 @@ class Topology:
         for signal in self.signals :
             if (signals.getSignalHead(signal).isCleared() and not signals.getSignalHead(signal).getHeld()) : return True
         return False
-    # Advance the rear of the train in this block, i.e. clear the block
-    def advanceRear(self) :
-        #print ("setting "+blockToSensorDict[self.dynamicNext()].getSystemName()+" INACTIVE for "+self.thisBlock.getSystemName())
-        blockToSensorDict[self.thisBlock].setState(INACTIVE)
-        return
 
 Topology.SIMPLE = 0             # straight through block
 Topology.FACING = 1             # facing point, with two exits
@@ -258,66 +270,50 @@ def occupied(block) :
 
 # Method for moving all trains forward one step.
 # Multiple phases to avoid trains stepping on each other:
-#  1) Find all trains that can move into a next block
-#  2) Move all those
-#  3) Find the block of the back end of all trains that can move
+#  1) Train status checks (avoids having to edit blocks by hand, you can just add or remove with sensors)
+#  2) Find all trains that can move into a next block
+#  3) Move all those
 #  4) Move those back ends
 def stepTrains() :
-    # check for removed trains - this is a bit brute-force for now, but
-    #                            needed because Block doesn't notify when
-    #                            a block content (train) is removed
+    # 1) Train status checks - this is a bit brute-force for now, but
+    #                          needed because Block doesn't notify when
+    #                          a block content (train) is removed
+    # check for removed trains
     allTrains = []
     for node in topologyNodes :
         train = node.thisBlock.getValue()
         if (train != None) :
             allTrains.append(train)
+    # check for trains that have had blocks added at front
+    for train in allTrains :
+        #print ("first check "+str(train)+" vs "+str(train.frontNode.dynamicNext().getValue()))
+        while (train == train.frontNode.dynamicNext().getValue()) :
+            print("extended "+str(train)+" to "+str(getTopoFromBlockName(train.frontNode.dynamicNext())))
+            train.frontNode = getTopoFromBlockName(train.frontNode.dynamicNext().getSystemName())
+    # check for trains that have had blocks added at back
+    for train in allTrains :
+        #print ("second check "+str(train)+" vs "+str(train.rearNode.dynamicPrior().getValue()))
+        while (train == train.rearNode.dynamicPrior().getValue()) :
+            print("extended "+str(train)+" to "+str(getTopoFromBlockName(train.rearNode.dynamicPrior())))
+            train.rearNode = getTopoFromBlockName(train.rearNode.dynamicPrior().getSystemName())
+    # check for trains that have had blocks removed at front
+    # check for trains that have had blocks removed at back
 
-    # extend front of trains
-    # 1) make a list of those to move
+    # 2) make a list of those to move to extend front of trains
     moveNodes = []
     moveTrains = []
     for train in allTrains :
         if (train.frontNode.thisBlock.getValue()!=None and train.frontNode.thisBlock.getValue().willAdvanceFront()) :
             moveNodes.append(train.frontNode)
             moveTrains.append(train)
-    # 2) move them
+    # 3) move them
     for train in moveTrains :
         train.advanceFront()
 
-    # catch up rear of train
-    # 3) find rear block of moved trains
-    moveNodes = []
+    # 4) advance the rear of the moved trains
     for train in moveTrains :
-        #print("scanning for "+str(train))
-        # find rear of this train in prior block
-        for node in topologyNodes :
-            if (node.thisBlock.getValue() == train) :
-                #print ("   found train \""+str(train)+"\" in \""+str(node)+"\"")
-                # node contains train, so check if also in prior
-                prior = findPrior(node, train)
-                if (prior == None) :
-                    # no prior, this is back of train
-                    moveNodes.append(node)
-                    break # found end, go to next train entry
-                else :
-                    # there is a prior, check to see if train there too
-                    if (prior.thisBlock.getValue() != train) :
-                        # no, this is back end of train
-                       moveNodes.append(node)
-                       break # found end, go to next train entry
-    # 4) advance the rear blocks
-    for node in moveNodes :
-        node.advanceRear()
+        train.advanceRear()
 
-# Service routine to find the prior block to this one
-def findPrior(node, train) :
-    # node contains train, but not last if also in prior
-    for prior in topologyNodes : #scan for prior
-        #print("      check prior \""+str(prior)+"\" with next \""+str(prior.dynamicNext())+"\"")
-        if (prior.dynamicNext() == node.thisBlock) :
-            #print ("         found prior "+str(prior)+" with train "+str(prior.thisBlock.getValue()))
-            return prior
-    # did not find one, return None
 
 # Start a thread to do the auto-run if box checked
 class AutoRun(jmri.jmrit.automat.AbstractAutomaton) :
