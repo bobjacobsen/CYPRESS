@@ -74,12 +74,10 @@ class Train:
                 signals = self.rearNode.signalsCCW
             else :
                 signals = self.rearNode.signalsCW
-        print (str(self.fwd)+" "+str(self.cw)+" "+str(signals)+" "+str(anyCleared(signals)))
         return anyCleared(signals)
     # Is it possible for this train to advance?
     def willAdvanceFront(self) :
         if (not self.signalsClear()) :
-            print (str(self)+" in "+str(self.frontNode.thisBlock)+" stopped due to signal")
             return False
         if (occupied(self.frontNode.thisBlock) and not occupied(self.nextFwd())) : return True
         return False
@@ -271,7 +269,6 @@ class TrainListSelection(java.awt.event.ActionListener) :
 class DirectionSelection(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
         train = trainComboBox.getSelectedItem()
-        print("got "+str(train))
         if (train != None) :
             train.cw = checkCW.isSelected()
             train.fwd = checkFwd.isSelected()
