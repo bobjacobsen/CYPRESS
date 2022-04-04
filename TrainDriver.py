@@ -78,11 +78,14 @@ class Train:
     # Is it possible for this train to advance?
     def willAdvanceFront(self) :
         if (not self.signalsClear()) :
+            print (str(self)+" not advancing due to signals")
             return False
         if (occupied(self.frontNode.thisBlock) and not occupied(self.nextFwd())) : return True
+        print(str(self)+" not advancing because "+str(self.nextFwd())+" is occupied "+str(occupied(self.nextFwd())) )
         return False
     # Advance the front of the train, i.e. move into next block
     def advanceFront(self) :
+        print (str(self)+" advances to "+str(self.nextFwd()))
         blockToSensorDict[self.nextFwd()].setState(ACTIVE)
         self.frontNode = getTopoFromBlockName(self.nextFwd().getSystemName())
         return
@@ -118,7 +121,10 @@ class Topology:
     #   signals - array of signals at exit; empty array or None if none
     def __init__(self, thisBlock, nextBlock, turnout, nextDivergingBlock, typeTurnout, signalsCW, signalsCCW) :
         self.thisBlock = blocks.provideBlock(thisBlock)
-        self.nextBlock = blocks.provideBlock(nextBlock)
+
+        if (nextBlock != None) : self.nextBlock = blocks.provideBlock(nextBlock)
+        else : self.nextBlock = None
+
         if (turnout != None) :
             self.turnout = turnouts.provideTurnout(turnout)
         else :
@@ -193,16 +199,23 @@ topologyNodes = [
 
     # Track 2
     Topology("IBIS16","IBIS12", None,       None,   Topology.SIMPLE,            ["IHTr2-Ss02"],     []),
-    Topology("IBIS12","IBIS22", None,       None,   Topology.SIMPLE,            ["IHTr2-Ss03"],     []),
+    Topology("IBIS12","IBIS22", "Tr2-T03",  "IBIS33",Topology.FACING,           [],     []),
     Topology("IBIS22","IBIS7",  None,       None,   Topology.SIMPLE,            [],                 []),
-    Topology("IBIS7","IBIS8",   None,       None,   Topology.SIMPLE,            ["IHTr2-Ss04"],     []),
-    Topology("IBIS8","IBIS21",  None,       None,   Topology.SIMPLE,            ["IHTr2-Ss05"],     []),
+    Topology("IBIS7", "IBIS8",  None,       None,   Topology.SIMPLE,            ["IHTr2-Ss04"],     []),
+    Topology("IBIS8", "IBIS21", None,       None,   Topology.SIMPLE,            ["IHTr2-Ss05"],     []),
     Topology("IBIS21","IBIS28", None,       None,   Topology.SIMPLE,            ["IHTr2-Ss06"],     []),
     Topology("IBIS28","IBIS20", None,       None,   Topology.SIMPLE,            [],                 []),
     Topology("IBIS20","IBIS25", "Tr2-T01",  None,   Topology.TRAILING_MAIN,     ["IHTr2-Sd01-U", "IHTr2-Sd01-L"],     []),
     Topology("IBIS25","IBIS27", None,       None,   Topology.SIMPLE,            ["IHTr2-Sd02-U", "IHTr2-Sd02-L"],     []),
     Topology("IBIS27","IBIS11", "Tr2-T02", "IBIS26",Topology.FACING,            [],                 []),
     Topology("IBIS11","IBIS16", None,       None,   Topology.SIMPLE,            ["IHTr2-Ss01"],     []),
+
+    Topology("IBIS33","IBIS13", "Tr2-T06", "IBIS29",Topology.FACING,            [],                []),  # IS13 NOT RIGHT (TODO)
+    Topology("IBIS29","IBIS31", "Tr2-T08",  None,   Topology.TRAILING_DIVERGING,[],                []),
+    Topology("IBIS31","IBIS32", None,       None,   Topology.SIMPLE,            [],                []),
+    Topology("IBIS32", None,    None,       None,   Topology.SIMPLE,            [],                []),
+    Topology("IBIS30","IBIS31", "Tr2-T08",  None,   Topology.TRAILING_MAIN,     [],                []),  # IS33 NOT RIGHT (TODO)
+
 ]
 
 # Get topology element for a particular block or none
