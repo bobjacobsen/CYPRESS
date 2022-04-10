@@ -152,16 +152,21 @@ class Topology:
                 return None
             else :
                 return self.nextBlock
-        if (self.typeTurnout == Topology.TRAILING_DIVERGING) :
+        elif (self.typeTurnout == Topology.TRAILING_DIVERGING) :
             if (self.turnout.getState() == THROWN) :
                 return self.nextBlock
             else :
                 return None
-        if (self.typeTurnout == Topology.FACING) :
+        elif (self.typeTurnout == Topology.FACING) :
             if (self.turnout.getState() == THROWN) :
                 return self.nextDivergingBlock
             else :
                 return self.nextBlock
+        elif (self.typeTurnout == Topology.WYE_TAIL) :
+                return self.nextBlock
+        else :
+            print ("Unexpected type: "+str(self.typeTurnout))
+            return
     # Find the prior block to this one
     # Can return None if there is no prior block, i.e. in wye or turnout set against
     def dynamicNextCCW(self) :
@@ -174,10 +179,10 @@ class Topology:
         return None
 
 Topology.SIMPLE = 0             # straight through block
-Topology.FACING = 1             # facing point, with two exits
-Topology.TRAILING_MAIN = 2      # entering next block on main line of turnout there
-Topology.TRAILING_DIVERGING = 3 # entering next block on diverging leg of turnout there
-
+Topology.FACING = 1             # facing point, with two exits; provide TO name, next block name when diverging
+Topology.TRAILING_MAIN = 2      # entering next block on main line of turnout there; provide TO name
+Topology.TRAILING_DIVERGING = 3 # entering next block on diverging leg of turnout there; provide TO name
+Topology.WYE_TAIL = 4           # tail TO of a wye; provide TO, tail track block name
 
 # Create the topology array for this specific layout
 topologyNodes = [
@@ -372,9 +377,14 @@ def occupied(block) :
 
 # Service routine to update the Train list in GUI
 def updateTrainList() :
+    selection = trainComboBox.getSelectedItem()
     trainComboBox.removeAllItems()
-    for train in allTrains : # TODO ensure sorted by name
+    if (allTrains == None or len(allTrains) == 0) : return
+    sortedList = allTrains
+    sortedList.sort(key=str)  # sort acts in place
+    for train in sortedList :
         trainComboBox.addItem(train)
+    trainComboBox.setSelectedItem(selection)
 
 # Method for moving all trains forward one step.
 # Multiple phases to avoid trains stepping on each other:
