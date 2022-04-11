@@ -80,13 +80,17 @@ class Train:
         if (not self.signalsClear()) :
             print (str(self)+" not advancing due to signals")
             return False
+        # if no next block, just end
+        if (self.nextFwd() == None) : return False # didn't move
+        # check occupancy
         if (occupied(self.frontNode.thisBlock) and not occupied(self.nextFwd())) : return True
         print(str(self)+" not advancing because "+str(self.nextFwd())+" is occupied "+str(occupied(self.nextFwd())) )
         return False
     # Advance the front of the train, i.e. move into next block
     def advanceFront(self) :
         print (str(self)+" advances to "+str(self.nextFwd()))
-        blockToSensorDict[self.nextFwd()].setState(ACTIVE)
+        nextBlock = blockToSensorDict[self.nextFwd()]
+        nextBlock.setState(ACTIVE)
         self.frontNode = getTopoFromBlockName(self.nextFwd().getSystemName())
         return
     # Advance the rear of the train, i.e. clear the block
@@ -185,7 +189,13 @@ Topology.TRAILING_DIVERGING = 3 # entering next block on diverging leg of turnou
 Topology.WYE_TAIL = 4           # tail TO of a wye; provide TO, tail track block name
 
 # Create the topology array for this specific layout
+#
+# The first two entries are treated specially in the array as part of the Wye handling
+#
 topologyNodes = [
+    # Wye - these two are entered dynamically, see wye0Thrown, wye0Closed, wye1Thrown, wye1Closed below
+    None,
+    None,
     # track 1
     Topology("IBIS1", "IBIS2",  None,       None,   Topology.SIMPLE,            ["IHTr1-Ss03"],     []),
     Topology("IBIS2", "IBIS3",  None,       None,   Topology.SIMPLE,            ["IHTr1-Sd02-U", "IHTr1-Sd02-L"],     []),
@@ -215,15 +225,49 @@ topologyNodes = [
     Topology("IBIS27","IBIS11", "Tr2-T02", "IBIS26",Topology.FACING,            [],                 []),
     Topology("IBIS11","IBIS16", None,       None,   Topology.SIMPLE,            ["IHTr2-Ss01"],     []),
 
-    Topology("IBIS33","IBIS13", "Tr2-T06", "IBIS29",Topology.FACING,            [],                []),  # IS13 NOT RIGHT (TODO)
-    Topology("IBIS29","IBIS31", "Tr2-T08",  None,   Topology.TRAILING_DIVERGING,[],                []),
-    Topology("IBIS31","IBIS32", None,       None,   Topology.SIMPLE,            [],                []),
-    Topology("IBIS32", None,    None,       None,   Topology.SIMPLE,            [],                []),
-    Topology("IBIS30","IBIS31", "Tr2-T08",  None,   Topology.TRAILING_MAIN,     [],                []),  # IS33 NOT RIGHT (TODO)
+    # Yard area
+    Topology("IBIS29","IBIS31", "Tr2-T08",  None,   Topology.TRAILING_DIVERGING,[],                 []),
+    Topology("IBIS30","IBIS34", "Tr2-T07",  None,   Topology.TRAILING_MAIN,     [],                 []),
+    Topology("IBIS33","IBIS34", "Tr2-T07", "IBIS29",Topology.TRAILING_DIVERGING,[],                 []), # TODO
+    Topology("IBIS34","IBIS13", None,       None,   Topology.SIMPLE,            [],                 []),
+    Topology("IBIS13", None,    None,       None,   Topology.SIMPLE,            [],                 []),
 
 ]
+# dynamic entries for the Wye tip turnout
+wye0Thrown = \
+    Topology("IBIS31","IBIS32", None,       None,   Topology.SIMPLE,            [],                 [])
+wye0Closed = \
+    Topology("IBIS31","IBIS30", None,       None,   Topology.SIMPLE,            [],                 [])
+# dynamic entries for the Wye tail track
+wye1Thrown = \
+    Topology("IBIS32", None,    None,       None,   Topology.SIMPLE,            [],                 [])
+wye1Closed = \
+    Topology("IBIS32","IBIS31", None,       None,   Topology.SIMPLE,            [],                 [])
+# add listener to update with changes
+class WyeListener(java.beans.PropertyChangeListener):
+  def __init__(self) :
+    self.lastState = turnouts.getTurnout("Tr2-T08").getKnownState()
+  def propertyChange(self, event):
+    turnout = turnouts.getTurnout("Tr2-T08")
+    if (turnout.getKnownState() == THROWN) :
+        topologyNodes[0] = wye0Thrown
+        topologyNodes[1] = wye1Thrown
+    else :
+        topologyNodes[0] = wye0Closed
+        topologyNodes[1] = wye1Closed
+    # if train on tail track, reverse direction it's facing
+    if (event == None or event.propertyName != "CommandedState") : return
+    train = wye1Thrown.thisBlock.getValue()
+    if (train == None) : return
+    if (turnout.getKnownState() != self.lastState) :
+        train.cw = not train.cw
+    self.lastState = turnout.getKnownState()
 
-# Get topology element for a particular block or none
+turnouts.getTurnout("Tr2-T08").addPropertyChangeListener(WyeListener())
+# set initial values to correspond to the layout
+WyeListener().propertyChange(None)
+
+# Service routine to get topology element for a particular block or none
 # Used for convenience when you have e.g. the initial block name
 def getTopoFromBlockName(blockName):
     for node in topologyNodes:
@@ -356,13 +400,19 @@ checkRev.addActionListener(DirectionSelection())
 p2 = javax.swing.JPanel()
 p2.setLayout(javax.swing.BoxLayout(p2, javax.swing.BoxLayout.Y_AXIS))
 p.add(p2)
-p2.add(checkCW)
-p2.add(checkCCW)
+p2Border = javax.swing.BorderFactory.createEtchedBorder()
+p2Titled = javax.swing.BorderFactory.createTitledBorder(p2Border, "Moving")
+p2.setBorder(p2Titled)
+p2.add(checkFwd)
+p2.add(checkRev)
 p2=javax.swing.JPanel()
 p2.setLayout(javax.swing.BoxLayout(p2, javax.swing.BoxLayout.Y_AXIS))
 p.add(p2)
-p2.add(checkFwd)
-p2.add(checkRev)
+p2Border = javax.swing.BorderFactory.createEtchedBorder()
+p2Titled = javax.swing.BorderFactory.createTitledBorder(p2Border, "Facing")
+p2.setBorder(p2Titled)
+p2.add(checkCW)
+p2.add(checkCCW)
 #
 f.contentPane.add(p)
 
