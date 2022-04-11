@@ -116,6 +116,9 @@
       <systemName>IS34</systemName>
     </sensor>
     <sensor inverted="false">
+      <systemName>IS35</systemName>
+    </sensor>
+    <sensor inverted="false">
       <systemName>ISCLOCKRUNNING</systemName>
     </sensor>
   </sensors>
@@ -180,7 +183,7 @@
     </turnout>
   </turnouts>
   <memories class="jmri.managers.configurexml.DefaultMemoryManagerXml">
-    <memory value="9:46 AM">
+    <memory value="10:58 AM">
       <systemName>IMCURRENTTIME</systemName>
     </memory>
     <memory value="1.0">
@@ -414,6 +417,10 @@
       <systemName>IBIS34</systemName>
       <userName>IS34</userName>
     </block>
+    <block systemName="IBIS35">
+      <systemName>IBIS35</systemName>
+      <userName>IS35</userName>
+    </block>
     <block systemName="IBIS1" length="0.0" curve="0">
       <systemName>IBIS1</systemName>
       <userName>IS1</userName>
@@ -551,7 +558,7 @@
           <turnout systemName="Tr2-T03" />
         </beansetting>
       </path>
-      <path todir="96" fromdir="144" block="IBIS33">
+      <path todir="96" fromdir="144" block="IBIS35">
         <beansetting setting="4">
           <turnout systemName="Tr2-T03" />
         </beansetting>
@@ -746,7 +753,7 @@
           <turnout systemName="Tr2-T08" />
         </beansetting>
       </path>
-      <path todir="16" fromdir="32" block="IBIS33">
+      <path todir="16" fromdir="32" block="IBIS35">
         <beansetting setting="4">
           <turnout systemName="Tr2-T06" />
         </beansetting>
@@ -797,7 +804,6 @@
       <userName>IS33</userName>
       <permissive>no</permissive>
       <occupancysensor>IS33</occupancysensor>
-      <path todir="144" fromdir="96" block="IBIS12" />
       <path todir="64" fromdir="128" block="IBIS14">
         <beansetting setting="4">
           <turnout systemName="Tr2-T05" />
@@ -805,21 +811,10 @@
         <beansetting setting="2">
           <turnout systemName="Tr2-T04" />
         </beansetting>
-        <beansetting setting="2">
-          <turnout systemName="Tr2-T06" />
-        </beansetting>
       </path>
       <path todir="64" fromdir="128" block="IBIS15">
         <beansetting setting="4">
           <turnout systemName="Tr2-T04" />
-        </beansetting>
-        <beansetting setting="2">
-          <turnout systemName="Tr2-T06" />
-        </beansetting>
-      </path>
-      <path todir="32" fromdir="16" block="IBIS29">
-        <beansetting setting="4">
-          <turnout systemName="Tr2-T06" />
         </beansetting>
       </path>
       <path todir="96" fromdir="144" block="IBIS34">
@@ -832,6 +827,8 @@
         <beansetting setting="2">
           <turnout systemName="Tr2-T04" />
         </beansetting>
+      </path>
+      <path todir="144" fromdir="96" block="IBIS35">
         <beansetting setting="2">
           <turnout systemName="Tr2-T06" />
         </beansetting>
@@ -851,6 +848,23 @@
       <path todir="144" fromdir="96" block="IBIS33">
         <beansetting setting="4">
           <turnout systemName="Tr2-T07" />
+        </beansetting>
+      </path>
+    </block>
+    <block systemName="IBIS35" length="0.0" curve="0">
+      <systemName>IBIS35</systemName>
+      <userName>IS35</userName>
+      <permissive>no</permissive>
+      <occupancysensor>IS35</occupancysensor>
+      <path todir="144" fromdir="96" block="IBIS12" />
+      <path todir="32" fromdir="16" block="IBIS29">
+        <beansetting setting="4">
+          <turnout systemName="Tr2-T06" />
+        </beansetting>
+      </path>
+      <path todir="96" fromdir="144" block="IBIS33">
+        <beansetting setting="2">
+          <turnout systemName="Tr2-T06" />
         </beansetting>
       </path>
     </block>
@@ -991,6 +1005,10 @@
     <layoutblock systemName="ILB34" occupancysensor="IS34" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
       <systemName>ILB34</systemName>
       <userName>IS34</userName>
+    </layoutblock>
+    <layoutblock systemName="ILB35" occupancysensor="IS35" occupiedsense="2" trackcolor="darkGray" occupiedcolor="red" extracolor="white">
+      <systemName>ILB35</systemName>
+      <userName>IS35</userName>
     </layoutblock>
   </layoutblocks>
   <signalelements class="jmri.jmrit.blockboss.configurexml.BlockBossLogicProviderXml">
@@ -1327,6 +1345,7 @@
       <conditionalAction option="1" type="9" systemName="IS32" data="4" delay="0" string="" />
       <conditionalAction option="1" type="9" systemName="IS33" data="4" delay="0" string="" />
       <conditionalAction option="1" type="9" systemName="IS34" data="4" delay="0" string="" />
+      <conditionalAction option="1" type="9" systemName="IS35" data="4" delay="0" string="" />
       <conditionalAction option="1" type="2" systemName="Tr1-T01" data="2" delay="0" string="" />
       <conditionalAction option="1" type="2" systemName="Tr1-T02" data="2" delay="0" string="" />
       <conditionalAction option="1" type="2" systemName="Tr1-T03" data="2" delay="0" string="" />
@@ -3351,6 +3370,23 @@
       <iconmaps />
     </sensoricon>
     <BlockContentsIcon blockcontents="IS34" x="782" y="309" level="5" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="yes" redBack="192" greenBack="192" blueBack="192" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <sensoricon sensor="IS35" x="433" y="154" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USSpanels/Lamps/lamp-y.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USSpanels/Lamps/lamp-dy.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USSpanels/Lamps/lamp-w.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USSpanels/Lamps/lamp-w.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <BlockContentsIcon blockcontents="IS35" x="470" y="157" level="5" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="yes" redBack="192" greenBack="192" blueBack="192" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <positionablelabel x="494" y="179" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="B" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
   </paneleditor>
   <LayoutEditor class="jmri.jmrit.display.layoutEditor.configurexml.LayoutEditorXml" name="CYPRESS Layout" x="315" y="385" windowheight="664" windowwidth="1145" panelheight="590" panelwidth="1106" sliders="no" scrollable="none" editable="no" positionable="yes" controlling="yes" animating="yes" showhelpbar="no" drawgrid="yes" snaponadd="no" snaponmove="no" antialiasing="yes" turnoutcircles="no" tooltipsnotedit="no" tooltipsinedit="yes" mainlinetrackwidth="4" xscale="1.0" yscale="1.0" sidetrackwidth="2" defaulttrackcolor="darkGray" defaultoccupiedtrackcolor="red" defaultalternativetrackcolor="white" defaulttextcolor="black" turnoutcirclecolor="black" turnoutcirclesize="4" turnoutdrawunselectedleg="yes" turnoutbx="20.0" turnoutcx="20.0" turnoutwid="10.0" xoverlong="30.0" xoverhwid="10.0" xovershort="10.0" autoblkgenerate="no" redBackground="192" greenBackground="192" blueBackground="192" gridSize="10" gridSize2nd="10" openDispatcher="no" useDirectTurnoutControl="yes">
     <layoutTrackDrawingOptions name="CYPRESS Layout" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutTrackDrawingOptionsXml">
@@ -4089,7 +4125,7 @@
     <layoutturnout ident="TO9" type="LH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="371.0" ycen="481.0" xa="391.0" ya="481.0" xb="351.0" yb="481.0" xc="345.0" yc="495.0" xd="391.0" yd="481.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutLHTurnoutXml" turnoutname="Tr2-T02" blockname="IS27" connectaname="T15" connectbname="T19" connectcname="T28" />
     <layoutturnout ident="TO10" type="RH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="457.3363952636719" ycen="350.9179992675781" xa="501.07769775390625" ya="351.1243591308594" xb="413.5950927734375" yb="350.7116394042969" xc="429.14215087890625" yc="331.14215087890625" xd="501.07769775390625" yd="351.1243591308594" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutRHTurnoutXml" turnoutname="Tr2-T07" blockname="IS34" connectaname="T26" connectbname="T29" connectcname="T23" />
     <layoutturnout ident="TO11" type="LH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="214.0" ycen="351.0" xa="194.0" ya="351.0" xb="234.0" yb="351.0" xc="233.0" yc="335.0" xd="194.0" yd="351.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutLHTurnoutXml" turnoutname="Tr2-T08" blockname="IS31" connectaname="T30" connectbname="T29" connectcname="T32" />
-    <layoutturnout ident="TO12" type="RH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="255.0" ycen="205.0" xa="239.85784912109375" ya="192.85784912109375" xb="270.14215087890625" yb="217.14215087890625" xc="261.0710754394531" yc="236.21319580078125" xd="239.85784912109375" yd="192.85784912109375" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutRHTurnoutXml" turnoutname="Tr2-T06" blockname="IS33" connectaname="T10" connectbname="T31" connectcname="T32" />
+    <layoutturnout ident="TO12" type="RH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="255.0" ycen="205.0" xa="239.85784912109375" ya="192.85784912109375" xb="270.14215087890625" yb="217.14215087890625" xc="261.0710754394531" yc="236.21319580078125" xd="239.85784912109375" yd="192.85784912109375" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutRHTurnoutXml" turnoutname="Tr2-T06" blockname="IS35" connectaname="T10" connectbname="T31" connectcname="T32" />
     <tracksegment ident="T1" blockname="IS4" connect1name="TO1" type1="TURNOUT_B" connect2name="TO2" type2="TURNOUT_B" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
     <tracksegment ident="T3" blockname="IS6" connect1name="TO2" type1="TURNOUT_A" connect2name="X1" type2="LEVEL_XING_A" dashed="no" mainline="yes" hidden="no" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml" />
     <tracksegment ident="T5" blockname="IS8" connect1name="A2" type1="POS_POINT" connect2name="A1" type2="POS_POINT" dashed="no" mainline="yes" hidden="no" bezier="yes" hideConLines="yes" class="jmri.jmrit.display.layoutEditor.configurexml.TrackSegmentXml">
@@ -4205,104 +4241,104 @@
   <filehistory>
     <operation>
       <type>app</type>
-      <date>Mon Apr 11 09:40:51 EDT 2022</date>
+      <date>Mon Apr 11 10:54:31 EDT 2022</date>
       <filename>JMRI program</filename>
     </operation>
     <operation>
       <type>Load OK</type>
-      <date>Mon Apr 11 09:40:53 EDT 2022</date>
+      <date>Mon Apr 11 10:54:33 EDT 2022</date>
       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
       <filehistory>
         <operation>
           <type>app</type>
-          <date>Sun Apr 03 19:02:34 MDT 2022</date>
+          <date>Mon Apr 11 10:47:53 EDT 2022</date>
           <filename>JMRI program</filename>
         </operation>
         <operation>
           <type>Load OK</type>
-          <date>Sun Apr 03 19:02:36 MDT 2022</date>
+          <date>Mon Apr 11 10:47:55 EDT 2022</date>
           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
           <filehistory>
             <operation>
               <type>app</type>
-              <date>Sun Apr 03 19:00:28 MDT 2022</date>
+              <date>Mon Apr 11 09:40:51 EDT 2022</date>
               <filename>JMRI program</filename>
             </operation>
             <operation>
               <type>Load OK</type>
-              <date>Sun Apr 03 19:00:30 MDT 2022</date>
+              <date>Mon Apr 11 09:40:53 EDT 2022</date>
               <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
               <filehistory>
                 <operation>
                   <type>app</type>
-                  <date>Sun Apr 03 18:56:24 MDT 2022</date>
+                  <date>Sun Apr 03 19:02:34 MDT 2022</date>
                   <filename>JMRI program</filename>
                 </operation>
                 <operation>
                   <type>Load OK</type>
-                  <date>Sun Apr 03 18:56:25 MDT 2022</date>
+                  <date>Sun Apr 03 19:02:36 MDT 2022</date>
                   <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                   <filehistory>
                     <operation>
                       <type>app</type>
-                      <date>Sun Apr 03 17:46:54 MDT 2022</date>
+                      <date>Sun Apr 03 19:00:28 MDT 2022</date>
                       <filename>JMRI program</filename>
                     </operation>
                     <operation>
                       <type>Load OK</type>
-                      <date>Sun Apr 03 17:46:56 MDT 2022</date>
+                      <date>Sun Apr 03 19:00:30 MDT 2022</date>
                       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                       <filehistory>
                         <operation>
                           <type>app</type>
-                          <date>Tue Mar 29 07:45:06 EDT 2022</date>
+                          <date>Sun Apr 03 18:56:24 MDT 2022</date>
                           <filename>JMRI program</filename>
                         </operation>
                         <operation>
                           <type>Load OK</type>
-                          <date>Tue Mar 29 07:45:08 EDT 2022</date>
+                          <date>Sun Apr 03 18:56:25 MDT 2022</date>
                           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                         </operation>
                         <operation>
                           <type>Store</type>
-                          <date>Tue Mar 29 08:02:44 EDT 2022</date>
+                          <date>Sun Apr 03 18:57:17 MDT 2022</date>
                           <filename />
                         </operation>
                       </filehistory>
                     </operation>
                     <operation>
                       <type>Store</type>
-                      <date>Sun Apr 03 18:55:29 MDT 2022</date>
+                      <date>Sun Apr 03 19:01:28 MDT 2022</date>
                       <filename />
                     </operation>
                   </filehistory>
                 </operation>
                 <operation>
                   <type>Store</type>
-                  <date>Sun Apr 03 18:57:17 MDT 2022</date>
+                  <date>Sun Apr 03 19:04:31 MDT 2022</date>
                   <filename />
                 </operation>
               </filehistory>
             </operation>
             <operation>
               <type>Store</type>
-              <date>Sun Apr 03 19:01:28 MDT 2022</date>
+              <date>Mon Apr 11 09:46:53 EDT 2022</date>
               <filename />
             </operation>
           </filehistory>
         </operation>
         <operation>
           <type>Store</type>
-          <date>Sun Apr 03 19:04:31 MDT 2022</date>
+          <date>Mon Apr 11 10:52:53 EDT 2022</date>
           <filename />
         </operation>
       </filehistory>
     </operation>
     <operation>
       <type>Store</type>
-      <date>Mon Apr 11 09:46:53 EDT 2022</date>
+      <date>Mon Apr 11 10:58:11 EDT 2022</date>
       <filename />
     </operation>
   </filehistory>
-  <!--Written by JMRI version 4.99.6plus+jake+20220411T1340Z+R69e30408f3 on Mon Apr 11 09:46:53 EDT 2022-->
+  <!--Written by JMRI version 4.99.6plus+jake+20220411T1454Z+R69e30408f3 on Mon Apr 11 10:58:11 EDT 2022-->
 </layout-config>
