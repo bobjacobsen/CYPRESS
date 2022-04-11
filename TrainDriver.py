@@ -81,7 +81,9 @@ class Train:
             print (str(self)+" not advancing due to signals")
             return False
         # if no next block, just end
-        if (self.nextFwd() == None) : return False # didn't move
+        if (self.nextFwd() == None) :
+            print (str(self)+" has no next block")
+            return False
         # check occupancy
         if (occupied(self.frontNode.thisBlock) and not occupied(self.nextFwd())) : return True
         print(str(self)+" not advancing because "+str(self.nextFwd())+" is occupied "+str(occupied(self.nextFwd())) )
@@ -214,7 +216,7 @@ topologyNodes = [
 
     # Track 2
     Topology("IBIS16","IBIS12", None,       None,   Topology.SIMPLE,            ["IHTr2-Ss02"],     []),
-    Topology("IBIS12","IBIS22", "Tr2-T03",  "IBIS33",Topology.FACING,           [],     []),
+    Topology("IBIS12","IBIS22", "Tr2-T03",  "IBIS35",Topology.FACING,           [],     []),
     Topology("IBIS22","IBIS7",  None,       None,   Topology.SIMPLE,            [],                 []),
     Topology("IBIS7", "IBIS8",  None,       None,   Topology.SIMPLE,            ["IHTr2-Ss04"],     []),
     Topology("IBIS8", "IBIS21", None,       None,   Topology.SIMPLE,            ["IHTr2-Ss05"],     []),
@@ -226,9 +228,10 @@ topologyNodes = [
     Topology("IBIS11","IBIS16", None,       None,   Topology.SIMPLE,            ["IHTr2-Ss01"],     []),
 
     # Yard area
+    Topology("IBIS35","IBIS33", "Tr2-T06", "IBIS29",Topology.FACING,            [],                 []),
     Topology("IBIS29","IBIS31", "Tr2-T08",  None,   Topology.TRAILING_DIVERGING,[],                 []),
     Topology("IBIS30","IBIS34", "Tr2-T07",  None,   Topology.TRAILING_MAIN,     [],                 []),
-    Topology("IBIS33","IBIS34", "Tr2-T07", "IBIS29",Topology.TRAILING_DIVERGING,[],                 []), # TODO
+    Topology("IBIS33","IBIS34", "Tr2-T07", "None",  Topology.TRAILING_DIVERGING,[],                 []),
     Topology("IBIS34","IBIS13", None,       None,   Topology.SIMPLE,            [],                 []),
     Topology("IBIS13", None,    None,       None,   Topology.SIMPLE,            [],                 []),
 
@@ -300,6 +303,8 @@ class ClearButtonHandler(java.awt.event.ActionListener) :
             key.setState(INACTIVE)
         # reset train numbers
         nextTrainNumber = 1
+        # make sure of wye polarity
+        WyeListener().propertyChange(None)
 class StartTrack1ButtonHandler(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
         blockName = "IBIS1"
