@@ -234,7 +234,7 @@ topologyNodes = [
     Topology("IBIS35","IBIS33", "Tr2-T06", "IBIS29",Topology.FACING,            [],                 []),
     Topology("IBIS29","IBIS31", "Tr2-T08",  None,   Topology.TRAILING_DIVERGING,[],                 []),
     Topology("IBIS30","IBIS34", "Tr2-T07",  None,   Topology.TRAILING_MAIN,     [],                 []),
-    Topology("IBIS33","IBIS34", "Tr2-T07",  None,  Topology.TRAILING_DIVERGING,[],                 []),
+    Topology("IBIS33","IBIS34", "Tr2-T07",  None,   Topology.TRAILING_DIVERGING,[],                 []),
     Topology("IBIS34","IBIS13", None,       None,   Topology.SIMPLE,            [],                 []),
     Topology("IBIS13", None,    None,       None,   Topology.SIMPLE,            [],                 []),
 
@@ -249,7 +249,7 @@ wye1Thrown = \
     Topology("IBIS32", None,    None,       None,   Topology.SIMPLE,            [],                 [])
 wye1Closed = \
     Topology("IBIS32","IBIS31", None,       None,   Topology.SIMPLE,            [],                 [])
-# add listener to update with changes
+# add listener to update Wye tail tracks with turnout changes
 class WyeListener(java.beans.PropertyChangeListener):
   def __init__(self) :
     self.lastState = turnouts.getTurnout("Tr2-T08").getKnownState()
@@ -268,7 +268,7 @@ class WyeListener(java.beans.PropertyChangeListener):
     if (turnout.getKnownState() != self.lastState) :
         train.cw = not train.cw
     self.lastState = turnout.getKnownState()
-
+# add listener to wye turnout
 turnouts.getTurnout("Tr2-T08").addPropertyChangeListener(WyeListener())
 # set initial values to correspond to the layout
 WyeListener().propertyChange(None)
@@ -293,7 +293,7 @@ def getTopoFromBlockName(blockName):
 global nextTrainNumber
 nextTrainNumber = 1
 
-# Set up frame with initialization buttons.
+# Set up control frame with initialization buttons, train controls, etc
 # First, define listener classes to handle each button
 class ClearButtonHandler(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
@@ -326,7 +326,7 @@ def launchNewTrain(blockName) :
     blocks.getBlock(blockName).setValue(train)
     nextTrainNumber = nextTrainNumber+1
     updateTrainList()
-# Service class to handle selection in Train list in GUI
+# Service class to handle selection in Train list ComboBox in GUI
 class TrainListSelection(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
         train = trainComboBox.getSelectedItem()
@@ -335,7 +335,7 @@ class TrainListSelection(java.awt.event.ActionListener) :
             checkCCW.setSelected(not train.cw)
             checkFwd.setSelected(train.fwd)
             checkRev.setSelected(not train.fwd)
-# Service class to handle change of direction
+# Service class to handle change of direction (Fwd/Rev and CW/CCW)
 class DirectionSelection(java.awt.event.ActionListener) :
     def actionPerformed (self, event) :
         train = trainComboBox.getSelectedItem()
@@ -344,7 +344,7 @@ class DirectionSelection(java.awt.event.ActionListener) :
             train.fwd = checkFwd.isSelected()
 
 # Second, create a frame to hold the buttons, put buttons in it, and display
-f = javax.swing.JFrame("Autorun Control")
+f = jmri.util.JmriJFrame("Autorun Control")
 f.contentPane.setLayout(javax.swing.BoxLayout(f.contentPane, javax.swing.BoxLayout.Y_AXIS))
 #
 p = javax.swing.JPanel()
@@ -424,7 +424,7 @@ p2.add(checkCCW)
 #
 f.contentPane.add(p)
 
-#
+# and display it
 f.pack()
 f.show()
 
