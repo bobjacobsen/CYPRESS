@@ -427,6 +427,7 @@ f.contentPane.add(p)
 # and display it
 f.pack()
 f.show()
+# end of control frame creation
 
 # Service routine for checking whether a block is occupied
 def occupied(block) :
@@ -442,7 +443,10 @@ def updateTrainList() :
     sortedList.sort(key=str)  # sort acts in place
     for train in sortedList :
         trainComboBox.addItem(train)
-    trainComboBox.setSelectedItem(selection)
+    if (selection != None) :
+        trainComboBox.setSelectedItem(selection)
+    else :
+        trainComboBox.setSelectedIndex(0)  # first entry, if there is one
 
 # Method for moving all trains forward one step.
 # Multiple phases to avoid trains stepping on each other:
@@ -473,7 +477,7 @@ def stepTrains() :
             #print(str(train)+" from "+str(train.rearNode)+" to "+str(train.frontNode))
     # update the combobox of trains
     updateTrainList()
-    # 2) make a list of those to move to extend front of trains
+    # 2) make a list of those who can move to extend front of trains
     moveNodes = []
     moveTrains = []
     for train in allTrains :
