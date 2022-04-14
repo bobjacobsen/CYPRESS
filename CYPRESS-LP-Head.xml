@@ -183,7 +183,7 @@
     </turnout>
   </turnouts>
   <memories class="jmri.managers.configurexml.DefaultMemoryManagerXml">
-    <memory value="10:58 AM">
+    <memory value="5:44 PM">
       <systemName>IMCURRENTTIME</systemName>
     </memory>
     <memory value="1.0">
@@ -1125,6 +1125,7 @@
     </signalelement>
     <signalelement signal="IHV2" mode="3" watchedturnout="Tr2-T07" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <sensorname>IS13</sensorname>
+      <sensorname>IS34</sensorname>
       <comment />
     </signalelement>
     <signalelement signal="IHV3" mode="4" watchedturnout="Tr2-T06" watchedsignal1="IHTr2-Sd03-L" watchedsignal1alt="IHTr2-Sd03-U" watchedsignal2="IHV4" watchedsensor1="IS33" watchedsensor2="IS29" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
@@ -1141,6 +1142,7 @@
     </signalelement>
     <signalelement signal="IHV6" mode="2" watchedturnout="Tr2-T07" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <sensorname>IS13</sensorname>
+      <sensorname>IS34</sensorname>
       <comment />
     </signalelement>
   </signalelements>
@@ -1362,7 +1364,7 @@
   </conditionals>
   <timebase class="jmri.jmrit.simpleclock.configurexml.SimpleTimebaseXml" time="Fri Feb 04 12:30:38 EST 2022" rate="1.0" startrate="1.0" run="yes" master="yes" sync="no" correct="no" display="no" startstopped="no" startrunning="yes" startsettime="no" startclockoption="0" showbutton="no" startsetrate="yes" />
   <paneleditor class="jmri.jmrit.display.panelEditor.configurexml.PanelEditorXml" name="Wye Details" x="225" y="250" height="875" width="1447" editable="yes" positionable="yes" showtooltips="yes" controlling="yes" hide="yes" panelmenu="yes" scrollable="both" redBackground="255" greenBackground="255" blueBackground="255">
-    <positionablelabel x="0" y="0" level="1" forcecontroloff="false" hidden="yes" positionable="true" showtooltip="false" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
+    <positionablelabel x="0" y="0" level="1" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
       <icon url="preference:Wye-Zoomed.png" degrees="0" scale="1.0">
         <rotation>0</rotation>
       </icon>
@@ -1929,8 +1931,42 @@
       <iconmaps />
     </signalheadicon>
     <positionablelabel x="1023" y="88" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="Tr2-Ss03" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="482" y="139" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="B" size="24" style="0" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <positionablelabel x="937" y="329" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="B" size="24" style="0" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <sensoricon sensor="IS35" x="442" y="126" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USSpanels/Lamps/lamp-y.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USSpanels/Lamps/lamp-dy.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USSpanels/Lamps/lamp-w.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USSpanels/Lamps/lamp-w.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <positionablelabel x="452" y="104" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="35" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
+    <sensoricon sensor="IS34" x="1060" y="357" level="10" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" momentary="false" icon="yes" class="jmri.jmrit.display.configurexml.SensorIconXml">
+      <active url="program:resources/icons/USSpanels/Lamps/lamp-y.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </active>
+      <inactive url="program:resources/icons/USSpanels/Lamps/lamp-dy.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inactive>
+      <unknown url="program:resources/icons/USSpanels/Lamps/lamp-w.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </unknown>
+      <inconsistent url="program:resources/icons/USSpanels/Lamps/lamp-w.gif" degrees="0" scale="1.0">
+        <rotation>0</rotation>
+      </inconsistent>
+      <iconmaps />
+    </sensoricon>
+    <positionablelabel x="1035" y="337" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="34" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
   </paneleditor>
-  <paneleditor class="jmri.jmrit.display.panelEditor.configurexml.PanelEditorXml" name="CYPRESS Panel" x="0" y="275" height="814" width="1751" editable="yes" positionable="yes" showtooltips="yes" controlling="yes" hide="yes" panelmenu="yes" scrollable="both" redBackground="255" greenBackground="255" blueBackground="255">
+  <paneleditor class="jmri.jmrit.display.panelEditor.configurexml.PanelEditorXml" name="CYPRESS Panel" x="165" y="478" height="814" width="1751" editable="yes" positionable="yes" showtooltips="yes" controlling="yes" hide="yes" panelmenu="yes" scrollable="both" redBackground="255" greenBackground="255" blueBackground="255">
     <positionablelabel x="0" y="0" level="1" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="true" icon="yes" class="jmri.jmrit.display.configurexml.PositionableLabelXml">
       <icon url="preference:QNIempire3b-WYE.png" degrees="0" scale="1.0">
         <rotation>0</rotation>
@@ -3388,7 +3424,7 @@
     <BlockContentsIcon blockcontents="IS35" x="470" y="157" level="5" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="yes" redBack="192" greenBack="192" blueBack="192" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
     <positionablelabel x="494" y="179" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" text="B" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="centre" class="jmri.jmrit.display.configurexml.PositionableLabelXml" />
   </paneleditor>
-  <LayoutEditor class="jmri.jmrit.display.layoutEditor.configurexml.LayoutEditorXml" name="CYPRESS Layout" x="315" y="385" windowheight="664" windowwidth="1145" panelheight="590" panelwidth="1106" sliders="no" scrollable="none" editable="no" positionable="yes" controlling="yes" animating="yes" showhelpbar="no" drawgrid="yes" snaponadd="no" snaponmove="no" antialiasing="yes" turnoutcircles="no" tooltipsnotedit="no" tooltipsinedit="yes" mainlinetrackwidth="4" xscale="1.0" yscale="1.0" sidetrackwidth="2" defaulttrackcolor="darkGray" defaultoccupiedtrackcolor="red" defaultalternativetrackcolor="white" defaulttextcolor="black" turnoutcirclecolor="black" turnoutcirclesize="4" turnoutdrawunselectedleg="yes" turnoutbx="20.0" turnoutcx="20.0" turnoutwid="10.0" xoverlong="30.0" xoverhwid="10.0" xovershort="10.0" autoblkgenerate="no" redBackground="192" greenBackground="192" blueBackground="192" gridSize="10" gridSize2nd="10" openDispatcher="no" useDirectTurnoutControl="yes">
+  <LayoutEditor class="jmri.jmrit.display.layoutEditor.configurexml.LayoutEditorXml" name="CYPRESS Layout" x="315" y="385" windowheight="890" windowwidth="1514" panelheight="590" panelwidth="1106" sliders="no" scrollable="none" editable="yes" positionable="yes" controlling="yes" animating="yes" showhelpbar="no" drawgrid="yes" snaponadd="no" snaponmove="no" antialiasing="yes" turnoutcircles="no" tooltipsnotedit="no" tooltipsinedit="yes" mainlinetrackwidth="4" xscale="1.0" yscale="1.0" sidetrackwidth="2" defaulttrackcolor="darkGray" defaultoccupiedtrackcolor="red" defaultalternativetrackcolor="white" defaulttextcolor="black" turnoutcirclecolor="black" turnoutcirclesize="4" turnoutdrawunselectedleg="yes" turnoutbx="20.0" turnoutcx="20.0" turnoutwid="10.0" xoverlong="30.0" xoverhwid="10.0" xovershort="10.0" autoblkgenerate="no" redBackground="192" greenBackground="192" blueBackground="192" gridSize="10" gridSize2nd="10" openDispatcher="no" useDirectTurnoutControl="yes">
     <layoutTrackDrawingOptions name="CYPRESS Layout" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutTrackDrawingOptionsXml">
       <mainBallastColor>#000000</mainBallastColor>
       <mainBallastWidth>0</mainBallastWidth>
@@ -3415,7 +3451,7 @@
       <sideTieLength>0</sideTieLength>
       <sideTieWidth>0</sideTieWidth>
     </layoutTrackDrawingOptions>
-    <signalheadicon signalhead="IHTr2-Ss05" x="889" y="414" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr2-Ss05" x="889" y="414" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="0" scale="1.0">
           <rotation>0</rotation>
@@ -3444,7 +3480,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr2-Ss04" x="887" y="39" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" degrees="180" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr2-Ss04" x="887" y="39" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="180" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="180" scale="1.0">
           <rotation>0</rotation>
@@ -3473,7 +3509,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr1-Ss06" x="753" y="193" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" degrees="270" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr1-Ss06" x="753" y="193" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="270" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="270" scale="1.0">
           <rotation>0</rotation>
@@ -3502,7 +3538,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr2-Ss02" x="178" y="175" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" degrees="180" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr2-Ss02" x="178" y="175" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="180" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="180" scale="1.0">
           <rotation>0</rotation>
@@ -3531,7 +3567,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr1-Ss03" x="55" y="172" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" degrees="120" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr1-Ss03" x="55" y="172" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="120" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="120" scale="1.0">
           <rotation>0</rotation>
@@ -3560,7 +3596,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr2-Ss01" x="128" y="384" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" degrees="45" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr2-Ss01" x="128" y="384" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="45" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="45" scale="1.0">
           <rotation>0</rotation>
@@ -3589,7 +3625,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr1-Ss02" x="80" y="410" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" degrees="45" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr1-Ss02" x="80" y="410" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="45" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="45" scale="1.0">
           <rotation>0</rotation>
@@ -3618,7 +3654,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr1-Ss04" x="454" y="106" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" degrees="180" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr1-Ss04" x="454" y="106" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="180" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="180" scale="1.0">
           <rotation>0</rotation>
@@ -3647,7 +3683,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr1-Ss05" x="454" y="138" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" degrees="180" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr1-Ss05" x="454" y="138" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="180" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="180" scale="1.0">
           <rotation>0</rotation>
@@ -3676,7 +3712,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr1-Sd02-U" x="295" y="105" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr1-Sd02-U" x="295" y="105" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="0" scale="1.0">
           <rotation>2</rotation>
@@ -3705,7 +3741,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr1-Sd02-L" x="284" y="105" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr1-Sd02-L" x="284" y="105" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="0" scale="1.0">
           <rotation>2</rotation>
@@ -3734,7 +3770,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr2-Sd03-U" x="280" y="236" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" degrees="215" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr2-Sd03-U" x="280" y="236" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="215" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="215" scale="1.0">
           <rotation>0</rotation>
@@ -3763,7 +3799,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr2-Sd03-L" x="271" y="230" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" degrees="215" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr2-Sd03-L" x="271" y="230" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="215" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="215" scale="1.0">
           <rotation>0</rotation>
@@ -3792,7 +3828,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr1-Ss07" x="688" y="396" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" degrees="315" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr1-Ss07" x="688" y="396" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="315" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="315" scale="1.0">
           <rotation>0</rotation>
@@ -3821,7 +3857,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr2-Ss06" x="709" y="418" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr2-Ss06" x="709" y="418" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="0" scale="1.0">
           <rotation>0</rotation>
@@ -3850,7 +3886,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr1-Sd01-U" x="532" y="499" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr1-Sd01-U" x="532" y="499" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="0" scale="1.0">
           <rotation>0</rotation>
@@ -3879,7 +3915,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr1-Sd01-L" x="544" y="499" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr1-Sd01-L" x="544" y="499" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="0" scale="1.0">
           <rotation>0</rotation>
@@ -3908,7 +3944,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr2-Sd01-U" x="476" y="461" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr2-Sd01-U" x="476" y="461" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="0" scale="1.0">
           <rotation>0</rotation>
@@ -3937,7 +3973,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr2-Sd01-L" x="487" y="461" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr2-Sd01-L" x="487" y="461" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="0" scale="1.0">
           <rotation>0</rotation>
@@ -3966,7 +4002,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr2-Sd02-U" x="380" y="461" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr2-Sd02-U" x="380" y="461" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="0" scale="1.0">
           <rotation>0</rotation>
@@ -3995,7 +4031,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr2-Sd02-L" x="390" y="461" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr2-Sd02-L" x="390" y="461" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="0" scale="1.0">
           <rotation>0</rotation>
@@ -4024,7 +4060,7 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <signalheadicon signalhead="IHTr1-Ss01" x="352" y="503" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <signalheadicon signalhead="IHTr1-Ss01" x="352" y="503" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="0" scale="1.0">
           <rotation>0</rotation>
@@ -4053,34 +4089,34 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <BlockContentsIcon blockcontents="IS2" x="161" y="76" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS1" x="9" y="274" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS3" x="326" y="69" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS4" x="406" y="70" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS5" x="406" y="109" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS6" x="511" y="71" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS23" x="736" y="106" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS9" x="784" y="321" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS10" x="682" y="452" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS19" x="621" y="502" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS17" x="504" y="533" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS24" x="390" y="534" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS26" x="293" y="535" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS18" x="150" y="516" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS16" x="108" y="267" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS12" x="425" y="179" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS22" x="588" y="122" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS7" x="710" y="52" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS8" x="983" y="227" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS21" x="797" y="401" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS20" x="545" y="427" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS25" x="441" y="438" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS11" x="214" y="430" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS27" x="363" y="438" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS15" x="644" y="241" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS14" x="645" y="301" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS13" x="644" y="340" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <signalheadicon signalhead="IHTr2-Ss03" x="560" y="123" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" degrees="120" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
+    <BlockContentsIcon blockcontents="IS2" x="161" y="76" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS1" x="9" y="274" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS3" x="326" y="69" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS4" x="406" y="70" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS5" x="406" y="109" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS6" x="511" y="71" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS23" x="736" y="106" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS9" x="784" y="321" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS10" x="682" y="452" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS19" x="621" y="502" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS17" x="504" y="533" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS24" x="390" y="534" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS26" x="293" y="535" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS18" x="150" y="516" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS16" x="108" y="267" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS12" x="425" y="179" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS22" x="588" y="122" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS7" x="710" y="52" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS8" x="983" y="227" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS21" x="797" y="401" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS20" x="545" y="427" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS25" x="441" y="438" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS11" x="214" y="430" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS27" x="363" y="438" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS15" x="644" y="241" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS14" x="645" y="301" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS13" x="644" y="340" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <signalheadicon signalhead="IHTr2-Ss03" x="560" y="123" level="9" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" degrees="120" clickmode="3" litmode="false" class="jmri.jmrit.display.configurexml.SignalHeadIconXml">
       <icons>
         <held url="program:resources/icons/smallschematics/searchlights/left-held-short.gif" degrees="120" scale="1.0">
           <rotation>0</rotation>
@@ -4109,11 +4145,11 @@
       </icons>
       <iconmaps />
     </signalheadicon>
-    <BlockContentsIcon blockcontents="IS32" x="139" y="365" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS31" x="199" y="365" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS30" x="296" y="366" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS29" x="202" y="279" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
-    <BlockContentsIcon blockcontents="IS33" x="301" y="214" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="false" editable="false" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS32" x="139" y="365" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS31" x="199" y="365" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS30" x="296" y="366" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS29" x="202" y="279" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
+    <BlockContentsIcon blockcontents="IS33" x="301" y="214" level="4" forcecontroloff="false" hidden="no" positionable="true" showtooltip="true" editable="true" size="13" style="0" red="0" green="0" blue="0" hasBackground="no" justification="left" selectable="no" class="jmri.jmrit.display.configurexml.BlockContentsIconXml" />
     <layoutturnout ident="TO1" type="RH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="331.0" ycen="100.0" xa="311.0" ya="100.0" xb="351.0" yb="100.0" xc="361.0" yc="130.0" xd="311.0" yd="100.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutRHTurnoutXml" turnoutname="Tr1-T03" blockname="IS3" connectaname="T16" connectbname="T1" connectcname="T2" />
     <layoutturnout ident="TO2" type="LH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="499.0" ycen="100.0" xa="527.0" ya="100.0" xb="471.0" yb="100.0" xc="469.0" yc="130.0" xd="527.0" yd="100.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutLHTurnoutXml" turnoutname="Tr1-T04" blockname="IS6" connectaname="T3" connectbname="T1" connectcname="T2" />
     <layoutturnout ident="TO3" type="RH_TURNOUT" hidden="no" disabled="no" disableWhenOccupied="no" continuing="2" xcen="202.0" ycen="161.0" xa="182.0" ya="161.0" xb="222.0" yb="161.0" xc="219.0" yc="175.0" xd="182.0" yd="161.0" ver="1" class="jmri.jmrit.display.layoutEditor.configurexml.LayoutRHTurnoutXml" turnoutname="Tr2-T03" blockname="IS12" connectaname="T20" connectbname="T9" connectcname="T10" />
@@ -4241,104 +4277,104 @@
   <filehistory>
     <operation>
       <type>app</type>
-      <date>Mon Apr 11 10:54:31 EDT 2022</date>
+      <date>Wed Apr 13 17:24:13 EDT 2022</date>
       <filename>JMRI program</filename>
     </operation>
     <operation>
       <type>Load OK</type>
-      <date>Mon Apr 11 10:54:33 EDT 2022</date>
+      <date>Wed Apr 13 17:24:15 EDT 2022</date>
       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
       <filehistory>
         <operation>
           <type>app</type>
-          <date>Mon Apr 11 10:47:53 EDT 2022</date>
+          <date>Wed Apr 13 17:16:34 EDT 2022</date>
           <filename>JMRI program</filename>
         </operation>
         <operation>
           <type>Load OK</type>
-          <date>Mon Apr 11 10:47:55 EDT 2022</date>
+          <date>Wed Apr 13 17:16:36 EDT 2022</date>
           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
           <filehistory>
             <operation>
               <type>app</type>
-              <date>Mon Apr 11 09:40:51 EDT 2022</date>
+              <date>Wed Apr 13 17:04:04 EDT 2022</date>
               <filename>JMRI program</filename>
             </operation>
             <operation>
               <type>Load OK</type>
-              <date>Mon Apr 11 09:40:53 EDT 2022</date>
+              <date>Wed Apr 13 17:04:06 EDT 2022</date>
               <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
               <filehistory>
                 <operation>
                   <type>app</type>
-                  <date>Sun Apr 03 19:02:34 MDT 2022</date>
+                  <date>Mon Apr 11 10:54:31 EDT 2022</date>
                   <filename>JMRI program</filename>
                 </operation>
                 <operation>
                   <type>Load OK</type>
-                  <date>Sun Apr 03 19:02:36 MDT 2022</date>
+                  <date>Mon Apr 11 10:54:33 EDT 2022</date>
                   <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                   <filehistory>
                     <operation>
                       <type>app</type>
-                      <date>Sun Apr 03 19:00:28 MDT 2022</date>
+                      <date>Mon Apr 11 10:47:53 EDT 2022</date>
                       <filename>JMRI program</filename>
                     </operation>
                     <operation>
                       <type>Load OK</type>
-                      <date>Sun Apr 03 19:00:30 MDT 2022</date>
+                      <date>Mon Apr 11 10:47:55 EDT 2022</date>
                       <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                       <filehistory>
                         <operation>
                           <type>app</type>
-                          <date>Sun Apr 03 18:56:24 MDT 2022</date>
+                          <date>Mon Apr 11 09:40:51 EDT 2022</date>
                           <filename>JMRI program</filename>
                         </operation>
                         <operation>
                           <type>Load OK</type>
-                          <date>Sun Apr 03 18:56:25 MDT 2022</date>
+                          <date>Mon Apr 11 09:40:53 EDT 2022</date>
                           <filename>/Users/jake/Library/Preferences/JMRI/CYPRESS/CYPRESS-LP-Head.xml</filename>
                         </operation>
                         <operation>
                           <type>Store</type>
-                          <date>Sun Apr 03 18:57:17 MDT 2022</date>
+                          <date>Mon Apr 11 09:46:53 EDT 2022</date>
                           <filename />
                         </operation>
                       </filehistory>
                     </operation>
                     <operation>
                       <type>Store</type>
-                      <date>Sun Apr 03 19:01:28 MDT 2022</date>
+                      <date>Mon Apr 11 10:52:53 EDT 2022</date>
                       <filename />
                     </operation>
                   </filehistory>
                 </operation>
                 <operation>
                   <type>Store</type>
-                  <date>Sun Apr 03 19:04:31 MDT 2022</date>
+                  <date>Mon Apr 11 10:58:11 EDT 2022</date>
                   <filename />
                 </operation>
               </filehistory>
             </operation>
             <operation>
               <type>Store</type>
-              <date>Mon Apr 11 09:46:53 EDT 2022</date>
+              <date>Wed Apr 13 17:09:03 EDT 2022</date>
               <filename />
             </operation>
           </filehistory>
         </operation>
         <operation>
           <type>Store</type>
-          <date>Mon Apr 11 10:52:53 EDT 2022</date>
+          <date>Wed Apr 13 17:20:05 EDT 2022</date>
           <filename />
         </operation>
       </filehistory>
     </operation>
     <operation>
       <type>Store</type>
-      <date>Mon Apr 11 10:58:11 EDT 2022</date>
+      <date>Wed Apr 13 17:44:51 EDT 2022</date>
       <filename />
     </operation>
   </filehistory>
-  <!--Written by JMRI version 4.99.6plus+jake+20220411T1454Z+R69e30408f3 on Mon Apr 11 10:58:11 EDT 2022-->
+  <!--Written by JMRI version 4.99.6plus+jake+20220413T2124Z+R79448bea4b on Wed Apr 13 17:44:51 EDT 2022-->
 </layout-config>
