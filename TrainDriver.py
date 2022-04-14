@@ -14,6 +14,9 @@ import javax.swing
 #   Map Block name to Sensor name
 blockNameToSensorNameDict = {}
 for block in blocks.getNamedBeanSet() :
+    if (block.getSensor() == None) :
+        print ("Block "+block.getSystemName()+" has no sensor")
+        continue
     blockNameToSensorNameDict[block.getSystemName()] = block.getSensor().getSystemName()
     # check for incomplete block -> sensor setup (should never happen if JMRI config OK)
     if (block.getSystemName()== "" or block.getSystemName()== None) :
@@ -231,7 +234,7 @@ topologyNodes = [
     Topology("IBIS35","IBIS33", "Tr2-T06", "IBIS29",Topology.FACING,            [],                 []),
     Topology("IBIS29","IBIS31", "Tr2-T08",  None,   Topology.TRAILING_DIVERGING,[],                 []),
     Topology("IBIS30","IBIS34", "Tr2-T07",  None,   Topology.TRAILING_MAIN,     [],                 []),
-    Topology("IBIS33","IBIS34", "Tr2-T07", "None",  Topology.TRAILING_DIVERGING,[],                 []),
+    Topology("IBIS33","IBIS34", "Tr2-T07",  None,  Topology.TRAILING_DIVERGING,[],                 []),
     Topology("IBIS34","IBIS13", None,       None,   Topology.SIMPLE,            [],                 []),
     Topology("IBIS13", None,    None,       None,   Topology.SIMPLE,            [],                 []),
 
