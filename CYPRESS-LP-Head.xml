@@ -806,10 +806,12 @@
       <sensorname>IS26</sensorname>
       <comment />
     </signalelement>
+<!--
     <signalelement signal="IHTr1-Ss02" mode="1" watchedsignal1="IHTr1-Ss03" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <sensorname>IS1</sensorname>
       <comment />
     </signalelement>
+ -->
     <signalelement signal="IHTr1-Ss03" mode="1" watchedsignal1="IHTr1-Sd02-L" watchedsignal1alt="IHTr1-Sd02-U" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <sensorname>IS2</sensorname>
       <comment />
@@ -890,10 +892,12 @@
       <sensorname>IS5</sensorname>
       <comment />
     </signalelement>
+<!--
     <signalelement signal="IHTr2-Ss01" mode="1" watchedsignal1="IHTr2-Ss02" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <sensorname>IS16</sensorname>
       <comment />
     </signalelement>
+ -->
     <signalelement signal="IHTr2-Ss03" mode="1" watchedsignal1="IHTr2-Ss04" limitspeed1="false" limitspeed2="false" useflashyellow="false" distantsignal="false">
       <sensorname>IS22</sensorname>
       <sensorname>IS6</sensorname>
