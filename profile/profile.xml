@@ -17,5 +17,6 @@
     <startup xmlns="http://jmri.org/xml/schema/auxiliary-configuration/startup-4-3-5.xsd">
         <perform xmlns="" class="jmri.util.startup.configurexml.PerformFileModelXml" name="preference:CYPRESS-LP-Head.xml" type="XmlFile"/>
         <perform xmlns="" class="jmri.util.startup.configurexml.PerformScriptModelXml" name="preference:TrainDriver.py" type="ScriptFile"/>
+        <perform xmlns="" class="jmri.util.startup.configurexml.PerformScriptModelXml" name="preference:SignalSimpleTrack.py" type="ScriptFile"/>
     </startup>
 </auxiliary-configuration>
