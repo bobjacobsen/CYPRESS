@@ -24,8 +24,6 @@ class SignalSimpleTrack(jmri.jmrit.automat.Siglet) :
         payAttentionTo = []
         payAttentionTo.extend(self.sensors)
         payAttentionTo.extend(self.nextSignals)
-        for item in payAttentionTo:
-            print (" - ", item)
 
         # Register the inputs so setOutput will be called when needed.
         self.setInputs(jarray.array(payAttentionTo, jmri.NamedBean))
@@ -53,7 +51,7 @@ class SignalSimpleTrack(jmri.jmrit.automat.Siglet) :
         self.thisSignal.appearance = newAppearence;
 
         # optionally, print the value for diagnostic purposes
-        print self.thisSignal, "output set to ", self.thisSignal.appearance
+        print self.thisSignal, "output set to ", self.thisSignal.appearanceName
 
         return
 
